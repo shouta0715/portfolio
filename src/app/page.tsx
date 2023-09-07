@@ -1,5 +1,9 @@
-import { Container } from "@/components/container";
+import { SkillSlider } from "@/components/skills";
 
 export default function Home() {
-  return <Container>現在工事中です。</Container>;
+  return (
+    <div>
+      <SkillSlider />
+    </div>
+  );
 }
