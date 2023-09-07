@@ -2,6 +2,7 @@
 
 import { MotionConfig, useReducedMotion } from "framer-motion";
 import React, { ReactNode } from "react";
+import { Pattern } from "@/components/pattern";
 import { Header } from "@/layouts/base/header";
 import { Providers } from "@/layouts/providers";
 
@@ -10,8 +11,11 @@ function BaseLayoutInner({ children }: { children: ReactNode }) {
 
   return (
     <MotionConfig transition={shouldReduceMotion ? { duration: 0 } : undefined}>
-      <Header />
-      <main className="w-full flex-auto">{children}</main>
+      <div className="flex min-h-full flex-col">
+        <Pattern />
+        <Header />
+        <main className="w-full flex-auto">{children}</main>
+      </div>
     </MotionConfig>
   );
 }

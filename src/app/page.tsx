@@ -1,3 +1,5 @@
+import { Container } from "@/components/container";
+
 export default function Home() {
-  return <div>現在開発中です。</div>;
+  return <Container>現在工事中です。</Container>;
 }
