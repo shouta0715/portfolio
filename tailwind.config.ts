@@ -16,6 +16,21 @@ const config: Config = {
         inter: ["Inter var", "sans-serif"],
         sans: ["Inter var", "sans-serif"],
       },
+      animation: {
+        "infinite-scroll-x-start":
+          "infinite-scroll-x-start 30s linear infinite",
+        "infinite-scroll-x-end": "infinite-scroll-x-end 30s linear infinite",
+      },
+      keyframes: {
+        "infinite-scroll-x-start": {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        "infinite-scroll-x-end": {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
+      },
     },
   },
   plugins: [require("@headlessui/tailwindcss")({ prefix: "ui" })],
