@@ -16,8 +16,8 @@ export const TailwindIcon = (props: React.ComponentProps<"svg">) => (
         y1="32%"
         y2="67.5555556%"
       >
-        <stop offset="0%" stop-color="#2298BD" />
-        <stop offset="100%" stop-color="#0ED7B5" />
+        <stop offset="0%" stopColor="#2298BD" />
+        <stop offset="100%" stopColor="#0ED7B5" />
       </linearGradient>
     </defs>
     <g>

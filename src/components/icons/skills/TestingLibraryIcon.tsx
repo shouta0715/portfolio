@@ -21,13 +21,13 @@ export const TestingLibraryIcon = (props: React.ComponentProps<"svg">) => {
           id="radialGradient-1"
           r="50.334%"
         >
-          <stop offset="0%" stop-color="#E33332" />
-          <stop offset="20%" stop-color="#E03330" />
-          <stop offset="38%" stop-color="#D52E2C" />
-          <stop offset="54%" stop-color="#C32827" />
-          <stop offset="71%" stop-color="#A91F23" />
-          <stop offset="86%" stop-color="#89181A" />
-          <stop offset="100%" stop-color="#640E0E" />
+          <stop offset="0%" stopColor="#E33332" />
+          <stop offset="20%" stopColor="#E03330" />
+          <stop offset="38%" stopColor="#D52E2C" />
+          <stop offset="54%" stopColor="#C32827" />
+          <stop offset="71%" stopColor="#A91F23" />
+          <stop offset="86%" stopColor="#89181A" />
+          <stop offset="100%" stopColor="#640E0E" />
         </radialGradient>
         <linearGradient
           id="linearGradient-2"
@@ -36,13 +36,13 @@ export const TestingLibraryIcon = (props: React.ComponentProps<"svg">) => {
           y1="49.969%"
           y2="49.969%"
         >
-          <stop offset="0%" stop-color="#F7B3C5" />
-          <stop offset="19%" stop-color="#F7B0C2" />
-          <stop offset="38%" stop-color="#F6A4B6" />
-          <stop offset="58%" stop-color="#F390A5" />
-          <stop offset="79%" stop-color="#E7728B" />
-          <stop offset="99%" stop-color="#DC4D6C" />
-          <stop offset="100%" stop-color="#DA4B6A" />
+          <stop offset="0%" stopColor="#F7B3C5" />
+          <stop offset="19%" stopColor="#F7B0C2" />
+          <stop offset="38%" stopColor="#F6A4B6" />
+          <stop offset="58%" stopColor="#F390A5" />
+          <stop offset="79%" stopColor="#E7728B" />
+          <stop offset="99%" stopColor="#DC4D6C" />
+          <stop offset="100%" stopColor="#DA4B6A" />
         </linearGradient>
         <linearGradient
           id="linearGradient-3"
@@ -51,13 +51,13 @@ export const TestingLibraryIcon = (props: React.ComponentProps<"svg">) => {
           y1="26.463%"
           y2="26.463%"
         >
-          <stop offset="0%" stop-color="#F7B3C5" />
-          <stop offset="19%" stop-color="#F7B0C2" />
-          <stop offset="38%" stop-color="#F6A4B6" />
-          <stop offset="58%" stop-color="#F390A5" />
-          <stop offset="79%" stop-color="#E7728B" />
-          <stop offset="99%" stop-color="#DC4D6C" />
-          <stop offset="100%" stop-color="#DA4B6A" />
+          <stop offset="0%" stopColor="#F7B3C5" />
+          <stop offset="19%" stopColor="#F7B0C2" />
+          <stop offset="38%" stopColor="#F6A4B6" />
+          <stop offset="58%" stopColor="#F390A5" />
+          <stop offset="79%" stopColor="#E7728B" />
+          <stop offset="99%" stopColor="#DC4D6C" />
+          <stop offset="100%" stopColor="#DA4B6A" />
         </linearGradient>
         <radialGradient
           cx="50.879%"
@@ -68,13 +68,13 @@ export const TestingLibraryIcon = (props: React.ComponentProps<"svg">) => {
           id="radialGradient-4"
           r="91.636%"
         >
-          <stop offset="0%" stop-color="#F7B3C5" />
-          <stop offset="19%" stop-color="#F7B0C2" />
-          <stop offset="38%" stop-color="#F6A4B6" />
-          <stop offset="58%" stop-color="#F390A5" />
-          <stop offset="79%" stop-color="#E7728B" />
-          <stop offset="99%" stop-color="#DC4D6C" />
-          <stop offset="100%" stop-color="#DA4B6A" />
+          <stop offset="0%" stopColor="#F7B3C5" />
+          <stop offset="19%" stopColor="#F7B0C2" />
+          <stop offset="38%" stopColor="#F6A4B6" />
+          <stop offset="58%" stopColor="#F390A5" />
+          <stop offset="79%" stopColor="#E7728B" />
+          <stop offset="99%" stopColor="#DC4D6C" />
+          <stop offset="100%" stopColor="#DA4B6A" />
         </radialGradient>
         <radialGradient
           cx="50.5432107%"
@@ -85,13 +85,13 @@ export const TestingLibraryIcon = (props: React.ComponentProps<"svg">) => {
           id="radialGradient-5"
           r="56.1219498%"
         >
-          <stop offset="0%" stop-color="#F7B3C5" />
-          <stop offset="19%" stop-color="#F7B0C2" />
-          <stop offset="38%" stop-color="#F6A4B6" />
-          <stop offset="58%" stop-color="#F390A5" />
-          <stop offset="79%" stop-color="#E7728B" />
-          <stop offset="99%" stop-color="#DC4D6C" />
-          <stop offset="100%" stop-color="#DA4B6A" />
+          <stop offset="0%" stopColor="#F7B3C5" />
+          <stop offset="19%" stopColor="#F7B0C2" />
+          <stop offset="38%" stopColor="#F6A4B6" />
+          <stop offset="58%" stopColor="#F390A5" />
+          <stop offset="79%" stopColor="#E7728B" />
+          <stop offset="99%" stopColor="#DC4D6C" />
+          <stop offset="100%" stopColor="#DA4B6A" />
         </radialGradient>
         <linearGradient
           id="linearGradient-6"
@@ -100,13 +100,13 @@ export const TestingLibraryIcon = (props: React.ComponentProps<"svg">) => {
           y1="49.997%"
           y2="49.997%"
         >
-          <stop offset="0%" stop-color="#DA4B6A" />
-          <stop offset="1%" stop-color="#DC4D6C" />
-          <stop offset="21%" stop-color="#E7728B" />
-          <stop offset="42%" stop-color="#F390A5" />
-          <stop offset="62%" stop-color="#F6A4B6" />
-          <stop offset="81%" stop-color="#F7B0C2" />
-          <stop offset="100%" stop-color="#F7B3C5" />
+          <stop offset="0%" stopColor="#DA4B6A" />
+          <stop offset="1%" stopColor="#DC4D6C" />
+          <stop offset="21%" stopColor="#E7728B" />
+          <stop offset="42%" stopColor="#F390A5" />
+          <stop offset="62%" stopColor="#F6A4B6" />
+          <stop offset="81%" stopColor="#F7B0C2" />
+          <stop offset="100%" stopColor="#F7B3C5" />
         </linearGradient>
         <linearGradient
           id="linearGradient-7"
@@ -115,13 +115,13 @@ export const TestingLibraryIcon = (props: React.ComponentProps<"svg">) => {
           y1="26.478%"
           y2="26.478%"
         >
-          <stop offset="0%" stop-color="#DA4B6A" />
-          <stop offset="1%" stop-color="#DC4D6C" />
-          <stop offset="21%" stop-color="#E7728B" />
-          <stop offset="42%" stop-color="#F390A5" />
-          <stop offset="62%" stop-color="#F6A4B6" />
-          <stop offset="81%" stop-color="#F7B0C2" />
-          <stop offset="100%" stop-color="#F7B3C5" />
+          <stop offset="0%" stopColor="#DA4B6A" />
+          <stop offset="1%" stopColor="#DC4D6C" />
+          <stop offset="21%" stopColor="#E7728B" />
+          <stop offset="42%" stopColor="#F390A5" />
+          <stop offset="62%" stopColor="#F6A4B6" />
+          <stop offset="81%" stopColor="#F7B0C2" />
+          <stop offset="100%" stopColor="#F7B3C5" />
         </linearGradient>
         <radialGradient
           cx="51.992%"
@@ -132,13 +132,13 @@ export const TestingLibraryIcon = (props: React.ComponentProps<"svg">) => {
           id="radialGradient-8"
           r="91.664%"
         >
-          <stop offset="0%" stop-color="#F7B3C5" />
-          <stop offset="19%" stop-color="#F7B0C2" />
-          <stop offset="38%" stop-color="#F6A4B6" />
-          <stop offset="58%" stop-color="#F390A5" />
-          <stop offset="79%" stop-color="#E7728B" />
-          <stop offset="99%" stop-color="#DC4D6C" />
-          <stop offset="100%" stop-color="#DA4B6A" />
+          <stop offset="0%" stopColor="#F7B3C5" />
+          <stop offset="19%" stopColor="#F7B0C2" />
+          <stop offset="38%" stopColor="#F6A4B6" />
+          <stop offset="58%" stopColor="#F390A5" />
+          <stop offset="79%" stopColor="#E7728B" />
+          <stop offset="99%" stopColor="#DC4D6C" />
+          <stop offset="100%" stopColor="#DA4B6A" />
         </radialGradient>
       </defs>
       <g>

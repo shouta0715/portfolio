@@ -20,8 +20,8 @@ export const NextIcon = (props: React.ComponentProps<"svg">) => {
           y1="56.3850422%"
           y2="96.0801119%"
         >
-          <stop offset="0%" stop-color="#FFFFFF" />
-          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+          <stop offset="0%" stopColor="#FFFFFF" />
+          <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="nextjsLinearGradient-4"
@@ -30,8 +30,8 @@ export const NextIcon = (props: React.ComponentProps<"svg">) => {
           y1="0%"
           y2="73.4375%"
         >
-          <stop offset="0%" stop-color="#FFFFFF" />
-          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+          <stop offset="0%" stopColor="#FFFFFF" />
+          <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
         </linearGradient>
       </defs>
       <g>
