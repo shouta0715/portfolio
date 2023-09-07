@@ -39,10 +39,10 @@ export const NavLinks = () => {
         <FadeIn key={nav.name}>
           <Link
             className={clsx(
-              "relative -mx-3 -my-2 rounded-lg px-3 py-2 text-sm text-gray-700 transition-colors delay-150 hover:delay-0  ",
+              "relative -mx-3 -my-2 rounded-lg px-3 py-2 text-sm text-gray-600 transition-colors delay-150 hover:delay-0  ",
               active === i
-                ? "font-semibold text-teal-600 dark:text-teal-400"
-                : "hover:text-teal-600 dark:text-gray-200 dark:hover:text-teal-400"
+                ? "font-semibold text-indigo-600 dark:text-indigo-400"
+                : "hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400"
             )}
             href={nav.href}
             onMouseEnter={() => {
@@ -90,10 +90,10 @@ export const MobileNavLinks = () => {
           <Popover.Button
             as={Link}
             className={clsx(
-              "relative -mx-3 -my-2 rounded-lg px-3 py-2 text-sm text-gray-700 transition-colors delay-150 hover:delay-0  ",
+              "relative -mx-3 -my-2 rounded-lg px-3 py-2 text-sm text-gray-600 transition-colors delay-150 hover:delay-0  ",
               active === i
-                ? "font-semibold text-teal-600 dark:text-teal-400 "
-                : "hover:text-teal-600 dark:text-gray-200 dark:hover:text-teal-400"
+                ? "font-semibold text-indigo-600 dark:text-indigo-400 "
+                : "hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400"
             )}
             href={nav.href}
           >
