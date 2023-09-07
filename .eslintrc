@@ -23,10 +23,11 @@
   "plugins": ["import", "jsx-a11y", "react", "unused-imports"],
   "rules": {
     "import/prefer-default-export": "off",
-    "arrow-body-style": ["error", "always"],
+    "arrow-body-style": "off",
     "import/no-extraneous-dependencies": "off",
     "react/react-in-jsx-scope": "off",
     "react/no-unknown-property": "off",
+    "react/jsx-props-no-spreading": "off",
     "no-console": "warn",
     "react/jsx-sort-props": "error",
     "lines-between-class-members": [
@@ -86,6 +87,7 @@
           "caseInsensitive": true
         }
       }
-    ]
+    ],
+    "react/require-default-props": "off"
   }
 }
