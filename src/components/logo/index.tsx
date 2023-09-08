@@ -6,14 +6,5 @@ export function Logo({
   className,
   ...props
 }: Omit<ComponentPropsWithoutRef<typeof Image>, "src">) {
-  return (
-    <Image
-      src="/avatar.png"
-      {...props}
-      className={clsx(
-        "border border-zinc-900/10 shadow-md shadow-zinc-800/5 dark:border-zinc-700",
-        className
-      )}
-    />
-  );
+  return <Image src="/avatar.png" {...props} className={clsx(className)} />;
 }

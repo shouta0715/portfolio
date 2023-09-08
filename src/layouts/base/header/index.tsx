@@ -25,7 +25,7 @@ export function Header() {
             >
               <Logo
                 alt="Logo"
-                className="h-12 w-12 rounded-full object-cover"
+                className="h-12 w-12 rounded-full border border-gray-900/10 object-cover shadow-md shadow-gray-800/5 dark:border-gray-700"
                 height={48}
                 width={48}
               />
