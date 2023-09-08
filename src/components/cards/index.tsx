@@ -28,15 +28,27 @@ export function Card<T extends ElementType = "div">({
 
 Card.Link = function CardLink({
   children,
+  href,
   ...props
-}: React.ComponentPropsWithoutRef<typeof Link>) {
+}: Omit<React.ComponentPropsWithoutRef<typeof Link>, "href" | "children"> & {
+  href: string;
+  children: React.ReactNode;
+}) {
+  const isExternal = href.toString().startsWith("http");
+  const Component = isExternal ? "a" : Link;
+
   return (
     <>
       <div className="absolute inset-0 z-0 opacity-0 transition group-hover:bg-gray-200/20 group-hover:opacity-100 dark:group-hover:bg-gray-900/20  sm:rounded-2xl" />
-      <Link {...props}>
+      <Component
+        rel={isExternal ? "noopener noreferrer" : undefined}
+        target={isExternal ? "_blank" : undefined}
+        {...props}
+        href={href}
+      >
         <span className="absolute inset-0 z-20  sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
-      </Link>
+      </Component>
     </>
   );
 };

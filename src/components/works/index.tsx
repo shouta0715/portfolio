@@ -4,6 +4,8 @@ import { Card } from "@/components/cards";
 import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
 import { Work as TWork } from "@/libs/client";
 
+const myurl = "https://www.kurahashi.me/";
+
 type ClassNames = {
   card?: string;
   cardImage?: string;
@@ -32,7 +34,7 @@ function Work({ work, classNames }: WorkProps) {
             "text-lg font-semibold md:text-xl lg:text-2xl",
             classNames?.cardTitle
           )}
-          href={`/works/${work.id}`}
+          href={work.link === myurl ? "/about" : work.link}
         >
           {work.name}
         </Card.Title>
