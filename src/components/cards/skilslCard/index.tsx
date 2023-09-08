@@ -6,7 +6,7 @@ import { SelectedSkill } from "@/components/skills";
 export function SkillsCard() {
   return (
     <FadeInWithStagger>
-      <FadeIn className="flex flex-1 flex-col gap-y-6 rounded-xl border bg-white/20 p-3 md:rounded-2xl md:p-6 md:shadow-lg">
+      <FadeIn className="flex flex-1 flex-col gap-y-6 rounded-xl border bg-white/20 p-3 dark:bg-gray-800 md:rounded-2xl md:p-6 md:shadow-lg">
         <p className="mb-3 flex items-center justify-between text-lg  text-gray-600 dark:text-gray-200">
           <span className="font-semibold">Primary Skills</span>
           <Link

@@ -22,7 +22,7 @@ export default function Home() {
             />
             くらはし しょうた
           </p>
-          <p className="mt-8 text-sm leading-7 text-gray-600 md:text-base">
+          <p className="mt-8 text-sm leading-7 text-gray-600 dark:text-gray-200 md:text-base">
             Web開発に興味があります。フロントエンドが得意ですが、バックエンドも勉強中です。
             フロントエンドに関しては、ReactとNext.jsを中心に学習しています。
             また、Tailwind CSSを使用した開発も得意です。
