@@ -151,6 +151,7 @@ function Skill({
   return (
     <FadeIn className="flex flex-col items-center">
       <Link
+        aria-label={skill.name}
         className={clsx(
           "relative block aspect-[9/10] flex-none overflow-hidden rounded-xl bg-white/50 shadow-lg ring ring-gray-100 transition-all duration-300 hover:scale-105 hover:ring-gray-300  dark:bg-zinc-600 sm:rounded-2xl",
           rotations[i % rotations.length],
@@ -158,7 +159,10 @@ function Skill({
         )}
         href={`/skills/${skill.name.toLowerCase()}`}
       >
-        <skill.icon className="h-full w-full object-cover p-2" />
+        <skill.icon
+          aria-hidden="true"
+          className="h-full w-full object-cover p-2"
+        />
       </Link>
       <p className="mt-2 text-center">
         <span className="text-xs font-semibold">{skill.name}</span>
