@@ -17,7 +17,7 @@ export function ToggleTheme() {
       aria-label={
         mounted ? `${oppositionTheme} mode に切り替える` : "読み込み中..."
       }
-      className="relative z-10 rounded-full p-1.5 shadow-lg ring-1 ring-zinc-900/5 hover:ring-zinc-800/20 dark:border-zinc-700 dark:bg-zinc-800 dark:hover:ring-zinc-700 md:p-2"
+      className="relative z-10 rounded-full p-1.5 shadow-lg ring-1 ring-gray-900/5 hover:ring-gray-800/20 dark:border-gray-700 dark:bg-gray-800 dark:hover:ring-gray-700 md:p-2"
       onClick={() => setTheme(oppositionTheme)}
       type="button"
     >

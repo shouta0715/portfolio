@@ -1,5 +1,7 @@
 import clsx from "clsx";
+import Link from "next/link";
 import React from "react";
+import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
 import { AstroIcon } from "@/components/icons/skills/AstroIcon";
 import { CSSIcon } from "@/components/icons/skills/CSSIcon";
 import { GitHubIcon } from "@/components/icons/skills/GitHubIcon";
@@ -20,7 +22,33 @@ import { TailwindIcon } from "@/components/icons/skills/TailwindIcon";
 import { TestingLibraryIcon } from "@/components/icons/skills/TestingLibraryIcon";
 import { TsIcon } from "@/components/icons/skills/TsIcon";
 
-export const Skills = [
+type SkillNames =
+  | "HTML"
+  | "CSS"
+  | "JavaScript"
+  | "TypeScript"
+  | "Tailwind CSS"
+  | "React"
+  | "Next.js"
+  | "Astro"
+  | "Storybook"
+  | "Tanstack/Query"
+  | "Node.js"
+  | "Nest.js"
+  | "Jest"
+  | "Testing Library"
+  | "Playwright"
+  | "MSW"
+  | "Graph QL"
+  | "Git"
+  | "GitHub";
+
+type Skill = {
+  name: SkillNames;
+  icon: React.FC<React.SVGProps<SVGSVGElement>>;
+};
+
+export const Skills: Skill[] = [
   {
     name: "HTML",
     icon: HTMLIcon,
@@ -107,45 +135,67 @@ const rotations = [
   "-rotate-2",
 ];
 
-export function SkillSlider() {
+export function selectedSkills({ skills }: { skills: SkillNames[] }) {
+  return Skills.filter((skill) => skills.includes(skill.name));
+}
+
+function Skill({
+  skill,
+  i,
+  className,
+}: {
+  skill: Skill;
+  i: number;
+  className?: string;
+}) {
   return (
-    <div className="mt-16 h-96 w-full overflow-hidden sm:mt-20">
-      <div className="relative -my-4 flex py-4 sm:gap-8">
-        {Array.from({ length: 2 }).map((_, index) => {
-          return (
-            <div
-              // eslint-disable-next-line react/no-array-index-key
-              key={`slider-${index}`}
-              className={clsx(
-                "absolute flex  justify-around gap-5 px-5 md:gap-8 md:px-8",
-                index === 0
-                  ? "animate-infinite-scroll-x-start"
-                  : "animate-infinite-scroll-x-end"
-              )}
-            >
-              {Skills.map((skill, i) => (
-                <div
-                  // eslint-disable-next-line react/no-array-index-key
-                  key={`${skill.name}-${i}`}
-                  className={clsx(
-                    "relative aspect-[9/10] w-32 flex-none overflow-hidden rounded-xl bg-white/50 shadow-lg ring ring-gray-100 dark:bg-zinc-600 sm:rounded-2xl md:w-44",
-                    rotations[i % rotations.length]
-                  )}
-                >
-                  <skill.icon className="absolute inset-0 h-full w-full object-cover p-4" />
-                  <span>
-                    <div className="absolute inset-0 flex items-end justify-center  ">
-                      <p className=" text-sm font-bold text-gray-600 dark:text-white md:text-xl">
-                        {skill.name}
-                      </p>
-                    </div>
-                  </span>
-                </div>
-              ))}
-            </div>
-          );
-        })}
-      </div>
-    </div>
+    <FadeIn key={skill.name} className="flex flex-col items-center">
+      <Link
+        className={clsx(
+          "relative block aspect-[9/10] flex-none overflow-hidden rounded-xl bg-white/50 shadow-lg ring ring-gray-100 transition-all duration-300 hover:scale-105 hover:ring-gray-300  dark:bg-zinc-600 sm:rounded-2xl",
+          rotations[i % rotations.length],
+          className
+        )}
+        href={`/skills/${skill.name.toLowerCase()}`}
+      >
+        <skill.icon className="h-full w-full object-cover p-2" />
+      </Link>
+      <p className="mt-2 text-center">
+        <span className="text-xs font-semibold">{skill.name}</span>
+      </p>
+    </FadeIn>
+  );
+}
+
+export function SelectedSkill({
+  skills,
+  className,
+  classNames,
+}: {
+  skills: SkillNames[];
+  className?: string;
+  classNames?: {
+    skill?: string;
+  };
+}) {
+  return (
+    <FadeInWithStagger className={className}>
+      {selectedSkills({ skills }).map((skill, i) => (
+        <Skill className={classNames?.skill} i={i} skill={skill} />
+      ))}
+    </FadeInWithStagger>
+  );
+}
+
+export function SkillSet() {
+  return (
+    <FadeInWithStagger
+      className="-my-4 grid grid-cols-5 gap-4 py-4 sm:gap-8 md:grid-cols-10"
+      speed={0.05}
+    >
+      {Skills.map((skill, i) => (
+        <Skill i={i} skill={skill} />
+      ))}
+    </FadeInWithStagger>
   );
 }
