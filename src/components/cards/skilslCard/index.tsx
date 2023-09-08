@@ -11,7 +11,7 @@ export function SkillsCard() {
           <span className="font-semibold">Primary Skills</span>
           <Link
             className="text-xs text-indigo-600 decoration-indigo-600  hover:underline dark:text-indigo-400 dark:decoration-indigo-400"
-            href="/skill"
+            href="/skills"
           >
             他のスキルはこちら
             <ChevronRightIcon
