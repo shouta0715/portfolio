@@ -16,7 +16,7 @@ export function Container<T extends ElementType = "div">({
   const Component = as ?? "div";
 
   return (
-    <Component className={clsx("mx-auto max-w-7xl px-4 lg:px-6", className)}>
+    <Component className={clsx("mx-auto max-w-7xl  px-6 lg:px-12", className)}>
       {children}
     </Component>
   );

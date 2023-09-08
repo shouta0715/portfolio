@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, useReducedMotion } from "framer-motion";
 import React, {
   ComponentPropsWithoutRef,
@@ -41,14 +43,18 @@ export function FadeIn(props: ComponentPropsWithoutRef<typeof motion.div>) {
 
 export function FadeInWithStagger({
   slow = false,
+  speed,
   ...props
-}: ComponentPropsWithoutRef<typeof motion.div> & { slow?: boolean }) {
+}: ComponentPropsWithoutRef<typeof motion.div> & {
+  slow?: boolean;
+  speed?: number;
+}) {
   return (
     <StaggerContext.Provider value>
       <motion.div
         initial="hidden"
         transition={{
-          staggerChildren: slow ? 0.2 : 0.1,
+          staggerChildren: speed ?? (slow ? 0.2 : 0.1),
         }}
         viewport={viewport}
         whileInView="visible"
