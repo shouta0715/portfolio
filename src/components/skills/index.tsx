@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import React from "react";
-import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
+import { FadeIn } from "@/components/fadeIn";
 import { AstroIcon } from "@/components/icons/skills/AstroIcon";
 import { CSSIcon } from "@/components/icons/skills/CSSIcon";
 import { GitHubIcon } from "@/components/icons/skills/GitHubIcon";
@@ -179,23 +179,20 @@ export function SelectedSkill({
   };
 }) {
   return (
-    <FadeInWithStagger className={className}>
+    <div className={className}>
       {selectedSkills({ skills }).map((skill, i) => (
         <Skill className={classNames?.skill} i={i} skill={skill} />
       ))}
-    </FadeInWithStagger>
+    </div>
   );
 }
 
 export function SkillSet() {
   return (
-    <FadeInWithStagger
-      className="-my-4 grid grid-cols-5 gap-4 py-4 sm:gap-8 md:grid-cols-10"
-      speed={0.05}
-    >
+    <div className="-my-4 grid grid-cols-5 gap-4 py-4 sm:gap-8 md:grid-cols-10">
       {Skills.map((skill, i) => (
         <Skill i={i} skill={skill} />
       ))}
-    </FadeInWithStagger>
+    </div>
   );
 }
