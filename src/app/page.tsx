@@ -43,25 +43,27 @@ const Careers = [
 
 function Contact() {
   return (
-    <FadeInWithStagger className="flex flex-col gap-y-6 rounded-xl border bg-white/20 p-3 md:rounded-2xl md:p-6 md:shadow-lg">
-      <FadeIn>
-        <p className="mb-3 text-lg font-semibold text-gray-600 dark:text-gray-200">
-          Social Links
-        </p>
-        <SocialLinks
-          classNames={{
-            wrapper: "gap-8",
-          }}
-        />
-      </FadeIn>
-      <FadeIn>
-        <p className="mb-3 font-semibold text-gray-600 dark:text-gray-200">
-          メールアドレス
-        </p>
-        <span className="flex gap-x-2 text-gray-600 dark:text-gray-200">
-          <EnvelopeIcon className="h-6 w-6 " />
-          <span>kshouta0715@gmail.com</span>
-        </span>
+    <FadeInWithStagger>
+      <FadeIn className="flex flex-col gap-y-6 rounded-xl border bg-white/20 p-3 md:rounded-2xl md:p-6 md:shadow-lg">
+        <div>
+          <p className="mb-3 text-lg font-semibold text-gray-600 dark:text-gray-200">
+            Social Links
+          </p>
+          <SocialLinks
+            classNames={{
+              wrapper: "gap-8",
+            }}
+          />
+        </div>
+        <div>
+          <p className="mb-3 font-semibold text-gray-600 dark:text-gray-200">
+            メールアドレス
+          </p>
+          <span className="flex gap-x-2 text-gray-600 dark:text-gray-200">
+            <EnvelopeIcon className="h-6 w-6 " />
+            <span>kshouta0715@gmail.com</span>
+          </span>
+        </div>
       </FadeIn>
     </FadeInWithStagger>
   );
@@ -69,8 +71,8 @@ function Contact() {
 
 function Skills() {
   return (
-    <FadeInWithStagger className="flex flex-col gap-y-6 rounded-xl border bg-white/20 p-3 md:rounded-2xl md:p-6 md:shadow-lg">
-      <div>
+    <FadeInWithStagger>
+      <FadeIn className="flex flex-col gap-y-6 rounded-xl border bg-white/20 p-3 md:rounded-2xl md:p-6 md:shadow-lg">
         <p className="mb-3 flex items-center justify-between text-lg  text-gray-600 dark:text-gray-200">
           <span className="font-semibold">Primary Skills</span>
           <Link
@@ -84,14 +86,13 @@ function Skills() {
             />
           </Link>
         </p>
+
         <SelectedSkill
-          className="grid grid-cols-4 gap-2 lg:gap-4 "
-          classNames={{
-            skill: "h-14 w-14 lg:h-20 lg:w-20",
-          }}
+          className=" grid grid-cols-4 gap-2 lg:gap-4 "
+          classNames={{ skill: "h-14 w-14 lg:h-20 lg:w-20" }}
           skills={["Next.js", "React", "Tailwind CSS", "TypeScript"]}
         />
-      </div>
+      </FadeIn>
     </FadeInWithStagger>
   );
 }
@@ -132,20 +133,18 @@ function Career() {
 
 export default function Home() {
   return (
-    <div className="mt-6 sm:mt-14 md:mt-20">
-      <FadeIn>
-        <Heading>About</Heading>
-        <div className="mt-12 text-gray-900 dark:text-gray-200">
-          <p className="text-xl font-medium sm:text-2xl">くらはし しょうた</p>
-          <div className="mt-8 flex flex-col gap-8 md:flex-row">
-            <Career />
-            <div className="flex flex-1 flex-col justify-between gap-y-8 md:gap-y-0">
-              <Contact />
-              <Skills />
-            </div>
+    <FadeIn>
+      <Heading>About</Heading>
+      <div className="mt-12 text-gray-900 dark:text-gray-200">
+        <p className="text-xl font-medium sm:text-2xl">くらはし しょうた</p>
+        <div className="mt-8 flex flex-col gap-8 md:flex-row">
+          <Career />
+          <div className="flex flex-1 flex-col justify-between gap-y-8 md:gap-y-0">
+            <Contact />
+            <Skills />
           </div>
         </div>
-      </FadeIn>
-    </div>
+      </div>
+    </FadeIn>
   );
 }

@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import React from "react";
-import { FadeIn } from "@/components/fadeIn";
+import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
 import { AstroIcon } from "@/components/icons/skills/AstroIcon";
 import { CSSIcon } from "@/components/icons/skills/CSSIcon";
 import { GitHubIcon } from "@/components/icons/skills/GitHubIcon";
@@ -149,7 +149,7 @@ function Skill({
   className?: string;
 }) {
   return (
-    <FadeIn key={skill.name} className="flex flex-col items-center">
+    <FadeIn className="flex flex-col items-center">
       <Link
         className={clsx(
           "relative block aspect-[9/10] flex-none overflow-hidden rounded-xl bg-white/50 shadow-lg ring ring-gray-100 transition-all duration-300 hover:scale-105 hover:ring-gray-300  dark:bg-zinc-600 sm:rounded-2xl",
@@ -179,20 +179,38 @@ export function SelectedSkill({
   };
 }) {
   return (
-    <div className={className}>
+    <FadeInWithStagger className={className}>
       {selectedSkills({ skills }).map((skill, i) => (
-        <Skill className={classNames?.skill} i={i} skill={skill} />
+        <Skill
+          key={skill.name}
+          className={classNames?.skill}
+          i={i}
+          skill={skill}
+        />
       ))}
-    </div>
+    </FadeInWithStagger>
   );
 }
 
-export function SkillSet() {
+export function SkillSet({
+  className,
+  classNames,
+}: {
+  className?: string;
+  classNames?: {
+    skill?: string;
+  };
+}) {
   return (
-    <div className="-my-4 grid grid-cols-5 gap-4 py-4 sm:gap-8 md:grid-cols-10">
+    <FadeInWithStagger className={className}>
       {Skills.map((skill, i) => (
-        <Skill i={i} skill={skill} />
+        <Skill
+          key={skill.name}
+          className={classNames?.skill}
+          i={i}
+          skill={skill}
+        />
       ))}
-    </div>
+    </FadeInWithStagger>
   );
 }
