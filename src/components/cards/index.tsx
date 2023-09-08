@@ -66,7 +66,7 @@ Card.Title = function CardTitle<T extends React.ElementType = "h2">({
   const Component = as ?? "h2";
 
   return (
-    <Component className={clsx("text-gray-800 dark:text-gray-100", className)}>
+    <Component className={clsx("text-gray-900 dark:text-gray-200", className)}>
       {href ? <Card.Link href={href}>{children}</Card.Link> : children}
     </Component>
   );
