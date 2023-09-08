@@ -1,68 +1,11 @@
 import { ChevronRightIcon } from "@heroicons/react/20/solid";
-import { EnvelopeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { Border } from "@/components/border";
-import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
+import { ContactCard } from "@/components/cards/contactCard";
+import { SkillsCard } from "@/components/cards/skilslCard";
+import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { Logo } from "@/components/logo";
-import { SelectedSkill } from "@/components/skills";
-import { SocialLinks } from "@/components/socialLinks";
-
-function Contact() {
-  return (
-    <FadeInWithStagger className=" flex-1  rounded-xl border bg-white/20 p-3 md:rounded-2xl md:p-6 md:shadow-lg">
-      <FadeIn className="flex flex-col gap-y-6">
-        <div>
-          <p className="mb-3 text-lg font-semibold text-gray-600 dark:text-gray-200">
-            Social Links
-          </p>
-          <SocialLinks
-            classNames={{
-              wrapper: "gap-8",
-            }}
-          />
-        </div>
-        <div>
-          <p className="mb-3 font-semibold text-gray-600 dark:text-gray-200">
-            Email
-          </p>
-          <span className="flex items-center gap-x-2 text-sm text-gray-600 dark:text-gray-200">
-            <EnvelopeIcon className="h-6 w-6 " />
-            kshouta0715@gmail.com
-          </span>
-        </div>
-      </FadeIn>
-    </FadeInWithStagger>
-  );
-}
-
-function Skills() {
-  return (
-    <FadeInWithStagger>
-      <FadeIn className="flex flex-1 flex-col gap-y-6 rounded-xl border bg-white/20 p-3 md:rounded-2xl md:p-6 md:shadow-lg">
-        <p className="mb-3 flex items-center justify-between text-lg  text-gray-600 dark:text-gray-200">
-          <span className="font-semibold">Primary Skills</span>
-          <Link
-            className="text-xs text-indigo-600 decoration-indigo-600  hover:underline dark:text-indigo-400 dark:decoration-indigo-400"
-            href="/skill"
-          >
-            他のスキルはこちら
-            <ChevronRightIcon
-              className="inline-block
-              h-4 w-4 text-indigo-600 dark:text-indigo-400"
-            />
-          </Link>
-        </p>
-
-        <SelectedSkill
-          className=" grid grid-cols-4 gap-2 lg:gap-4 "
-          classNames={{ skill: "h-14 w-14 lg:h-20 lg:w-20" }}
-          skills={["Next.js", "React", "Tailwind CSS", "TypeScript"]}
-        />
-      </FadeIn>
-    </FadeInWithStagger>
-  );
-}
 
 export default function Home() {
   return (
@@ -86,8 +29,8 @@ export default function Home() {
             実務経験を積むため、インターンや、アルバイト、フリーランスなどのお仕事を探しています。
           </p>
           <div className="mt-8 flex flex-col justify-between gap-16 md:flex-row">
-            <Contact />
-            <Skills />
+            <ContactCard />
+            <SkillsCard />
           </div>
         </div>
         <Link
