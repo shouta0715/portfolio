@@ -139,7 +139,7 @@ export default function Home() {
           <p className="text-xl font-medium sm:text-2xl">くらはし しょうた</p>
           <div className="mt-8 flex flex-col gap-8 md:flex-row">
             <Career />
-            <div className="flex flex-1 flex-col justify-between">
+            <div className="flex flex-1 flex-col justify-between gap-y-8 md:gap-y-0">
               <Contact />
               <Skills />
             </div>
