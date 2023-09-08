@@ -29,7 +29,7 @@ function Work({ work, classNames }: WorkProps) {
       />
       <div className="px-2.5">
         <Card.Title
-          as="h3"
+          as="div"
           className={clsx(
             "text-lg font-semibold md:text-xl lg:text-2xl",
             classNames?.cardTitle
