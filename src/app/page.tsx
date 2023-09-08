@@ -69,7 +69,7 @@ function Contact() {
 
 function Skills() {
   return (
-    <FadeIn className="flex flex-col gap-y-6 rounded-xl border bg-white/20 p-3 md:rounded-2xl md:p-6 md:shadow-lg">
+    <FadeInWithStagger className="flex flex-col gap-y-6 rounded-xl border bg-white/20 p-3 md:rounded-2xl md:p-6 md:shadow-lg">
       <div>
         <p className="mb-3 flex items-center justify-between text-lg  text-gray-600 dark:text-gray-200">
           <span className="font-semibold">Primary Skills</span>
@@ -92,7 +92,7 @@ function Skills() {
           skills={["Next.js", "React", "Tailwind CSS", "TypeScript"]}
         />
       </div>
-    </FadeIn>
+    </FadeInWithStagger>
   );
 }
 
