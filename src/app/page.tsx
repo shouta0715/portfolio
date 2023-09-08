@@ -6,8 +6,12 @@ import { SkillsCard } from "@/components/cards/skilslCard";
 import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { Logo } from "@/components/logo";
+import { Works } from "@/components/works";
+import { getWorks } from "@/libs/client";
 
-export default function Home() {
+export default async function Home() {
+  const { contents } = await getWorks();
+
   return (
     <FadeIn>
       <section>
@@ -44,6 +48,7 @@ export default function Home() {
       <Border className="my-8" />
       <section>
         <Heading>Works</Heading>
+        <Works works={contents} />
       </section>
     </FadeIn>
   );
