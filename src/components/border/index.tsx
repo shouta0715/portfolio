@@ -29,7 +29,7 @@ export function Border({
       )}
       initial="hidden"
       transition={{
-        duration: speed ?? (slow ? 1.5 : 1),
+        duration: speed ?? (slow ? 2 : 1),
       }}
       variants={{
         hidden: {

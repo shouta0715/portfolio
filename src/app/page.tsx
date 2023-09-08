@@ -4,6 +4,7 @@ import {
   EnvelopeIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { Border } from "@/components/border";
 import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { SelectedSkill } from "@/components/skills";
@@ -57,9 +58,9 @@ function Contact() {
         </div>
         <div>
           <p className="mb-3 font-semibold text-gray-600 dark:text-gray-200">
-            メールアドレス
+            Email
           </p>
-          <span className="flex gap-x-2 text-gray-600 dark:text-gray-200">
+          <span className="flex gap-x-2 text-lg text-gray-600 dark:text-gray-200">
             <EnvelopeIcon className="h-6 w-6 " />
             <span>kshouta0715@gmail.com</span>
           </span>
@@ -134,17 +135,29 @@ function Career() {
 export default function Home() {
   return (
     <FadeIn>
-      <Heading>About</Heading>
-      <div className="mt-12 text-gray-900 dark:text-gray-200">
-        <p className="text-xl font-medium sm:text-2xl">くらはし しょうた</p>
-        <div className="mt-8 flex flex-col gap-8 md:flex-row">
-          <Career />
-          <div className="flex flex-1 flex-col justify-between gap-y-8 md:gap-y-0">
-            <Contact />
-            <Skills />
+      <section>
+        <Heading>About</Heading>
+        <div className="mt-12 text-gray-900 dark:text-gray-200">
+          <p className="text-xl font-semibold sm:text-2xl">くらはし しょうた</p>
+          <p className="mt-8 text-sm leading-7 text-gray-600 md:text-base">
+            Web開発に興味があります。フロントエンドが得意ですが、バックエンドも勉強中です。
+            フロントエンドに関しては、ReactとNext.jsを中心に学習しています。
+            また、Tailwind CSSを使用した開発も得意です。
+            実戦経験を積みたいです。
+          </p>
+          <div className="mt-8 flex flex-col gap-8 md:flex-row">
+            <Career />
+            <div className="flex flex-1 flex-col justify-between gap-y-8 md:gap-y-0">
+              <Contact />
+              <Skills />
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+      <Border className="my-16" />
+      <section>
+        <Heading>Profile</Heading>
+      </section>
     </FadeIn>
   );
 }
