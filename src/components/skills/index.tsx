@@ -21,34 +21,16 @@ import { StoryBookIcon } from "@/components/icons/skills/StoryBookIcon";
 import { TailwindIcon } from "@/components/icons/skills/TailwindIcon";
 import { TestingLibraryIcon } from "@/components/icons/skills/TestingLibraryIcon";
 import { TsIcon } from "@/components/icons/skills/TsIcon";
+import { SkillNames, getSkills } from "@/libs/client";
 
-export type SkillNames =
-  | "HTML"
-  | "CSS"
-  | "JavaScript"
-  | "TypeScript"
-  | "Tailwind CSS"
-  | "React"
-  | "Next.js"
-  | "Astro"
-  | "Storybook"
-  | "Tanstack/Query"
-  | "Node.js"
-  | "Nest.js"
-  | "Jest"
-  | "Testing Library"
-  | "Playwright"
-  | "MSW"
-  | "Graph QL"
-  | "Git"
-  | "GitHub";
-
-type Skill = {
+type SkillData = {
   name: SkillNames;
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
 };
 
-export const Skills: Skill[] = [
+type ViewSkill = { id: string } & SkillData;
+
+export const Skills: SkillData[] = [
   {
     name: "HTML",
     icon: HTMLIcon,
@@ -135,8 +117,20 @@ const rotations = [
   "-rotate-2",
 ];
 
-export function selectedSkills({ skills }: { skills: SkillNames[] }) {
-  return Skills.filter((skill) => skills.includes(skill.name));
+export async function selectedSkills({ skills }: { skills: SkillNames[] }) {
+  const { contents } = await getSkills({ limit: 100, fields: ["id", "name"] });
+
+  const filtered = Skills.filter((skill) => skills.includes(skill.name));
+
+  const result: ViewSkill[] = filtered.map((skill) => {
+    const find = contents.find((s) => {
+      return s.name === skill.name;
+    });
+
+    return { ...skill, id: find?.id ?? "" };
+  });
+
+  return result;
 }
 
 function Skill({
@@ -144,7 +138,7 @@ function Skill({
   i,
   className,
 }: {
-  skill: Skill;
+  skill: ViewSkill;
   i: number;
   className?: string;
 }) {
@@ -157,7 +151,7 @@ function Skill({
           rotations[i % rotations.length],
           className
         )}
-        href={`/skills/${skill.name.toLowerCase()}`}
+        href={`/skills/${skill.id}`}
       >
         <skill.icon
           aria-hidden="true"
@@ -171,7 +165,7 @@ function Skill({
   );
 }
 
-export function SelectedSkill({
+export async function SelectedSkill({
   skills,
   className,
   classNames,
@@ -182,9 +176,11 @@ export function SelectedSkill({
     skill?: string;
   };
 }) {
+  const selected = await selectedSkills({ skills });
+
   return (
     <FadeInWithStagger className={className}>
-      {selectedSkills({ skills }).map((skill, i) => (
+      {selected.map((skill, i) => (
         <Skill
           key={skill.name}
           className={classNames?.skill}
@@ -196,7 +192,7 @@ export function SelectedSkill({
   );
 }
 
-export function SkillSet({
+export async function SkillSet({
   className,
   classNames,
 }: {
@@ -205,9 +201,13 @@ export function SkillSet({
     skill?: string;
   };
 }) {
+  const allSkills = await selectedSkills({
+    skills: Skills.map((skill) => skill.name),
+  });
+
   return (
     <FadeInWithStagger className={className}>
-      {Skills.map((skill, i) => (
+      {allSkills.map((skill, i) => (
         <Skill
           key={skill.name}
           className={classNames?.skill}
