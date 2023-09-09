@@ -10,7 +10,9 @@ import { Works } from "@/components/works";
 import { getWorks } from "@/libs/client";
 
 export default async function Home() {
-  const { contents } = await getWorks();
+  const { contents } = await getWorks({
+    fields: ["id", "name", "link", "image", "skills"],
+  });
 
   return (
     <FadeIn>
