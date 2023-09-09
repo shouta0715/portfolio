@@ -119,13 +119,13 @@ Card.Image = function CardImage({
       <div className="group relative h-64 overflow-hidden rounded-2xl">
         <div
           className={clsx(
-            "absolute bottom-6 left-0 right-4 top-0 max-h-60 w-full rounded-2xl border border-indigo-300 transition duration-300 group-hover:scale-95 xl:right-6"
+            "absolute bottom-8 left-0 top-0 h-56  w-full rounded-2xl border border-indigo-300 transition duration-300 group-hover:scale-95"
           )}
         />
         <div className="absolute inset-0 " style={{ clipPath: `url(#${src})` }}>
           <Image
             className={clsx(
-              "absolute inset-0 aspect-[3/2] max-h-56 w-full rounded-2xl object-cover transition-transform duration-300 group-hover:scale-105",
+              "absolute inset-0 aspect-[3/2] h-56 w-full rounded-2xl object-cover transition-transform duration-300 group-hover:scale-105",
               className
             )}
             {...props}
