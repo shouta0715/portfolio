@@ -17,7 +17,7 @@ export function Card<T extends ElementType = "div">({
   return (
     <Component
       className={clsx(
-        "group relative rounded-xl border bg-white/20 p-3 dark:bg-gray-800 md:rounded-2xl md:p-6 md:shadow-lg",
+        "group relative rounded-xl border bg-white/20 p-4 dark:bg-gray-800 md:rounded-2xl md:p-6 md:shadow-sm",
         className
       )}
     >
@@ -66,7 +66,7 @@ Card.Title = function CardTitle<T extends React.ElementType = "h2">({
   const Component = as ?? "h2";
 
   return (
-    <Component className={clsx("text-gray-900 dark:text-gray-200", className)}>
+    <Component className={clsx("text-gray-900 dark:text-gray-200 ", className)}>
       {href ? <Card.Link href={href}>{children}</Card.Link> : children}
     </Component>
   );
@@ -81,7 +81,7 @@ Card.Description = function CardDescription<T extends React.ElementType = "p">({
   as?: T;
   className?: string;
 }) {
-  const Component = as ?? "p";
+  const Component = as ?? "div";
 
   return (
     <Component
@@ -108,31 +108,50 @@ function ImageClipPaths({ id }: { id: string | StaticImport }) {
 Card.Image = function CardImage({
   className,
   src,
+  href,
   ...props
 }: {
   className?: string;
   src: string | StaticImport;
-} & Omit<React.ComponentPropsWithoutRef<typeof Image>, "src">) {
+  href?: string;
+} & Omit<React.ComponentPropsWithoutRef<typeof Image>, "src" | "href">) {
+  const Inner = (
+    <>
+      <div
+        className={clsx(
+          "absolute bottom-8 left-0 top-0 h-56  w-full rounded-2xl border border-indigo-300 transition duration-300 ",
+          href ? "group-hover/image:scale-95" : "group-hover:scale-95"
+        )}
+      />
+      <div className="absolute inset-0 " style={{ clipPath: `url(#${src})` }}>
+        <Image
+          className={clsx(
+            "absolute inset-0 aspect-[3/2] h-56 w-full rounded-2xl object-cover transition-transform duration-300",
+            className,
+            href ? "group-hover/image:scale-105" : "group-hover:scale-105"
+          )}
+          {...props}
+          src={src}
+        />
+      </div>
+    </>
+  );
+
   return (
     <>
       <ImageClipPaths id={src} />
-      <div className="group relative h-64 overflow-hidden rounded-2xl">
-        <div
-          className={clsx(
-            "absolute bottom-6 left-0 right-4 top-0 max-h-60 w-full rounded-2xl border border-indigo-300 transition duration-300 group-hover:scale-95 xl:right-6"
-          )}
-        />
-        <div className="absolute inset-0 " style={{ clipPath: `url(#${src})` }}>
-          <Image
-            className={clsx(
-              "absolute inset-0 aspect-[3/2] max-h-56 w-full rounded-2xl object-cover transition-transform duration-300 group-hover:scale-105",
-              className
-            )}
-            {...props}
-            src={src}
-          />
+      {href ? (
+        <Link
+          className="group/image relative block h-64 overflow-hidden rounded-2xl"
+          href={href}
+        >
+          {Inner}
+        </Link>
+      ) : (
+        <div className="group relative h-64 overflow-hidden rounded-2xl">
+          {Inner}
         </div>
-      </div>
+      )}
     </>
   );
 };

@@ -1,14 +1,17 @@
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { Card } from "@/components/cards";
 import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
 import { SelectedSkill } from "@/components/skills";
 
 export function SkillsCard() {
   return (
-    <FadeInWithStagger>
-      <FadeIn className="flex flex-1 flex-col gap-y-6 rounded-xl border bg-white/20 p-3 dark:bg-gray-800 md:rounded-2xl md:p-6 md:shadow-lg">
-        <p className="mb-3 flex items-center justify-between text-lg  text-gray-600 dark:text-gray-200">
-          <span className="font-semibold">Primary Skills</span>
+    <Card as={FadeInWithStagger}>
+      <FadeIn className="flex h-full flex-col gap-y-4">
+        <div className="flex items-center justify-between text-lg">
+          <Card.Title as="span" className="font-semibold">
+            Primary Skills
+          </Card.Title>
           <Link
             className="text-xs text-indigo-600 decoration-indigo-600  hover:underline dark:text-indigo-400 dark:decoration-indigo-400"
             href="/skills"
@@ -19,14 +22,15 @@ export function SkillsCard() {
               h-4 w-4 text-indigo-600 dark:text-indigo-400"
             />
           </Link>
-        </p>
-
-        <SelectedSkill
-          className=" grid grid-cols-4 gap-2 lg:gap-4 "
-          classNames={{ skill: "h-14 w-14 lg:h-20 lg:w-20" }}
-          skills={["Next.js", "React", "Tailwind CSS", "TypeScript"]}
-        />
+        </div>
+        <Card.Description className="grid flex-1 place-items-center">
+          <SelectedSkill
+            className="grid grid-cols-4 gap-2 lg:gap-4"
+            classNames={{ skill: "h-14 w-14 lg:h-20 lg:w-20" }}
+            skills={["Next.js", "React", "Tailwind CSS", "TypeScript"]}
+          />
+        </Card.Description>
       </FadeIn>
-    </FadeInWithStagger>
+    </Card>
   );
 }

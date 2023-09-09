@@ -23,6 +23,10 @@ const navs = [
     name: "Contact",
     href: "/contact",
   },
+  {
+    name: "Skills",
+    href: "/skills",
+  },
 ];
 
 export const NavLinks = () => {
