@@ -80,7 +80,7 @@ function Career() {
 export default function Page() {
   return (
     <FadeIn>
-      <Heading>About</Heading>
+      <Heading>About Me</Heading>
       <div className="mt-12 text-gray-900 dark:text-gray-200">
         <p className="flex items-center text-xl font-semibold sm:text-2xl">
           <Logo
