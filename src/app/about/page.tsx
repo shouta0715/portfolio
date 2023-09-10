@@ -48,7 +48,7 @@ function Career() {
     <FadeInWithStagger className="grid flex-1 gap-y-8">
       {Careers.map((career) => (
         <FadeIn key={career.id}>
-          <time className="relative order-first mb-3 flex items-center pl-3.5 text-sm leading-6 text-gray-400 sm:text-base">
+          <time className="relative order-first mb-3 flex items-center pl-3.5 text-sm leading-7 text-gray-400 sm:text-base">
             {career.date}
             <span
               aria-hidden="true"

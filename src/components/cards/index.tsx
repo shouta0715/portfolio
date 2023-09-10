@@ -144,6 +144,8 @@ Card.Image = function CardImage({
         <Link
           className="group/image relative block h-64 overflow-hidden rounded-2xl"
           href={href}
+          rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+          target={href.startsWith("http") ? "_blank" : undefined}
         >
           {Inner}
         </Link>
