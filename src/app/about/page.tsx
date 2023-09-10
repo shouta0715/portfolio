@@ -60,15 +60,15 @@ function Career() {
           <p className="pl-3.5 font-medium">{career.title}</p>
           {career.link && (
             <a
-              className="mt-3 inline-flex items-center gap-x-2 pl-3.5 text-sm hover:underline hover:decoration-teal-500 dark:hover:decoration-teal-400"
+              className="mt-3 inline-flex items-center gap-x-2 pl-3.5 text-sm hover:underline hover:decoration-teal-600 dark:hover:decoration-teal-400"
               href={career.link.url}
               rel="noopener noreferrer"
               target="_blank"
             >
-              <span className="text-teal-500 dark:text-teal-400">
+              <span className="text-teal-600 dark:text-teal-400">
                 {career.link.name}
               </span>
-              <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 text-teal-500 dark:text-teal-400" />
+              <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 text-teal-600 dark:text-teal-400" />
             </a>
           )}
         </FadeIn>

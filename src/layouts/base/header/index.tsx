@@ -78,10 +78,7 @@ export function Header() {
                           initial={{ opacity: 0, y: -32 }}
                           static
                         >
-                          <FadeInWithStagger
-                            className="flex flex-col gap-y-6"
-                            slow
-                          >
+                          <FadeInWithStagger className="flex flex-col gap-y-6">
                             <MobileNavLinks />
                           </FadeInWithStagger>
                         </Popover.Panel>

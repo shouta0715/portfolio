@@ -1,3 +1,4 @@
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import { MicroCMSListResponse } from "microcms-js-sdk";
 import { Card } from "@/components/cards";
@@ -39,11 +40,20 @@ function Work({ work, classNames }: WorkProps) {
         <Card.Title
           as="div"
           className={clsx(
-            "text-lg font-semibold md:text-xl lg:text-2xl",
+            "flex items-center justify-between text-lg font-semibold md:text-xl lg:text-2xl",
             classNames?.cardTitle
           )}
         >
-          {work.name}
+          <span>{work.name}</span>
+          <a
+            className="flex items-center gap-x-2 text-sm text-teal-600 decoration-teal-600 hover:underline dark:text-teal-400 dark:decoration-teal-400"
+            href={work.github_url}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            GitHubへ
+            <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 text-teal-600 dark:text-teal-400" />
+          </a>
         </Card.Title>
         <Card.Description as="div" className="-mx-4 grid flex-1">
           <SelectedSkill

@@ -7,7 +7,7 @@ import { SocialLinks } from "@/components/socialLinks";
 export default function Footer() {
   return (
     <footer>
-      <Container className="mt-20 sm:mt-24 lg:mt-28">
+      <Container className="mt-10 sm:mt-14 lg:mt-16">
         <Border />
         <FadeInWithStagger className="flex flex-col items-center justify-between py-10">
           <SocialLinks
