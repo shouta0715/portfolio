@@ -9,7 +9,7 @@ export default async function Page() {
     <FadeIn>
       <Heading>Skills</Heading>
       <div className="mt-12 flex flex-col gap-y-12">
-        <div className="leading-8 text-gray-600 dark:text-gray-200">
+        <div className="leading-7 text-gray-600 dark:text-gray-200">
           <p>
             フロントエンドのスキルを中心に、以下のスキルを習得、学習しています。以下のスキル以外にも、様々なスキルを習得しています。
           </p>
