@@ -3,7 +3,7 @@
 import { Popover } from "@headlessui/react";
 
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 import { Container } from "@/components/container";
@@ -57,7 +57,7 @@ export function Header() {
                       <>
                         <Popover.Overlay
                           animate={{ opacity: 1 }}
-                          as={motion.div}
+                          as={m.div}
                           className="fixed inset-0 z-0 bg-gray-300/60 backdrop-blur"
                           exit={{ opacity: 0 }}
                           initial={{ opacity: 0 }}
@@ -68,7 +68,7 @@ export function Header() {
                             opacity: 1,
                             y: 0,
                           }}
-                          as={motion.div}
+                          as={m.div}
                           className="absolute inset-x-0 top-0 z-0 origin-top rounded-b-2xl bg-gray-50 px-6 pb-6 pt-32 shadow-2xl shadow-gray-900/20 dark:bg-slate-900"
                           exit={{
                             opacity: 0,

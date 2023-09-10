@@ -1,9 +1,7 @@
 import { Popover } from "@headlessui/react";
 import clsx from "clsx";
-import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useRef, useState } from "react";
 import { FadeIn } from "@/components/fadeIn";
 
 const navs = [
@@ -30,8 +28,6 @@ const navs = [
 ];
 
 export const NavLinks = () => {
-  const timeoutRef = useRef<number | null>(null);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(-1);
   const pathname = usePathname();
   const active = navs.findIndex((nav) => nav.href === pathname);
 
@@ -47,32 +43,7 @@ export const NavLinks = () => {
                 : "hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400"
             )}
             href={nav.href}
-            onMouseEnter={() => {
-              if (timeoutRef.current) {
-                window.clearTimeout(timeoutRef.current);
-              }
-              setHoveredIndex(i);
-            }}
-            onMouseLeave={() => {
-              timeoutRef.current = window.setTimeout(() => {
-                setHoveredIndex(null);
-              }, 200);
-            }}
           >
-            <AnimatePresence>
-              {hoveredIndex === i && (
-                <motion.span
-                  animate={{ opacity: 1, transition: { duration: 0.15 } }}
-                  className="absolute inset-0 rounded-lg bg-gray-50 dark:bg-white/10"
-                  exit={{
-                    opacity: 0,
-                    transition: { duration: 0.15 },
-                  }}
-                  initial={{ opacity: 0 }}
-                  layoutId="hover"
-                />
-              )}
-            </AnimatePresence>
             <span className="relative z-10">{nav.name}</span>
           </Link>
         </FadeIn>
