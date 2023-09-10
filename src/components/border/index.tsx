@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import React from "react";
 
 const viewport = { once: true, margin: "0px 0px -200px" };
@@ -10,7 +10,7 @@ type BorderProps = {
   className?: string;
   slow?: boolean;
   speed?: number;
-} & React.ComponentPropsWithoutRef<typeof motion.div>;
+} & React.ComponentPropsWithoutRef<typeof m.div>;
 
 export function Border({
   className,
@@ -21,7 +21,7 @@ export function Border({
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <motion.div
+    <m.div
       animate="visible"
       className={clsx(
         "h-px rounded-md bg-gray-300 dark:border-gray-700",

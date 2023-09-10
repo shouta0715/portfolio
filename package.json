@@ -8,12 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "preview": "rm -rf .next && pnpm run build && pnpm start"
+    "preview": "rm -rf .next && pnpm run build && pnpm start",
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@headlessui/tailwindcss": "^0.2.0",
     "@heroicons/react": "^2.0.18",
+    "@next/bundle-analyzer": "^13.4.19",
     "@types/node": "20.5.9",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
