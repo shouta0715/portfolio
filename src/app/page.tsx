@@ -11,7 +11,7 @@ import { getWorks } from "@/libs/client";
 
 export default async function Home() {
   const { contents } = await getWorks({
-    fields: ["id", "name", "link", "image", "skills"],
+    fields: ["id", "name", "link", "image", "skills", "github_url"],
   });
 
   return (

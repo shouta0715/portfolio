@@ -27,8 +27,7 @@ export type SkillNames =
   | "Playwright"
   | "MSW"
   | "Graph QL"
-  | "Git"
-  | "GitHub";
+  | "Go";
 
 export const client = createClient({
   serviceDomain: process.env.SERVICE_DOMAIN as string,
@@ -38,6 +37,7 @@ export const client = createClient({
 export type Skill = {
   id: string;
   name: SkillNames;
+  description: string;
 } & MicroCMSDate;
 
 export type Work = {
@@ -46,6 +46,7 @@ export type Work = {
   link: string;
   image: MicroCMSImage;
   skills: Skill[];
+  github_url: string;
 } & MicroCMSDate;
 
 export const getWorks = async (queries?: MicroCMSQueries) => {
@@ -56,6 +57,15 @@ export const getWorks = async (queries?: MicroCMSQueries) => {
 
 export const getSkills = async (queries?: MicroCMSQueries) => {
   const data = await client.getList<Skill>({ endpoint: "skills", queries });
+
+  return data;
+};
+export const getSkill = async (id: string, queries?: MicroCMSQueries) => {
+  const data = await client.get<Skill>({
+    endpoint: "skills",
+    contentId: id,
+    queries,
+  });
 
   return data;
 };

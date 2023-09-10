@@ -4,8 +4,7 @@ import React from "react";
 import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
 import { AstroIcon } from "@/components/icons/skills/AstroIcon";
 import { CSSIcon } from "@/components/icons/skills/CSSIcon";
-import { GitHubIcon } from "@/components/icons/skills/GitHubIcon";
-import { GitIcon } from "@/components/icons/skills/GitIcon";
+import { GoIcon } from "@/components/icons/skills/GoIcon";
 import { GraphQLIcon } from "@/components/icons/skills/GraphQLIcon";
 import { HTMLIcon } from "@/components/icons/skills/HTMLIcon";
 import { JestIcon } from "@/components/icons/skills/JestIcon";
@@ -100,12 +99,8 @@ export const Skills: SkillData[] = [
     icon: GraphQLIcon,
   },
   {
-    name: "Git",
-    icon: GitIcon,
-  },
-  {
-    name: "GitHub",
-    icon: GitHubIcon,
+    name: "Go",
+    icon: GoIcon,
   },
 ];
 
