@@ -9,6 +9,7 @@ import { GraphQLIcon } from "@/components/icons/skills/GraphQLIcon";
 import { HTMLIcon } from "@/components/icons/skills/HTMLIcon";
 import { JestIcon } from "@/components/icons/skills/JestIcon";
 import { JsIcon } from "@/components/icons/skills/JsIcon";
+import { MicroCMSIcon } from "@/components/icons/skills/MicroCMSIcon";
 import { MSWIcon } from "@/components/icons/skills/MSWIcon";
 import { NestIcon } from "@/components/icons/skills/NestIcon";
 import { NextIcon } from "@/components/icons/skills/NextIcon";
@@ -101,6 +102,10 @@ export const Skills: SkillData[] = [
   {
     name: "Go",
     icon: GoIcon,
+  },
+  {
+    name: "microCMS",
+    icon: MicroCMSIcon,
   },
 ];
 

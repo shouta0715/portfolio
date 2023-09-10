@@ -27,7 +27,8 @@ export type SkillNames =
   | "Playwright"
   | "MSW"
   | "Graph QL"
-  | "Go";
+  | "Go"
+  | "microCMS";
 
 export const client = createClient({
   serviceDomain: process.env.SERVICE_DOMAIN as string,
