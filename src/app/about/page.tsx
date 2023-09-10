@@ -89,7 +89,19 @@ export default function Page() {
             height={64}
             width={64}
           />
-          くらはし しょうた
+          <ruby>
+            倉 <rp>(</rp>
+            <rt>くら</rt>
+            <rp>)</rp> 橋 <rp>(</rp>
+            <rt>はし</rt>
+          </ruby>
+          <ruby className="ml-2">
+            <rp>)</rp>渉 <rp>(</rp>
+            <rt>しょう</rt>
+            <rp>)</rp> 太 <rp>(</rp>
+            <rt>た</rt>
+            <rp>)</rp>
+          </ruby>
         </p>
         <p className="mt-8 text-sm leading-7 text-gray-600 dark:text-gray-200 md:text-base">
           Web開発に興味があります。フロントエンドが得意ですが、バックエンドも勉強中です。
