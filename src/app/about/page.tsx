@@ -117,7 +117,9 @@ export default function Page() {
           </div>
         </div>
         <div className="mt-12 leading-7 text-gray-600 dark:text-gray-200">
-          <Heading as="h4">趣味</Heading>
+          <p className="text-lg  text-gray-900 dark:text-gray-200 md:text-xl lg:text-2xl">
+            趣味
+          </p>
           <div className="mt-2">
             <p className="text-sm md:text-base">
               趣味は、プログラミングです。休日や暇な時間は
