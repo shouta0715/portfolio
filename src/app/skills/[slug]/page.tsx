@@ -39,6 +39,20 @@ const createGitHubUrl = (name: SkillNames) => {
   return `${base}&${query}`;
 };
 
+const getData = async (slug: string) => {
+  const { contents } = await getWorks({
+    fields: ["id", "name", "link", "image", "skills", "github_url", "tags"],
+    filters: `skills[contains]${slug}`,
+  });
+
+  const skill = await getSkill(slug, {
+    fields: ["name", "description"],
+  });
+  const [{ icon: Icon }] = await selectedSkills({ skills: [skill.name] });
+
+  return { contents, skill, Icon };
+};
+
 export default async function Page({
   params,
 }: {
@@ -46,15 +60,7 @@ export default async function Page({
     slug: string;
   };
 }) {
-  const { contents } = await getWorks({
-    fields: ["id", "name", "link", "image", "skills", "github_url"],
-    filters: `skills[contains]${params.slug}`,
-  });
-
-  const skill = await getSkill(params.slug, {
-    fields: ["name", "description"],
-  });
-  const [{ icon: Icon }] = await selectedSkills({ skills: [skill.name] });
+  const { contents, skill, Icon } = await getData(params.slug);
   const hasWorks = contents.length > 0;
 
   return (

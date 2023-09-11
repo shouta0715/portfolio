@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const { contents } = await getWorks({
-    fields: ["id", "name", "link", "image", "skills", "github_url"],
+    fields: ["id", "name", "link", "image", "skills", "github_url", "tags"],
   });
 
   return (

@@ -57,7 +57,7 @@ function Work({ work, classNames }: WorkProps) {
           </a>
         </Card.Title>
         <div>
-          {work.tags.map((tag) => (
+          {work.tags?.map((tag) => (
             <Achievement key={tag.id}>{tag.name}</Achievement>
           ))}
         </div>
