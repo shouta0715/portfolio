@@ -25,7 +25,7 @@ export default async function Page() {
         <p>
           詳細は各作品のページまたは、
           <a
-            className="inline-flex items-center gap-x-2 px-2 text-teal-600 decoration-teal-500 hover:underline dark:text-teal-400 dark:decoration-teal-400"
+            className="inline-flex items-center gap-2 px-2 text-teal-600 decoration-teal-500 hover:underline dark:text-teal-400 dark:decoration-teal-400"
             href="https://github.com/shouta0715"
             rel="noopener noreferrer"
             target="_blank"

@@ -52,7 +52,7 @@ export default async function Home() {
           </div>
         </div>
         <Link
-          className="mt-8 flex items-center justify-end gap-x-2 text-indigo-600 hover:underline hover:decoration-indigo-600 dark:text-indigo-400 dark:hover:decoration-indigo-400"
+          className="mt-8 flex items-center justify-end gap-2 text-indigo-600 hover:underline hover:decoration-indigo-600 dark:text-indigo-400 dark:hover:decoration-indigo-400"
           href="/about"
         >
           もっと詳しく

@@ -116,6 +116,17 @@ export default function Page() {
             <SkillsCard />
           </div>
         </div>
+        <div className="mt-12 leading-7 text-gray-600 dark:text-gray-200">
+          <Heading as="h4">趣味</Heading>
+          <div className="mt-2">
+            <p className="text-sm md:text-base">
+              趣味は、プログラミングです。休日や暇な時間は
+              Webアプリを作成したり、勉強したりしています。楽しいです。
+              <br />
+              また、ゲームも好きです。特に、スマブラに関してはスマメイトで1800に到達したことがあります。ぜひいろんな方と対戦したいので、スマブラが好きな方はぜひ声をかけてください。
+            </p>
+          </div>
+        </div>
       </div>
     </FadeIn>
   );

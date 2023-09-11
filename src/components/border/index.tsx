@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { motion, useReducedMotion } from "framer-motion";
 import React from "react";
 
-const viewport = { once: true, margin: "0px 0px -200px" };
+const viewport = { once: true, margin: "0px 0px -100px" };
 
 type BorderProps = {
   className?: string;
