@@ -1,6 +1,7 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import { MicroCMSListResponse } from "microcms-js-sdk";
+import { Achievement } from "@/components/achievement";
 import { Card } from "@/components/cards";
 import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
 import { SelectedSkill } from "@/components/skills";
@@ -55,7 +56,12 @@ function Work({ work, classNames }: WorkProps) {
             <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 text-teal-600 dark:text-teal-400" />
           </a>
         </Card.Title>
-        <Card.Description as="div" className="-mx-4 grid flex-1">
+        <div>
+          {work.tags.map((tag) => (
+            <Achievement key={tag.id}>{tag.name}</Achievement>
+          ))}
+        </div>
+        <Card.Description as="div" className="-mx-4 flex-1">
           <SelectedSkill
             className="grid grid-cols-3  gap-2 md:grid-cols-4"
             classNames={{ skill: "h-10 w-10 !rounded-md" }}

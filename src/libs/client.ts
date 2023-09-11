@@ -41,6 +41,11 @@ export type Skill = {
   description: string;
 } & MicroCMSDate;
 
+export type Tag = {
+  id: string;
+  name: string;
+} & MicroCMSDate;
+
 export type Work = {
   id: string;
   name: string;
@@ -48,6 +53,7 @@ export type Work = {
   image: MicroCMSImage;
   skills: Skill[];
   github_url: string;
+  tags: Tag[];
 } & MicroCMSDate;
 
 export const getWorks = async (queries?: MicroCMSQueries) => {
