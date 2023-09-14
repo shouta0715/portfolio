@@ -1,18 +1,20 @@
-import { ChevronRightIcon } from "@heroicons/react/20/solid";
-import Link from "next/link";
 import { Border } from "@/components/border";
 import { ContactCard } from "@/components/cards/contactCard";
 import { SkillsCard } from "@/components/cards/skilslCard";
 import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { Logo } from "@/components/logo";
+import { MoreLink } from "@/components/moreLink";
 import { Works } from "@/components/works";
+import { ZennArticles } from "@/components/zenn";
 import { getWorks } from "@/libs/client";
+import { getZennArticles } from "@/libs/zenn";
 
 export default async function Home() {
   const { contents } = await getWorks({
     fields: ["id", "name", "link", "image", "skills", "github_url", "tags"],
   });
+  const data = await getZennArticles();
 
   return (
     <FadeIn>
@@ -51,18 +53,19 @@ export default async function Home() {
             <SkillsCard />
           </div>
         </div>
-        <Link
-          className="mt-8 flex items-center justify-end gap-2 text-indigo-600 hover:underline hover:decoration-indigo-600 dark:text-indigo-400 dark:hover:decoration-indigo-400"
-          href="/about"
-        >
-          もっと詳しく
-          <ChevronRightIcon className="inline-block h-4 w-4" />
-        </Link>
+        <MoreLink href="/about" />
       </section>
       <Border className="my-8" />
       <section>
         <Heading>Works</Heading>
         <Works works={contents} />
+        <MoreLink href="/works" />
+      </section>
+      <Border className="my-8" />
+      <section>
+        <Heading>Articles</Heading>
+        <ZennArticles articles={data.articles} />
+        <MoreLink href="/articles" />
       </section>
     </FadeIn>
   );

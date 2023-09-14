@@ -1,6 +1,6 @@
 import React from "react";
 
-export function Pattern() {
+export function Pattern({ children }: { children: React.ReactNode }) {
   return (
     <>
       <div
@@ -27,6 +27,7 @@ export function Pattern() {
           }}
         />
       </div>
+      {children}
     </>
   );
 }

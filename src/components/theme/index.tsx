@@ -3,7 +3,7 @@
 import { SunIcon } from "@heroicons/react/24/solid";
 import { useTheme } from "next-themes";
 import React, { useEffect, useState } from "react";
-import { MoonIcon } from "@/components/icons/MoonIcon";
+import MoonIcon from "@/icons/moon.svg";
 
 export function ToggleTheme() {
   const [mounted, setMounted] = useState(false);

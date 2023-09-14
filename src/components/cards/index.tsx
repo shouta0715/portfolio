@@ -26,48 +26,21 @@ export function Card<T extends ElementType = "div">({
   );
 }
 
-Card.Link = function CardLink({
-  children,
-  href,
-  ...props
-}: Omit<React.ComponentPropsWithoutRef<typeof Link>, "href" | "children"> & {
-  href: string;
-  children: React.ReactNode;
-}) {
-  const isExternal = href.toString().startsWith("http");
-  const Component = isExternal ? "a" : Link;
-
-  return (
-    <>
-      <div className="absolute inset-0 z-0 opacity-0 transition group-hover:bg-gray-200/20 group-hover:opacity-100 dark:group-hover:bg-gray-900/20  sm:rounded-2xl" />
-      <Component
-        rel={isExternal ? "noopener noreferrer" : undefined}
-        target={isExternal ? "_blank" : undefined}
-        {...props}
-        href={href}
-      >
-        <span className="absolute inset-0 z-20  sm:rounded-2xl" />
-        <span className="relative z-10">{children}</span>
-      </Component>
-    </>
-  );
-};
-
 Card.Title = function CardTitle<T extends React.ElementType = "h2">({
   as,
-  href,
+
   children,
   className,
 }: Omit<React.ComponentPropsWithoutRef<T>, "as" | "href"> & {
   as?: T;
-  href?: string;
+
   className?: string;
 }) {
   const Component = as ?? "h2";
 
   return (
     <Component className={clsx("text-gray-900 dark:text-gray-200 ", className)}>
-      {href ? <Card.Link href={href}>{children}</Card.Link> : children}
+      {children}
     </Component>
   );
 };

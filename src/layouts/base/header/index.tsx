@@ -1,7 +1,6 @@
 "use client";
 
 import { Popover } from "@headlessui/react";
-
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
