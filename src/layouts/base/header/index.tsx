@@ -43,7 +43,7 @@ export function Header() {
                 <>
                   <Popover.Button
                     aria-label="ナビゲーションを開く"
-                    className="relative z-10 inline-flex items-center rounded-lg stroke-gray-900 p-2 hover:bg-gray-200/50 hover:stroke-gray-600 active:stroke-gray-900 ui-not-focus-visible:outline-none dark:hover:bg-gray-800"
+                    className="relative z-10 inline-flex items-center rounded-lg stroke-gray-900 p-2 hover:bg-gray-200/50 hover:stroke-gray-600 active:stroke-gray-900  dark:hover:bg-gray-800"
                   >
                     {open ? (
                       <XMarkIcon className="h-6 w-6" />

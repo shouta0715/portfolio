@@ -14,7 +14,7 @@ export default async function Home() {
   const { contents } = await getWorks({
     fields: ["id", "name", "link", "image", "skills", "github_url", "tags"],
   });
-  const data = await getZennArticles();
+  const { articles } = await getZennArticles();
 
   return (
     <FadeIn>
@@ -64,7 +64,7 @@ export default async function Home() {
       <Border className="my-8" />
       <section>
         <Heading>Articles</Heading>
-        <ZennArticles articles={data.articles} />
+        <ZennArticles articles={articles} />
         <MoreLink href="/articles" />
       </section>
     </FadeIn>

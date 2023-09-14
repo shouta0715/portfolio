@@ -70,12 +70,15 @@ function Article({ article }: { article: TArticle }) {
   );
 }
 
-export async function ZennArticles({ articles }: { articles: TArticle[] }) {
+export function ZennArticles({ articles }: { articles: TArticle[] }) {
   return (
     <FadeInWithStagger className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
       {articles.map((article) => (
-        <FadeIn className="group overflow-hidden rounded-xl border bg-gradient-to-br from-[#6ccaff] to-[#b398ff] p-4 dark:border-gray-900 md:rounded-2xl md:shadow-sm">
-          <Article key={article.id} article={article} />
+        <FadeIn
+          key={article.id}
+          className="group overflow-hidden rounded-xl border bg-gradient-to-br from-[#6ccaff] to-[#b398ff] p-4 dark:border-gray-900 md:rounded-2xl md:shadow-sm"
+        >
+          <Article article={article} />
         </FadeIn>
       ))}
     </FadeInWithStagger>

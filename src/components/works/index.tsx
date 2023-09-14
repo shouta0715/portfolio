@@ -73,7 +73,7 @@ function Work({ work, classNames }: WorkProps) {
   );
 }
 
-export function Works({
+export async function Works({
   works,
   classNames,
   className,
