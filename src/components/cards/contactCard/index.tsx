@@ -15,6 +15,7 @@ export function ContactCard() {
             classNames={{
               wrapper: "gap-8",
             }}
+            stagger
           />
         </div>
         <div>

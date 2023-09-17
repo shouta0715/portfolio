@@ -7,6 +7,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 const nextConfig = {
   swcMinify: true,
   reactStrictMode: true,
+  output: "export",
   images: {
     domains: ["images.microcms-assets.io"],
   },

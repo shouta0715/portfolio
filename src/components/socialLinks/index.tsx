@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import React, { CSSProperties } from "react";
-import { FadeIn } from "@/components/fadeIn";
+import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
 
 export function ZennIcon(props: React.ComponentPropsWithoutRef<"svg">) {
   return (
@@ -71,15 +71,19 @@ const links = [
 export function SocialLinks({
   className,
   classNames,
+  stagger = false,
 }: {
   className?: string;
+  stagger?: boolean;
   classNames?: {
     wrapper?: string;
     link?: string;
   };
 }) {
+  const Wrapper = stagger ? FadeInWithStagger : "div";
+
   return (
-    <div className={clsx("flex gap-4", classNames?.wrapper)}>
+    <Wrapper className={clsx("flex gap-4", classNames?.wrapper)}>
       {links.map((link) => (
         <FadeIn
           key={link.name}
@@ -99,6 +103,6 @@ export function SocialLinks({
           </a>
         </FadeIn>
       ))}
-    </div>
+    </Wrapper>
   );
 }

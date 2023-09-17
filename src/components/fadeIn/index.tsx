@@ -8,7 +8,7 @@ import React, {
 } from "react";
 
 const StaggerContext = createContext(false);
-const viewport = { once: true, margin: "0px 0px -100px" };
+const viewport = { once: true, margin: "0px 0px -120px" };
 
 export function FadeIn(props: ComponentPropsWithoutRef<typeof motion.div>) {
   const shouldReduceMotion = useReducedMotion();

@@ -10,7 +10,7 @@ export default function Footer() {
     <footer>
       <Container className="mt-10 sm:mt-14 lg:mt-16">
         <Border />
-        <FadeInWithStagger className="mt-10 flex flex-wrap justify-between">
+        <FadeInWithStagger className="mt-10 grid grid-cols-3 gap-y-4 text-center md:grid-cols-6">
           <NavLinks />
         </FadeInWithStagger>
         <FadeInWithStagger className="flex flex-col items-center justify-between py-10">
