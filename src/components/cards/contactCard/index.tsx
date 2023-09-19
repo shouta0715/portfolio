@@ -5,8 +5,8 @@ import { SocialLinks } from "@/components/socialLinks";
 
 export function ContactCard() {
   return (
-    <Card as={FadeInWithStagger} className="flex-1">
-      <FadeIn className="flex flex-col gap-y-6">
+    <FadeInWithStagger className="flex-1">
+      <Card as={FadeIn} className="flex flex-col gap-y-6">
         <div>
           <Card.Title as="p" className="mb-3 text-lg font-semibold ">
             Social Links
@@ -25,7 +25,7 @@ export function ContactCard() {
             kshouta0715@gmail.com
           </span>
         </div>
-      </FadeIn>
-    </Card>
+      </Card>
+    </FadeInWithStagger>
   );
 }

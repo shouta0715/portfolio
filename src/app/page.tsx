@@ -17,8 +17,8 @@ export default async function Home() {
   const { articles } = await getZennArticles();
 
   return (
-    <FadeIn>
-      <section>
+    <div>
+      <FadeIn>
         <Heading>About</Heading>
         <div className="mt-12 text-gray-900 dark:text-gray-200">
           <p className="flex items-center text-xl font-semibold sm:text-2xl">
@@ -54,19 +54,19 @@ export default async function Home() {
           </div>
         </div>
         <MoreLink href="/about" />
-      </section>
+      </FadeIn>
       <Border className="my-8" />
-      <section>
+      <FadeIn>
         <Heading>Works</Heading>
         <Works works={contents} />
         <MoreLink href="/works" />
-      </section>
+      </FadeIn>
       <Border className="my-8" />
-      <section>
+      <FadeIn>
         <Heading>Articles</Heading>
         <ZennArticles articles={articles} />
         <MoreLink href="/articles" />
-      </section>
-    </FadeIn>
+      </FadeIn>
+    </div>
   );
 }
