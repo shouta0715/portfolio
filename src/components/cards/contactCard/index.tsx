@@ -1,12 +1,11 @@
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
 import { Card } from "@/components/cards";
-import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
 import { SocialLinks } from "@/components/socialLinks";
 
 export function ContactCard() {
   return (
-    <FadeInWithStagger className="flex-1">
-      <Card as={FadeIn} className="flex flex-col gap-y-6">
+    <div className="flex-1">
+      <Card className="flex flex-col gap-y-6">
         <div>
           <Card.Title as="p" className="mb-3 text-lg font-semibold ">
             Social Links
@@ -15,7 +14,6 @@ export function ContactCard() {
             classNames={{
               wrapper: "gap-8",
             }}
-            stagger
           />
         </div>
         <div>
@@ -26,6 +24,6 @@ export function ContactCard() {
           </span>
         </div>
       </Card>
-    </FadeInWithStagger>
+    </div>
   );
 }

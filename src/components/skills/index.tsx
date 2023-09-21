@@ -179,7 +179,7 @@ export async function SelectedSkill({
   const selected = await selectedSkills({ skills });
 
   return (
-    <FadeInWithStagger className={className}>
+    <FadeInWithStagger className={className} speed={0.05}>
       {selected.map((skill, i) => (
         <Skill
           key={skill.name}
@@ -206,7 +206,7 @@ export async function SkillSet({
   });
 
   return (
-    <FadeInWithStagger className={className}>
+    <FadeInWithStagger className={className} speed={0.05}>
       {allSkills.map((skill, i) => (
         <Skill
           key={skill.name}

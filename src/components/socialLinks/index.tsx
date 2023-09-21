@@ -81,11 +81,12 @@ export function SocialLinks({
   };
 }) {
   const Wrapper = stagger ? FadeInWithStagger : "div";
+  const Inner = stagger ? FadeIn : "div";
 
   return (
     <Wrapper className={clsx("flex gap-4", classNames?.wrapper)}>
       {links.map((link) => (
-        <FadeIn
+        <Inner
           key={link.name}
           className={clsx(
             "group rounded-full bg-white p-2 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-800/20  dark:bg-gray-700 dark:hover:ring-gray-700",
@@ -101,7 +102,7 @@ export function SocialLinks({
           >
             <link.icon className={clsx("h-6 w-6 ", link.className)} />
           </a>
-        </FadeIn>
+        </Inner>
       ))}
     </Wrapper>
   );
