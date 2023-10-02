@@ -18,6 +18,7 @@ import { PlaywrightIcon } from "@/components/icons/skills/PlaywrightIcon";
 import { ReactIcon } from "@/components/icons/skills/ReactIcon";
 import { ReactQueryIcon } from "@/components/icons/skills/ReactQueryIcon";
 import { StoryBookIcon } from "@/components/icons/skills/StoryBookIcon";
+import { SupabaseIcon } from "@/components/icons/skills/SupabaseIcon";
 import { TailwindIcon } from "@/components/icons/skills/TailwindIcon";
 import { TestingLibraryIcon } from "@/components/icons/skills/TestingLibraryIcon";
 import { TsIcon } from "@/components/icons/skills/TsIcon";
@@ -106,6 +107,10 @@ export const Skills: SkillData[] = [
   {
     name: "microCMS",
     icon: MicroCMSIcon,
+  },
+  {
+    name: "Supabase",
+    icon: SupabaseIcon,
   },
 ];
 

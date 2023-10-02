@@ -70,7 +70,9 @@ export default async function Page({
           <Icon className="h-12 w-12 md:h-14 md:w-14" />
           {skill.name}
         </Heading>
-        <p className="leading-7 md:text-lg">{skill.description}</p>
+        <p className="leading-7 text-gray-600 md:text-lg">
+          {skill.description}
+        </p>
         <p>
           GitHub上のソースコードは
           <a
