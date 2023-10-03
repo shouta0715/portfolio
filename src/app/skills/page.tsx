@@ -1,8 +1,13 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import { Metadata } from "next";
 import React from "react";
 import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { SkillSet } from "@/components/skills";
+
+export const metadata: Metadata = {
+  title: "skills",
+};
 
 export default async function Page() {
   return (

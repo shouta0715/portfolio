@@ -1,10 +1,14 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import { Metadata } from "next";
 import React from "react";
 import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { ZennArticles } from "@/components/zenn";
 import { getZennArticles } from "@/libs/zenn";
 
+export const metadata: Metadata = {
+  title: "articles",
+};
 export default async function Page() {
   const data = await getZennArticles();
 
