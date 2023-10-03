@@ -18,7 +18,7 @@ function ArticleLink({ path, title }: { path: string; title: string }) {
 
 function ArticleInner({ title }: { title: string }) {
   return (
-    <div className="flex h-48 flex-col justify-between rounded-lg bg-white p-4 shadow-lg md:rounded-xl">
+    <div className="flex h-52 flex-col justify-between rounded-lg bg-white p-4 shadow-lg md:rounded-xl">
       <p className="text-lg font-bold text-gray-900">{title}</p>
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
@@ -72,7 +72,7 @@ function Article({ article }: { article: TArticle }) {
 
 export function ZennArticles({ articles }: { articles: TArticle[] }) {
   return (
-    <FadeInWithStagger className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+    <FadeInWithStagger className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
       {articles.map((article) => (
         <FadeIn
           key={article.id}

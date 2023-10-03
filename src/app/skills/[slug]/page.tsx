@@ -1,4 +1,5 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import { Metadata } from "next";
 import React from "react";
 import { Border } from "@/components/border";
 import { FadeIn } from "@/components/fadeIn";
@@ -6,6 +7,23 @@ import { Heading } from "@/components/heading";
 import { SkillSet, selectedSkills } from "@/components/skills";
 import { Works } from "@/components/works";
 import { SkillNames, getSkill, getSkills, getWorks } from "@/libs/client";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: {
+    slug: string;
+  };
+}): Promise<Metadata> {
+  const skill = await getSkill(params.slug, {
+    fields: ["name", "description"],
+  });
+
+  return {
+    title: `Skills - ${skill.name}`,
+    description: skill.description,
+  };
+}
 
 export async function generateStaticParams() {
   const { contents } = await getSkills({ fields: "id" });

@@ -7,7 +7,8 @@ import { ZennArticles } from "@/components/zenn";
 import { getZennArticles } from "@/libs/zenn";
 
 export const metadata: Metadata = {
-  title: "articles",
+  title: "Articles",
+  description: "Zennなどに投稿した記事を紹介します。",
 };
 export default async function Page() {
   const data = await getZennArticles();

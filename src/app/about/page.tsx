@@ -8,7 +8,8 @@ import { Heading } from "@/components/heading";
 import { Logo } from "@/components/logo";
 
 export const metadata: Metadata = {
-  title: "about",
+  title: "About",
+  description: "倉橋渉太の自己紹介です。",
 };
 
 const Careers = [
@@ -46,6 +47,9 @@ const Careers = [
 function Career() {
   return (
     <FadeInWithStagger className="grid flex-1 gap-y-8">
+      <h2 className="text-lg font-bold text-gray-900 dark:text-gray-200 md:text-xl">
+        経歴
+      </h2>
       {Careers.map((career) => (
         <FadeIn key={career.id}>
           <time className="relative order-first mb-3 flex items-center pl-3.5 text-sm leading-7 text-gray-400 sm:text-base">
@@ -79,48 +83,50 @@ function Career() {
 
 export default function Page() {
   return (
-    <FadeIn>
-      <Heading>About Me</Heading>
-      <div className="mt-12 text-gray-900 dark:text-gray-200">
-        <p className="flex items-center text-xl font-semibold sm:text-2xl">
-          <Logo
-            alt="くらはししょうたのアバター"
-            className="mr-2 inline-block rounded-full object-cover"
-            height={64}
-            width={64}
-          />
-          <ruby>
-            倉 <rp>(</rp>
-            <rt>くら</rt>
-            <rp>)</rp> 橋 <rp>(</rp>
-            <rt>はし</rt>
-          </ruby>
-          <ruby className="ml-2">
-            <rp>)</rp>渉 <rp>(</rp>
-            <rt>しょう</rt>
-            <rp>)</rp> 太 <rp>(</rp>
-            <rt>た</rt>
-            <rp>)</rp>
-          </ruby>
-        </p>
-        <p className="mt-8 text-sm leading-7 text-gray-600 dark:text-gray-200 md:text-base">
-          Web開発に興味があります。フロントエンドが得意ですが、バックエンドも勉強中です。
-          フロントエンドに関しては、ReactとNext.jsを中心に学習しています。
-          また、Tailwind CSSを使用した開発も得意です。
-          実務経験を積むため、インターンや、アルバイト、フリーランスなどのお仕事を探しています。
-        </p>
-        <div className="mt-8 flex flex-col gap-8 md:flex-row">
+    <div>
+      <FadeIn>
+        <Heading>About Me</Heading>
+        <div className="mt-12 text-gray-900 dark:text-gray-200">
+          <p className="flex items-center text-xl font-semibold sm:text-2xl">
+            <Logo
+              alt="くらはししょうたのアバター"
+              className="mr-2 inline-block rounded-full object-cover"
+              height={64}
+              width={64}
+            />
+            <ruby>
+              倉 <rp>(</rp>
+              <rt>くら</rt>
+              <rp>)</rp> 橋 <rp>(</rp>
+              <rt>はし</rt>
+            </ruby>
+            <ruby className="ml-2">
+              <rp>)</rp>渉 <rp>(</rp>
+              <rt>しょう</rt>
+              <rp>)</rp> 太 <rp>(</rp>
+              <rt>た</rt>
+              <rp>)</rp>
+            </ruby>
+          </p>
+          <p className="mt-8 text-sm leading-7 text-gray-600 dark:text-gray-200 md:text-base">
+            Web開発に興味があります。フロントエンドが得意ですが、バックエンドも勉強中です。
+            フロントエンドに関しては、ReactとNext.jsを中心に学習しています。
+            また、Tailwind CSSを使用した開発も得意です。
+            実務経験を積むため、インターンや、アルバイト、フリーランスなどのお仕事を探しています。
+          </p>
+        </div>
+        <FadeIn className="mt-8 flex flex-col gap-8 md:flex-row">
           <Career />
           <div className="flex flex-1 flex-col justify-between gap-y-8">
             <ContactCard />
             <SkillsCard />
           </div>
-        </div>
-        <div className="mt-12 leading-7 text-gray-600 dark:text-gray-200">
-          <p className="text-lg  text-gray-900 dark:text-gray-200 md:text-xl lg:text-2xl">
+        </FadeIn>
+        <FadeIn className="mt-12 leading-7 text-gray-600 dark:text-gray-200">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-gray-200 md:text-xl">
             趣味
-          </p>
-          <div className="mt-2">
+          </h2>
+          <div className="mt-8">
             <p className="text-sm md:text-base">
               趣味は、プログラミングです。休日や暇な時間は
               Webアプリを作成したり、勉強したりしています。楽しいです。
@@ -128,8 +134,8 @@ export default function Page() {
               また、ゲームも好きです。特に、スマブラに関してはスマメイトで1800に到達したことがあります。ぜひいろんな方と対戦したいので、スマブラが好きな方はぜひ声をかけてください。
             </p>
           </div>
-        </div>
-      </div>
-    </FadeIn>
+        </FadeIn>
+      </FadeIn>
+    </div>
   );
 }

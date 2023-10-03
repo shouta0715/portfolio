@@ -5,7 +5,8 @@ import { Heading } from "@/components/heading";
 import { SocialLinks } from "@/components/socialLinks";
 
 export const metadata: Metadata = {
-  title: "contact",
+  title: "Contact",
+  description: "連絡先の情報です。",
 };
 
 export default function Page() {

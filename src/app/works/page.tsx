@@ -7,7 +7,8 @@ import { Works } from "@/components/works";
 import { getWorks } from "@/libs/client";
 
 export const metadata: Metadata = {
-  title: "works",
+  title: "Works",
+  description: "これまでに作成した作品を紹介します。",
 };
 
 export default async function Page() {

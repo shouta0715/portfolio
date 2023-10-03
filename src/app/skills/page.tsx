@@ -6,7 +6,8 @@ import { Heading } from "@/components/heading";
 import { SkillSet } from "@/components/skills";
 
 export const metadata: Metadata = {
-  title: "skills",
+  title: "Skills",
+  description: "フロントエンドのスキルを中心に学習をしています。",
 };
 
 export default async function Page() {
