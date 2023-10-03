@@ -33,7 +33,7 @@ const navs = [
   },
 ];
 
-export const NavLinks = () => {
+export const NavLinks = ({ footer }: { footer?: boolean }) => {
   const timeoutRef = useRef<number | null>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(-1);
   const pathname = usePathname();
@@ -73,7 +73,7 @@ export const NavLinks = () => {
                     transition: { duration: 0.15 },
                   }}
                   initial={{ opacity: 0 }}
-                  layoutId="hover"
+                  layoutId={footer ? "footer-nav" : "nav"}
                 />
               )}
             </AnimatePresence>

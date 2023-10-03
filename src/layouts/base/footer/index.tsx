@@ -11,7 +11,7 @@ export default function Footer() {
       <Container className="mt-10 sm:mt-14 lg:mt-16">
         <Border />
         <FadeInWithStagger className="mt-10 grid grid-cols-3 gap-y-4 text-center md:grid-cols-6">
-          <NavLinks />
+          <NavLinks footer />
         </FadeInWithStagger>
         <FadeInWithStagger className="flex flex-col items-center justify-between py-10">
           <SocialLinks
