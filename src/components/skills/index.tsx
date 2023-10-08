@@ -123,7 +123,7 @@ const rotations = [
 ];
 
 export async function selectedSkills({ skills }: { skills: SkillNames[] }) {
-  const { contents } = await getSkills({ limit: 100, fields: ["id", "name"] });
+  const { contents } = await getSkills({ limit: 50, fields: ["id", "name"] });
 
   const filtered = Skills.filter((skill) => skills.includes(skill.name));
 
