@@ -34,6 +34,7 @@ function Work({ work, classNames }: WorkProps) {
         className={clsx("mb-4", classNames?.cardImage)}
         height={work.image.height}
         href={work.link === myurl ? "/about" : work.link}
+        priority
         src={work.image.url}
         width={work.image.width}
       />
