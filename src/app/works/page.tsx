@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   description: "これまでに作成した作品を紹介します。",
 };
 
-export const revalidate = 0;
 export default async function Page() {
   const { contents } = await getWorks({
     fields: ["id", "name", "link", "image", "skills", "github_url", "tags"],
