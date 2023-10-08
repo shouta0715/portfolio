@@ -61,9 +61,6 @@ export const getWorks = async (queries?: MicroCMSQueries) => {
   const data = await client.getList<Work>({
     endpoint: "works",
     queries,
-    customRequestInit: {
-      cache: "force-cache",
-    },
   });
 
   return data;
@@ -73,9 +70,6 @@ export const getSkills = async (queries?: MicroCMSQueries) => {
   const data = await client.getList<Skill>({
     endpoint: "skills",
     queries,
-    customRequestInit: {
-      cache: "force-cache",
-    },
   });
 
   return data;
@@ -85,9 +79,6 @@ export const getSkill = async (id: string, queries?: MicroCMSQueries) => {
     endpoint: "skills",
     contentId: id,
     queries,
-    customRequestInit: {
-      cache: "force-cache",
-    },
   });
 
   return data;
