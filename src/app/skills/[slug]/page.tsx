@@ -71,6 +71,7 @@ const getData = async (slug: string) => {
   return { contents, skill, Icon };
 };
 
+export const revalidate = 0;
 export default async function Page({
   params,
 }: {
