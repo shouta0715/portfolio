@@ -22,7 +22,7 @@ export function SkillsCard() {
           />
         </Link>
       </div>
-      <Card.Description className="grid flex-1 place-items-center">
+      <Card.Description className="grid flex-1 items-center">
         <SelectedSkill
           className="grid grid-cols-4 gap-2 lg:gap-4"
           classNames={{ skill: "h-14 w-14 lg:h-20 lg:w-20" }}

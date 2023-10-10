@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import React from "react";
 import { ContactCard } from "@/components/cards/contactCard";
 import { SkillsCard } from "@/components/cards/skilslCard";
+import { Contribution } from "@/components/contribution";
 import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { Logo } from "@/components/logo";
@@ -31,7 +32,7 @@ const Careers = [
   {
     id: "career-4",
     date: "2023年 6月",
-    title: "Webアプリを作成し、公開する",
+    title: "個人開発でアプリを作成",
     link: {
       name: "作成したWebアプリ",
       url: "https://nerd-plus.com/",
@@ -120,6 +121,14 @@ export default function Page() {
           <div className="flex flex-1 flex-col justify-between gap-y-8">
             <ContactCard />
             <SkillsCard />
+          </div>
+        </FadeIn>
+        <FadeIn className="mt-12 leading-7 text-gray-600 dark:text-gray-200">
+          <h2 className="text-lg font-bold text-gray-900 dark:text-gray-200 md:text-xl">
+            GitHub Contribution
+          </h2>
+          <div className="mt-8">
+            <Contribution animation={false} />
           </div>
         </FadeIn>
         <FadeIn className="mt-12 leading-7 text-gray-600 dark:text-gray-200">

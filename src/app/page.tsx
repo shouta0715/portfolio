@@ -1,6 +1,7 @@
 import { Border } from "@/components/border";
 import { ContactCard } from "@/components/cards/contactCard";
 import { SkillsCard } from "@/components/cards/skilslCard";
+import { Contribution } from "@/components/contribution";
 import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { Logo } from "@/components/logo";
@@ -48,9 +49,16 @@ export default async function Home() {
             また、Tailwind CSSを使用した開発も得意です。
             実務経験を積むため、インターンや、アルバイト、フリーランスなどのお仕事を探しています。
           </p>
-          <div className="mt-8 flex flex-col justify-between gap-16 md:flex-row">
-            <ContactCard />
-            <SkillsCard />
+          <div className="mt-8 grid gap-y-8">
+            <div className="flex flex-col justify-between gap-8 md:flex-row">
+              <ContactCard />
+              <SkillsCard />
+            </div>
+
+            <div className="overflow-hidden">
+              <p className="mb-3 text-lg font-semibold">GitHub Contribution</p>
+              <Contribution />
+            </div>
           </div>
         </div>
         <MoreLink href="/about" />

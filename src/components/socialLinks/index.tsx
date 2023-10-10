@@ -89,7 +89,7 @@ export function SocialLinks({
         <Inner
           key={link.name}
           className={clsx(
-            "group rounded-full bg-white p-2 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-800/20  dark:bg-gray-700 dark:hover:ring-gray-700",
+            "group rounded-lg bg-white p-2 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-800/20  dark:bg-gray-700 dark:hover:ring-gray-700",
             classNames?.link,
             className
           )}
@@ -100,7 +100,9 @@ export function SocialLinks({
             rel="noopener noreferrer"
             target="_blank"
           >
-            <link.icon className={clsx("h-6 w-6 ", link.className)} />
+            <link.icon
+              className={clsx("h-6 w-6 md:h-8 md:w-8", link.className)}
+            />
           </a>
         </Inner>
       ))}
