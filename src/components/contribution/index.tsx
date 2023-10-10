@@ -64,7 +64,7 @@ const colors = {
 async function getContribution() {
   const res = await fetch("https://api.github.com/graphql", {
     next: {
-      revalidate: 60 * 60 * 24,
+      revalidate: 60 * 60 * 6,
     },
     method: "POST",
     headers: {

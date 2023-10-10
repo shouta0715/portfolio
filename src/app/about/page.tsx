@@ -1,6 +1,9 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { Metadata } from "next";
-import React from "react";
+import React, { Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import Error from "@/app/error";
+import Loading from "@/app/loading";
 import { ContactCard } from "@/components/cards/contactCard";
 import { SkillsCard } from "@/components/cards/skilslCard";
 import { Contribution } from "@/components/contribution";
@@ -128,7 +131,15 @@ export default function Page() {
             GitHub Contribution
           </h2>
           <div className="mt-8">
-            <Contribution animation={false} />
+            <ErrorBoundary
+              fallback={
+                <Error message="Failed to fetch GitHub contribution data" />
+              }
+            >
+              <Suspense fallback={<Loading />}>
+                <Contribution animation={false} />
+              </Suspense>
+            </ErrorBoundary>
           </div>
         </FadeIn>
         <FadeIn className="mt-12 leading-7 text-gray-600 dark:text-gray-200">
