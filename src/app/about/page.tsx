@@ -3,7 +3,6 @@ import { Metadata } from "next";
 import React, { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import Error from "@/app/error";
-import Loading from "@/app/loading";
 import { ContactCard } from "@/components/cards/contactCard";
 import { SkillsCard } from "@/components/cards/skilslCard";
 import { Contribution } from "@/components/contribution";
@@ -136,7 +135,9 @@ export default function Page() {
                 <Error message="Failed to fetch GitHub contribution data" />
               }
             >
-              <Suspense fallback={<Loading />}>
+              <Suspense
+                fallback={<div>Loading GitHub contribution data...</div>}
+              >
                 <Contribution animation={false} />
               </Suspense>
             </ErrorBoundary>
