@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import Error from "@/app/error";
-import Loading from "@/app/loading";
 import { Border } from "@/components/border";
 import { ContactCard } from "@/components/cards/contactCard";
 import { SkillsCard } from "@/components/cards/skilslCard";
@@ -60,13 +59,17 @@ export default async function Home() {
             </div>
 
             <div className="overflow-hidden">
-              <p className="mb-3 text-lg font-semibold">GitHub Contribution</p>
+              <FadeIn className="mb-3 text-lg font-semibold">
+                GitHub Contribution
+              </FadeIn>
               <ErrorBoundary
                 fallback={
                   <Error message="Failed to fetch GitHub contribution data" />
                 }
               >
-                <Suspense fallback={<Loading />}>
+                <Suspense
+                  fallback={<div>Loading GitHub contribution data...</div>}
+                >
                   <Contribution />
                 </Suspense>
               </ErrorBoundary>

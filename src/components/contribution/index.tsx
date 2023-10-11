@@ -100,20 +100,25 @@ export async function Contribution({
 
       <div className="flex flex-col gap-y-1 overflow-x-auto">
         <div className="flex gap-x-[3.8rem] text-sm">
-          {months.map((month) => {
-            return <span>{month.name}</span>;
+          {months.map((month, i) => {
+            // eslint-disable-next-line react/no-array-index-key
+            return <span key={`${i}-${month.name}`}>{month.name}</span>;
           })}
         </div>
         <div className="flex gap-x-1">
           {weeks.map((week) => {
             return (
-              <div className="grid grid-rows-[repeat(7,_minmax(0,_1fr))] gap-y-1">
+              <div
+                key={week.contributionDays[0].date}
+                className="grid grid-rows-[repeat(7,_minmax(0,_1fr))] gap-y-1"
+              >
                 {week.contributionDays.map((day) => {
                   return (
                     <div
+                      key={day.date}
                       aria-label={`${day.date}のコントリビューション数`}
                       className={clsx(
-                        "h-4 w-4 rounded",
+                        "h-4 w-4 rounded border border-gray-300 dark:border-gray-700",
                         colors[day.contributionLevel]
                       )}
                     />
