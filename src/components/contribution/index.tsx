@@ -98,23 +98,25 @@ export async function Contribution({
         {totalContributions} contributions in the last year
       </p>
 
-      <div className="flex flex-col gap-y-1 overflow-x-auto">
-        <div className="flex gap-x-[3.8rem] text-sm">
-          {months.map((month, i) => {
-            // eslint-disable-next-line react/no-array-index-key
-            return <span key={`${i}-${month.name}`}>{month.name}</span>;
-          })}
-        </div>
-        <div className="flex gap-x-1">
+      <table className="flex flex-col gap-y-1 overflow-x-auto">
+        <thead className="flex flex-col">
+          <tr className="flex gap-x-[3.8rem] text-sm">
+            {months.map((month, i) => {
+              // eslint-disable-next-line react/no-array-index-key
+              return <th key={`${i}-${month.name}`}>{month.name}</th>;
+            })}
+          </tr>
+        </thead>
+        <tbody className="flex gap-x-1">
           {weeks.map((week) => {
             return (
-              <div
+              <tr
                 key={week.contributionDays[0].date}
                 className="grid grid-rows-[repeat(7,_minmax(0,_1fr))] gap-y-1"
               >
                 {week.contributionDays.map((day) => {
                   return (
-                    <div
+                    <td
                       key={day.date}
                       aria-label={`${day.date}のコントリビューション数`}
                       className={clsx(
@@ -124,11 +126,11 @@ export async function Contribution({
                     />
                   );
                 })}
-              </div>
+              </tr>
             );
           })}
-        </div>
-      </div>
+        </tbody>
+      </table>
     </Component>
   );
 }
