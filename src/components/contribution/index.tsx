@@ -99,8 +99,8 @@ export async function Contribution({
       </p>
 
       <table className="flex flex-col gap-y-1 overflow-x-auto">
-        <thead className="flex flex-col">
-          <tr className="flex gap-x-[3.8rem] text-sm">
+        <thead>
+          <tr className="flex gap-x-[3.6rem] text-sm">
             {months.map((month, i) => {
               // eslint-disable-next-line react/no-array-index-key
               return <th key={`${i}-${month.name}`}>{month.name}</th>;
@@ -120,7 +120,7 @@ export async function Contribution({
                       key={day.date}
                       aria-label={`${day.date}のコントリビューション数`}
                       className={clsx(
-                        "h-4 w-4 rounded border border-gray-300 dark:border-gray-700",
+                        "h-4 w-4 rounded border border-gray-300 dark:border-gray-600",
                         colors[day.contributionLevel]
                       )}
                     />
