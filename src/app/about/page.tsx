@@ -151,8 +151,6 @@ export default function Page() {
             <p className="text-sm md:text-base">
               趣味は、プログラミングです。休日や暇な時間は
               Webアプリを作成したり、勉強したりしています。楽しいです。
-              <br />
-              ヒロアカが好きです！
             </p>
           </div>
         </FadeIn>
