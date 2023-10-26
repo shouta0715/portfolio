@@ -1,7 +1,7 @@
 import React from "react";
 import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
 import { Logo, ZennLogo } from "@/components/logo";
-import { Article as TArticle, zennurl } from "@/libs/zenn";
+import { Article as TArticle, getZennArticles, zennurl } from "@/libs/zenn";
 
 function ArticleLink({ path, title }: { path: string; title: string }) {
   return (
@@ -70,9 +70,11 @@ function Article({ article }: { article: TArticle }) {
   );
 }
 
-export function ZennArticles({ articles }: { articles: TArticle[] }) {
+export async function ZennArticles() {
+  const { articles } = await getZennArticles();
+
   return (
-    <FadeInWithStagger className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+    <FadeInWithStagger className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
       {articles.map((article) => (
         <FadeIn
           key={article.id}

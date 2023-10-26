@@ -9,16 +9,15 @@ import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { Logo } from "@/components/logo";
 import { MoreLink } from "@/components/moreLink";
+import { NotionArticles, NotionLoadings } from "@/components/notion";
 import { Works } from "@/components/works";
 import { ZennArticles } from "@/components/zenn";
 import { getWorks } from "@/libs/client";
-import { getZennArticles } from "@/libs/zenn";
 
 export default async function Home() {
   const { contents } = await getWorks({
     fields: ["id", "name", "link", "image", "skills", "github_url", "tags"],
   });
-  const { articles } = await getZennArticles();
 
   return (
     <div>
@@ -87,7 +86,19 @@ export default async function Home() {
       <Border className="my-8" />
       <FadeIn>
         <Heading>Articles</Heading>
-        <ZennArticles articles={articles} />
+        <div className="grid gap-8">
+          <ErrorBoundary fallback={<Error />}>
+            <ZennArticles />
+          </ErrorBoundary>
+
+          <ErrorBoundary
+            fallback={<Error message="Notionの記事を取得できませんでした。" />}
+          >
+            <Suspense fallback={<NotionLoadings />}>
+              <NotionArticles />
+            </Suspense>
+          </ErrorBoundary>
+        </div>
         <MoreLink href="/articles" />
       </FadeIn>
     </div>
