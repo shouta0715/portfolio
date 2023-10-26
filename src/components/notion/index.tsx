@@ -50,7 +50,7 @@ async function Article({ properties, icon, last_edited_time }: NotionPage) {
 
   return (
     <a
-      className="flex h-full gap-x-6 rounded-xl px-6 py-3 ring-1 ring-gray-200 hover:bg-gray-100/30 dark:bg-gray-800 dark:hover:bg-gray-800/10 md:shadow-sm"
+      className="flex h-full gap-x-6 rounded-xl bg-white px-6 py-3 ring-1 ring-gray-200 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-800/10 md:shadow-sm"
       href={url}
       rel="noopener noreferrer"
       target="_blank"
