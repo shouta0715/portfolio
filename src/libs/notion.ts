@@ -54,8 +54,6 @@ export async function getNotionArticles(): Promise<NotionListResponse> {
     throw new Error("NOTION_DATABASE_ID is not set");
   }
 
-  // await new Promise((resolve) => setTimeout(resolve, 1000000));
-
   return fetch(
     `https://api.notion.com/v1/databases/${NOTION_DATABASE_ID}/query`,
     {
