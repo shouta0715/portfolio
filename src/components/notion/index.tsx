@@ -50,17 +50,17 @@ async function Article({ properties, icon, last_edited_time }: NotionPage) {
 
   return (
     <a
-      className="flex h-full gap-x-6 rounded-xl bg-white px-6 py-3 ring-1 ring-gray-200 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-800/10 md:shadow-sm"
+      className="flex h-full gap-x-6 rounded-xl bg-white px-4 py-3 ring-1 ring-gray-200 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-800/10 md:px-6 md:shadow-sm"
       href={url}
       rel="noopener noreferrer"
       target="_blank"
     >
-      <div className="grid h-16 w-16 place-items-center rounded-xl">
-        <span className="text-5xl">{icon.emoji}</span>
+      <div className="grid h-14 w-14 place-items-center rounded-xl md:h-16 md:w-16">
+        <span className="text-4xl md:text-5xl">{icon.emoji}</span>
       </div>
       <div className="line-clamp-3 flex flex-col pt-1">
         <div className="flex flex-1 flex-col justify-between gap-2">
-          <p className="text-lg font-bold text-gray-900 dark:text-gray-200">
+          <p className="line-clamp-2 font-bold text-gray-900 dark:text-gray-200 md:text-lg">
             {name}
           </p>
           <time
