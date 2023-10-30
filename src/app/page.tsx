@@ -95,7 +95,7 @@ export default async function Home() {
             fallback={<Error message="Notionの記事を取得できませんでした。" />}
           >
             <Suspense fallback={<NotionLoadings />}>
-              <NotionArticles />
+              <NotionArticles limit={4} />
             </Suspense>
           </ErrorBoundary>
         </div>

@@ -49,7 +49,9 @@ type NotionListResponse = {
 
 const { NOTION_API_KEY, NOTION_DATABASE_ID } = process.env;
 
-export async function getNotionArticles(): Promise<NotionListResponse> {
+export async function getNotionArticles(
+  limit = 100
+): Promise<NotionListResponse> {
   if (!NOTION_DATABASE_ID || !NOTION_API_KEY) {
     throw new Error("NOTION_DATABASE_ID is not set");
   }
@@ -64,6 +66,7 @@ export async function getNotionArticles(): Promise<NotionListResponse> {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        page_size: limit,
         sorts: [
           {
             direction: "ascending",

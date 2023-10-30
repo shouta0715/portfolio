@@ -76,8 +76,8 @@ async function Article({ properties, icon, last_edited_time }: NotionPage) {
   );
 }
 
-export async function NotionArticles() {
-  const { results } = await getNotionArticles();
+export async function NotionArticles({ limit = 100 }) {
+  const { results } = await getNotionArticles(limit);
 
   return (
     <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-2">
