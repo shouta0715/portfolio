@@ -57,7 +57,7 @@ function Work({ work, classNames }: WorkProps) {
             <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 text-teal-600 dark:text-teal-400" />
           </a>
         </Card.Title>
-        <div>
+        <div className="flex flex-wrap gap-2">
           {work.tags?.map((tag) => (
             <Achievement key={tag.id}>{tag.name}</Achievement>
           ))}
@@ -66,6 +66,7 @@ function Work({ work, classNames }: WorkProps) {
           <SelectedSkill
             className="grid grid-cols-3  gap-2 md:grid-cols-4"
             classNames={{ skill: "h-10 w-10 !rounded-md" }}
+            hasStar={false}
             skills={skills}
           />
         </Card.Description>
