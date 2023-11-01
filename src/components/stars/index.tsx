@@ -49,7 +49,7 @@ export function Stars({
     <FadeInWithStagger className={clsx("flex items-center gap-1", className)}>
       {Array.from({ length: 4 }, (_, i) => (
         <Star
-          key={`${id}-${i}`}
+          key={`${id}-${i}-star`}
           active={i < level}
           className={classNames?.star}
         />
@@ -68,15 +68,14 @@ const describe = [
 
 export function StarDescribe({ className }: { className?: string }) {
   return (
-    <div className={clsx("grid grid-cols-2 gap-y-4 md:grid-cols-3", className)}>
+    <div className={clsx("grid grid-cols-1 gap-y-4 md:grid-cols-3", className)}>
       {describe.map((desc, i) => (
-        <div className="flex gap-x-4 gap-y-2 md:flex-col">
+        <div key={desc} className="flex gap-x-4 gap-y-2 md:flex-col">
           <Stars
-            key={desc}
             classNames={{
               star: "h-4 w-4 lg:h-4 lg:w-4",
             }}
-            id={desc}
+            id={`${desc}-${i}-describe`}
             level={i}
           />
           <p className="text-sm text-gray-600 dark:text-gray-200">{desc}</p>
