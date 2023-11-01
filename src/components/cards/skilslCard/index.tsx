@@ -26,6 +26,7 @@ export function SkillsCard() {
         <SelectedSkill
           className="grid grid-cols-4 gap-2 lg:gap-4"
           classNames={{ skill: "h-14 w-14 lg:h-20 lg:w-20" }}
+          hasStar={false}
           skills={["Next.js", "React", "Tailwind CSS", "TypeScript"]}
         />
       </Card.Description>

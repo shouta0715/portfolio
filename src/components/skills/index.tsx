@@ -22,11 +22,13 @@ import { SupabaseIcon } from "@/components/icons/skills/SupabaseIcon";
 import { TailwindIcon } from "@/components/icons/skills/TailwindIcon";
 import { TestingLibraryIcon } from "@/components/icons/skills/TestingLibraryIcon";
 import { TsIcon } from "@/components/icons/skills/TsIcon";
+import { Stars } from "@/components/stars";
 import { SkillNames, getSkills } from "@/libs/client";
 
 type SkillData = {
   name: SkillNames;
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  level?: number;
 };
 
 type ViewSkill = { id: string } & SkillData;
@@ -69,7 +71,7 @@ export const Skills: SkillData[] = [
     icon: StoryBookIcon,
   },
   {
-    name: "Tanstack/Query",
+    name: "Tanstack Query",
     icon: ReactQueryIcon,
   },
   {
@@ -123,7 +125,10 @@ const rotations = [
 ];
 
 export async function selectedSkills({ skills }: { skills: SkillNames[] }) {
-  const { contents } = await getSkills({ limit: 50, fields: ["id", "name"] });
+  const { contents } = await getSkills({
+    limit: 50,
+    fields: ["id", "name", "level"],
+  });
 
   const filtered = Skills.filter((skill) => skills.includes(skill.name));
 
@@ -132,7 +137,7 @@ export async function selectedSkills({ skills }: { skills: SkillNames[] }) {
       return s.name === skill.name;
     });
 
-    return { ...skill, id: find?.id ?? "" };
+    return { ...skill, id: find?.id ?? "", level: find?.level };
   });
 
   return result;
@@ -142,10 +147,12 @@ function Skill({
   skill,
   i,
   className,
+  hasStar = true,
 }: {
   skill: ViewSkill;
   i: number;
   className?: string;
+  hasStar?: boolean;
 }) {
   return (
     <FadeIn className="flex flex-col items-center">
@@ -163,9 +170,17 @@ function Skill({
           className="h-full w-full object-cover p-2"
         />
       </Link>
-      <p className="mt-2 text-center">
-        <span className="text-xs font-semibold">{skill.name}</span>
-      </p>
+
+      <div className="mt-2 text-center">
+        <p className="text-xs font-semibold">{skill.name}</p>
+        {hasStar && (
+          <Stars
+            className="mt-1 justify-center"
+            id={skill.name}
+            level={skill.level ?? 0}
+          />
+        )}
+      </div>
     </FadeIn>
   );
 }
@@ -174,12 +189,14 @@ export async function SelectedSkill({
   skills,
   className,
   classNames,
+  hasStar = true,
 }: {
   skills: SkillNames[];
   className?: string;
   classNames?: {
     skill?: string;
   };
+  hasStar?: boolean;
 }) {
   const selected = await selectedSkills({ skills });
 
@@ -189,6 +206,7 @@ export async function SelectedSkill({
         <Skill
           key={skill.name}
           className={classNames?.skill}
+          hasStar={hasStar}
           i={i}
           skill={skill}
         />
@@ -200,11 +218,13 @@ export async function SelectedSkill({
 export async function SkillSet({
   className,
   classNames,
+  hasStar = true,
 }: {
   className?: string;
   classNames?: {
     skill?: string;
   };
+  hasStar?: boolean;
 }) {
   const allSkills = await selectedSkills({
     skills: Skills.map((skill) => skill.name),
@@ -216,6 +236,7 @@ export async function SkillSet({
         <Skill
           key={skill.name}
           className={classNames?.skill}
+          hasStar={hasStar}
           i={i}
           skill={skill}
         />

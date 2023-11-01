@@ -5,6 +5,7 @@ import { Border } from "@/components/border";
 import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { SkillSet, selectedSkills } from "@/components/skills";
+import { StarDescribe, Stars } from "@/components/stars";
 import { Works } from "@/components/works";
 import { SkillNames, getSkill, getSkills, getWorks } from "@/libs/client";
 
@@ -64,7 +65,7 @@ const getData = async (slug: string) => {
   });
 
   const skill = await getSkill(slug, {
-    fields: ["name", "description"],
+    fields: ["name", "description", "level"],
   });
   const [{ icon: Icon }] = await selectedSkills({ skills: [skill.name] });
 
@@ -88,9 +89,15 @@ export default async function Page({
           <Icon className="h-12 w-12 md:h-14 md:w-14" />
           {skill.name}
         </Heading>
+        <Stars
+          classNames={{ star: "h-6 w-6 md:h-8 md:w-8" }}
+          id={skill.name}
+          level={skill.level}
+        />
         <p className="leading-7 text-gray-600 dark:text-gray-200 md:text-lg">
           {skill.description}
         </p>
+
         <p>
           GitHub上のソースコードは
           <a
@@ -104,19 +111,16 @@ export default async function Page({
           </a>
           からご覧いただけます。
         </p>
-        <div>
-          {hasWorks ? (
-            <Works works={contents} />
-          ) : (
-            <p>公開している作品はありません。</p>
-          )}
-        </div>
+        <div>{hasWorks && <Works works={contents} />}</div>
       </div>
 
       <div className="mt-10 flex flex-col gap-8 sm:mt-14 lg:mt-16">
         <Border />
         <Heading as="h4">その他のスキル一覧</Heading>
         <div>
+          <StarDescribe className="items-center" />
+        </div>
+        <div className="mt-10">
           <SkillSet
             className="-mx-6 grid grid-cols-3 gap-6 md:grid-cols-4 md:gap-10"
             classNames={{ skill: "h-14 w-14 lg:h-20 lg:w-20" }}

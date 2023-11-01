@@ -19,7 +19,7 @@ export type SkillNames =
   | "Next.js"
   | "Astro"
   | "Storybook"
-  | "Tanstack/Query"
+  | "Tanstack Query"
   | "Node.js"
   | "Nest.js"
   | "Jest"
@@ -40,6 +40,7 @@ export type Skill = {
   id: string;
   name: SkillNames;
   description: string;
+  level: number;
 } & MicroCMSDate;
 
 export type Tag = {
