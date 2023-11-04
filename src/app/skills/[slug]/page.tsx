@@ -72,6 +72,7 @@ const getData = async (slug: string) => {
   return { contents, skill, Icon };
 };
 
+export const fetchCache = "only-cache";
 export default async function Page({
   params,
   searchParams,

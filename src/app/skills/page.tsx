@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description: "フロントエンドのスキルを中心に学習をしています。",
 };
 
+export const fetchCache = "only-cache";
 export default async function Page({
   searchParams,
 }: {
