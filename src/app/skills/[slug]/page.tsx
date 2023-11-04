@@ -74,10 +74,10 @@ const getData = async (slug: string) => {
 
 export default async function Page({
   params,
+  searchParams,
 }: {
-  params: {
-    slug: string;
-  };
+  params: { slug: string };
+  searchParams: { [key: string]: string };
 }) {
   const { contents, skill, Icon } = await getData(params.slug);
   const hasWorks = contents.length > 0;
@@ -124,6 +124,8 @@ export default async function Page({
           <SkillSet
             className="-mx-6 grid grid-cols-3 gap-6 md:grid-cols-4 md:gap-10"
             classNames={{ skill: "h-14 w-14 lg:h-20 lg:w-20" }}
+            currentPage={Number(searchParams.page ?? 1)}
+            slug={params.slug}
           />
           <p className="mt-8">
             その他のライブラリや、コードの詳細は

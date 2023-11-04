@@ -29,7 +29,11 @@ export type SkillNames =
   | "Graph QL"
   | "Go"
   | "microCMS"
-  | "Supabase";
+  | "Supabase"
+  | "Firebase"
+  | "AWS"
+  | "GCP"
+  | "Docker";
 
 export const client = createClient({
   serviceDomain: process.env.SERVICE_DOMAIN as string,

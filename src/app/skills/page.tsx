@@ -11,7 +11,12 @@ export const metadata: Metadata = {
   description: "フロントエンドのスキルを中心に学習をしています。",
 };
 
-export default async function Page() {
+export default async function Page({
+  searchParams,
+}: {
+  params: { slug: string };
+  searchParams: { [key: string]: string };
+}) {
   return (
     <FadeIn>
       <Heading>Skills</Heading>
@@ -35,6 +40,7 @@ export default async function Page() {
         <SkillSet
           className="-mx-6 grid grid-cols-3 gap-6 md:grid-cols-4 md:gap-10"
           classNames={{ skill: "h-16 w-16 lg:h-20 lg:w-20" }}
+          currentPage={Number(searchParams.page ?? 1)}
         />
       </div>
     </FadeIn>
