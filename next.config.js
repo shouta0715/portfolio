@@ -8,7 +8,12 @@ const nextConfig = {
   swcMinify: true,
   reactStrictMode: true,
   images: {
-    domains: ["images.microcms-assets.io"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.microcms-assets.io",
+      },
+    ],
   },
 };
 
