@@ -70,7 +70,7 @@ export function StarDescribe({ className }: { className?: string }) {
   return (
     <div className={clsx("grid grid-cols-1 gap-y-4 md:grid-cols-3", className)}>
       {describe.map((desc, i) => (
-        <div key={desc} className="flex gap-x-4 gap-y-2 md:flex-col">
+        <FadeIn key={desc} className="flex gap-x-4 gap-y-2 md:flex-col">
           <Stars
             classNames={{
               star: "h-4 w-4 lg:h-4 lg:w-4",
@@ -79,7 +79,7 @@ export function StarDescribe({ className }: { className?: string }) {
             level={i}
           />
           <p className="text-sm text-gray-600 dark:text-gray-200">{desc}</p>
-        </div>
+        </FadeIn>
       ))}
     </div>
   );
