@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import clsx from "clsx";
 import React from "react";
 import { FadeIn } from "@/components/fadeIn";
@@ -21,6 +22,7 @@ export function SkillLoader({
   const skills = Array.from({ length }).map((_, i) => {
     return (
       <FadeIn
+        key={`${id}-${i}-loader`}
         aria-busy="true"
         aria-label="loading"
         className="flex flex-col items-center"
