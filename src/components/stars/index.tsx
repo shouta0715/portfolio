@@ -3,9 +3,19 @@ import clsx from "clsx";
 import React from "react";
 import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
 
-function Star({ active, className }: { active: boolean; className?: string }) {
+function Star({
+  active,
+  className,
+  animate,
+}: {
+  active: boolean;
+  className?: string;
+  animate?: boolean;
+}) {
+  const Wrapper = animate ? FadeIn : "div";
+
   return (
-    <FadeIn
+    <Wrapper
       className="inline-block"
       transition={{
         type: "spring",
@@ -28,7 +38,7 @@ function Star({ active, className }: { active: boolean; className?: string }) {
           className || "h-3 w-3 lg:h-3.5 lg:w-3.5"
         )}
       />
-    </FadeIn>
+    </Wrapper>
   );
 }
 
@@ -37,6 +47,7 @@ export function Stars({
   id,
   className,
   classNames,
+  animate = true,
 }: {
   level: number;
   id: string;
@@ -44,6 +55,7 @@ export function Stars({
   classNames?: {
     star?: string;
   };
+  animate?: boolean;
 }) {
   return (
     <FadeInWithStagger className={clsx("flex items-center gap-1", className)}>
@@ -51,6 +63,7 @@ export function Stars({
         <Star
           key={`${id}-${i}-star`}
           active={i < level}
+          animate={animate}
           className={classNames?.star}
         />
       ))}
