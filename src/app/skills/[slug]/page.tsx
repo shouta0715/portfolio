@@ -1,10 +1,9 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { Metadata } from "next";
-import React, { Suspense } from "react";
+import React from "react";
 import { Border } from "@/components/border";
 import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
-import { SkillLoader } from "@/components/loader";
 import { SkillSet, selectedSkills } from "@/components/skills";
 import { StarDescribe, Stars } from "@/components/stars";
 import { Works } from "@/components/works";
@@ -74,13 +73,7 @@ const getData = async (slug: string) => {
 };
 
 export const fetchCache = "only-cache";
-export default async function Page({
-  params,
-  searchParams,
-}: {
-  params: { slug: string };
-  searchParams: { [key: string]: string };
-}) {
+export default async function Page({ params }: { params: { slug: string } }) {
   const { contents, skill, Icon } = await getData(params.slug);
   const hasWorks = contents.length > 0;
 
@@ -123,14 +116,10 @@ export default async function Page({
           <StarDescribe className="items-center" />
         </div>
         <div className="mt-10">
-          <Suspense fallback={<SkillLoader id={params.slug} />}>
-            <SkillSet
-              className="-mx-6 grid grid-cols-3 gap-6 md:grid-cols-4 md:gap-10"
-              classNames={{ skill: "h-14 w-14 lg:h-20 lg:w-20" }}
-              currentPage={Number(searchParams.page ?? 1)}
-              slug={params.slug}
-            />
-          </Suspense>
+          <SkillSet
+            className="-mx-6 grid grid-cols-3 gap-6 md:grid-cols-4 md:gap-10"
+            classNames={{ skill: "h-14 w-14 lg:h-20 lg:w-20" }}
+          />
           <p className="mt-8">
             その他のライブラリや、コードの詳細は
             <a

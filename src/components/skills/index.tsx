@@ -25,7 +25,6 @@ import { SupabaseIcon } from "@/components/icons/skills/SupabaseIcon";
 import { TailwindIcon } from "@/components/icons/skills/TailwindIcon";
 import { TestingLibraryIcon } from "@/components/icons/skills/TestingLibraryIcon";
 import { TsIcon } from "@/components/icons/skills/TsIcon";
-import { Paginator } from "@/components/paginator";
 import { Stars } from "@/components/stars";
 import { SkillNames, getSkills } from "@/libs/client";
 
@@ -181,7 +180,6 @@ function Skill({
         )}
         href={{
           pathname: `/skills/${skill.id}`,
-          query: { page: 1 },
         }}
       >
         <skill.icon
@@ -238,16 +236,12 @@ export async function SkillSet({
   className,
   classNames,
   hasStar = true,
-  currentPage = 1,
-  slug,
 }: {
   className?: string;
   classNames?: {
     skill?: string;
   };
   hasStar?: boolean;
-  currentPage: number;
-  slug?: string;
 }) {
   const allSkills = await selectedSkills({
     skills: Skills.map((skill) => skill.name),
@@ -255,34 +249,15 @@ export async function SkillSet({
 
   return (
     <div className={className}>
-      <Paginator currentPage={currentPage} data={allSkills}>
-        {({ pageData, hasMore }) => (
-          <>
-            {pageData.map((skill, i) => (
-              <Skill
-                key={skill.name}
-                className={classNames?.skill}
-                hasStar={hasStar}
-                i={i}
-                skill={skill}
-              />
-            ))}
-            {hasMore && (
-              <Link
-                className="col-span-3 mx-auto rounded-md bg-white/10 px-3 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:text-white dark:hover:hover:bg-white/20 md:col-span-4"
-                href={{
-                  pathname: slug ? `/skills/${slug}` : "/skills",
-                  query: { page: currentPage + 1 },
-                }}
-                replace
-                scroll={false}
-              >
-                もっと見る
-              </Link>
-            )}
-          </>
-        )}
-      </Paginator>
+      {allSkills.map((skill, i) => (
+        <Skill
+          key={skill.name}
+          className={classNames?.skill}
+          hasStar={hasStar}
+          i={i}
+          skill={skill}
+        />
+      ))}
     </div>
   );
 }

@@ -25,7 +25,7 @@ const navs = [
   },
   {
     name: "Skills",
-    href: "/skills?page=1",
+    href: "/skills",
   },
   {
     name: "Articles",
