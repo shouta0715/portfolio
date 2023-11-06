@@ -15,7 +15,6 @@ export function SkillsCard() {
           className="text-xs text-indigo-600 decoration-indigo-600  hover:underline dark:text-indigo-400 dark:decoration-indigo-400"
           href={{
             pathname: "/skills",
-            query: { page: 1 },
           }}
         >
           他のスキルはこちら

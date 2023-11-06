@@ -38,12 +38,7 @@ export function SkillLoader({
         </div>
 
         <div className="mt-2 text-center">
-          <Stars
-            animate={false}
-            className="mt-1 justify-center"
-            id={id}
-            level={0}
-          />
+          <Stars className="mt-1 justify-center" id={id} level={0} />
         </div>
       </FadeIn>
     );
