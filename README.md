@@ -13,7 +13,7 @@
 
 - 👯 興味のある分野 **Web 開発のプロジェクトに興味があります。**
 
-- 📄 活動履歴 [https://github.com/shouta0715](https://github.com/shouta0715)
+- 📄 活動履歴 [GitHub](https://github.com/shouta0715)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
