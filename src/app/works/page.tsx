@@ -38,7 +38,12 @@ export default async function Page() {
         </p>
       </div>
       <div className="mt-12">
-        <Works works={contents} />
+        <Works
+          classNames={{
+            card: "h-max",
+          }}
+          works={contents}
+        />
       </div>
     </FadeIn>
   );

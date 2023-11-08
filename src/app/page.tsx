@@ -80,7 +80,12 @@ export default async function Home() {
       <Border className="my-8" />
       <FadeIn>
         <Heading>Works</Heading>
-        <Works works={contents} />
+        <Works
+          classNames={{
+            card: "h-max",
+          }}
+          works={contents}
+        />
         <MoreLink href="/works" />
       </FadeIn>
       <Border className="my-8" />
