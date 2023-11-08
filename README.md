@@ -15,6 +15,9 @@
 
 - 📄 活動履歴 [GitHub](https://github.com/shouta0715)
 
+- 📝 勉強メモ [Notion](https://ubiquitous-harrier-6b6.notion.site/08c6c6d00fd94986ba5f1c5dd37e6ead?v=ad2a30c65a5b4a47a7e22664656187a8)
+
+
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 <a href="https://twitter.com/shoutapu0715" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="shoutapu0715" height="30" width="40" /></a>
