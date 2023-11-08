@@ -1,6 +1,12 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import { MicroCMSListResponse } from "microcms-js-sdk";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/accordion";
 import { Achievement } from "@/components/achievement";
 import { Card } from "@/components/cards";
 import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
@@ -27,7 +33,7 @@ function Work({ work, classNames }: WorkProps) {
     <Card
       key={work.id}
       as={FadeIn}
-      className={clsx("flex flex-col ", classNames?.card)}
+      className={clsx("flex flex-col", classNames?.card)}
     >
       <Card.Image
         alt={work.name}
@@ -38,7 +44,7 @@ function Work({ work, classNames }: WorkProps) {
         src={work.image.url}
         width={work.image.width}
       />
-      <div className="flex flex-1 flex-col gap-y-4 px-2.5">
+      <div className="flex flex-col gap-y-4 px-2.5">
         <Card.Title
           as="div"
           className={clsx(
@@ -62,13 +68,20 @@ function Work({ work, classNames }: WorkProps) {
             <Achievement key={tag.id}>{tag.name}</Achievement>
           ))}
         </div>
-        <Card.Description as="div" className="-mx-4 flex-1">
-          <SelectedSkill
-            className="grid grid-cols-3  gap-2 md:grid-cols-4"
-            classNames={{ skill: "h-10 w-10 !rounded-md" }}
-            hasStar={false}
-            skills={skills}
-          />
+        <Card.Description as="div" className=" flex-1">
+          <Accordion collapsible type="single">
+            <AccordionItem value={work.id}>
+              <AccordionTrigger>使用したスキルを表示する</AccordionTrigger>
+              <AccordionContent className="-mx-4 py-4">
+                <SelectedSkill
+                  className="grid grid-cols-3  gap-2 md:grid-cols-4"
+                  classNames={{ skill: "h-10 w-10 !rounded-md" }}
+                  hasStar={false}
+                  skills={skills}
+                />
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </Card.Description>
       </div>
     </Card>
