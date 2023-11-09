@@ -18,6 +18,7 @@ import { NestIcon } from "@/components/icons/skills/NestIcon";
 import { NextIcon } from "@/components/icons/skills/NextIcon";
 import { NodeIcon } from "@/components/icons/skills/NodeIcon";
 import { PlaywrightIcon } from "@/components/icons/skills/PlaywrightIcon";
+import { PrismaIcon } from "@/components/icons/skills/PrismaIcon";
 import { ReactIcon } from "@/components/icons/skills/ReactIcon";
 import { ReactQueryIcon } from "@/components/icons/skills/ReactQueryIcon";
 import { StoryBookIcon } from "@/components/icons/skills/StoryBookIcon";
@@ -64,6 +65,10 @@ export const Skills: SkillData[] = [
   {
     name: "Next.js",
     icon: NextIcon,
+  },
+  {
+    name: "Prisma",
+    icon: PrismaIcon,
   },
   {
     name: "Astro",
