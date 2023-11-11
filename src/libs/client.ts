@@ -34,7 +34,8 @@ export type SkillNames =
   | "AWS"
   | "GCP"
   | "Docker"
-  | "Prisma";
+  | "Prisma"
+  | "Vitest";
 
 export const client = createClient({
   serviceDomain: process.env.SERVICE_DOMAIN as string,

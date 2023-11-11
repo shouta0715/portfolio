@@ -26,6 +26,7 @@ import { SupabaseIcon } from "@/components/icons/skills/SupabaseIcon";
 import { TailwindIcon } from "@/components/icons/skills/TailwindIcon";
 import { TestingLibraryIcon } from "@/components/icons/skills/TestingLibraryIcon";
 import { TsIcon } from "@/components/icons/skills/TsIcon";
+import { VitestIcon } from "@/components/icons/skills/VitestIcon";
 import { Stars } from "@/components/stars";
 import { SkillNames, getSkills } from "@/libs/client";
 
@@ -133,6 +134,10 @@ export const Skills: SkillData[] = [
   {
     name: "Docker",
     icon: DockerIcon,
+  },
+  {
+    name: "Vitest",
+    icon: VitestIcon,
   },
 ];
 
