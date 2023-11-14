@@ -106,7 +106,16 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </a>
           からご覧いただけます。
         </p>
-        <div>{hasWorks && <Works works={contents} />}</div>
+        <div>
+          {hasWorks && (
+            <Works
+              classNames={{
+                card: "h-max",
+              }}
+              works={contents}
+            />
+          )}
+        </div>
       </div>
 
       <div className="mt-10 flex flex-col gap-8 sm:mt-14 lg:mt-16">
