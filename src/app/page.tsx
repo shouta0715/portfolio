@@ -72,6 +72,7 @@ export default async function Home() {
                   <Contribution />
                 </Suspense>
               </ErrorBoundary>
+              vMarquee
             </div>
           </div>
         </div>

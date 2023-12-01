@@ -6,8 +6,8 @@ import { SelectedSkill } from "@/components/skills";
 
 export function SkillsCard() {
   return (
-    <Card as={FadeIn} className="flex h-full flex-col gap-y-4">
-      <div className="flex items-center justify-between text-lg">
+    <Card as={FadeIn} className="flex h-full flex-col gap-y-4 ">
+      <div className="flex items-center justify-between text-lg ">
         <Card.Title as="span" className="font-semibold">
           Primary Skills
         </Card.Title>
