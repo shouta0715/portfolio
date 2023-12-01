@@ -54,23 +54,19 @@ export function Globe({
   config?: COBEOptions;
 }) {
   let phi = 0;
-
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const pointerInteracting = useRef(null);
   const isDark = useTheme().theme === "dark";
 
   const onRender = useCallback(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (state: Record<string, any>) => {
-      if (!pointerInteracting.current) phi += 0.005;
+      phi += 0.005;
 
       const newPhi = phi + 0.005;
 
       return {
         ...state,
         phi: newPhi % (Math.PI * 2),
-        width: 1200,
-        height: 1200,
       };
     },
     [phi]
@@ -82,13 +78,13 @@ export function Globe({
     const globe = createGlobe(canvasRef.current, {
       ...config,
       ...(isDark ? darkGlobeConfig : lightGlobeConfig),
-      width: 1200,
-      height: 1200,
+      width: canvasRef.current.clientWidth * 2,
+      height: canvasRef.current.clientWidth * 2,
       onRender,
     });
 
     return () => globe.destroy();
-  }, [canvasRef, config, onRender, isDark]);
+  }, [canvasRef.current, config, isDark, onRender]);
 
   return (
     <FadeIn
