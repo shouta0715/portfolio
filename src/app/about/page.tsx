@@ -50,7 +50,7 @@ const Careers = [
 function Career() {
   return (
     <FadeInWithStagger className="grid flex-1 gap-y-8">
-      <h2 className="text-lg font-bold text-gray-900 dark:text-gray-200 md:text-xl">
+      <h2 className="text-lg font-bold text-gray-900 md:text-xl dark:text-gray-200">
         経歴
       </h2>
       {Careers.map((career) => (
@@ -111,7 +111,7 @@ export default function Page() {
               <rp>)</rp>
             </ruby>
           </p>
-          <p className="mt-8 text-sm leading-7 text-gray-600 dark:text-gray-200 md:text-base">
+          <p className="mt-8 text-sm leading-7 text-gray-600 md:text-base dark:text-gray-200">
             Web開発に興味があります。フロントエンドが得意ですが、バックエンドも勉強中です。
             フロントエンドに関しては、ReactとNext.jsを中心に学習しています。
             また、Tailwind CSSを使用した開発も得意です。
@@ -126,7 +126,7 @@ export default function Page() {
           </div>
         </FadeIn>
         <FadeIn className="mt-12 leading-7 text-gray-600 dark:text-gray-200">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-gray-200 md:text-xl">
+          <h2 className="text-lg font-bold text-gray-900 md:text-xl dark:text-gray-200">
             GitHub Contribution
           </h2>
           <div className="mt-8">
@@ -144,7 +144,7 @@ export default function Page() {
           </div>
         </FadeIn>
         <FadeIn className="mt-12 leading-7 text-gray-600 dark:text-gray-200">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-gray-200 md:text-xl">
+          <h2 className="text-lg font-bold text-gray-900 md:text-xl dark:text-gray-200">
             趣味
           </h2>
           <div className="mt-8">

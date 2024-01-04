@@ -6,7 +6,7 @@ import { Article as TArticle, getZennArticles, zennurl } from "@/libs/zenn";
 function ArticleLink({ path, title }: { path: string; title: string }) {
   return (
     <a
-      className="absolute inset-0 z-0 -m-4 opacity-0 transition group-hover:bg-white/20 group-hover:opacity-100 dark:group-hover:bg-gray-900/10 sm:rounded-2xl"
+      className="absolute inset-0 z-0 -m-4 opacity-0 transition group-hover:bg-white/20 group-hover:opacity-100 sm:rounded-2xl dark:group-hover:bg-gray-900/10"
       href={`${zennurl}/${path}`}
       rel="noopener noreferrer"
       target="_blank"
@@ -78,7 +78,7 @@ export async function ZennArticles() {
       {articles.map((article) => (
         <FadeIn
           key={article.id}
-          className="group overflow-hidden rounded-xl border bg-gradient-to-br from-[#6ccaff] to-[#b398ff] p-4 dark:border-gray-900 md:rounded-2xl md:shadow-sm"
+          className="group overflow-hidden rounded-xl border bg-gradient-to-br from-[#6ccaff] to-[#b398ff] p-4 md:rounded-2xl md:shadow-sm dark:border-gray-900"
         >
           <Article article={article} />
         </FadeIn>

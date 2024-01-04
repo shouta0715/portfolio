@@ -19,7 +19,7 @@ export function ContactCard() {
         </div>
         <div>
           <Card.Title className="mb-3 font-semibold">Email</Card.Title>
-          <span className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-200 md:text-base">
+          <span className="flex items-center gap-2 text-sm text-gray-600 md:text-base dark:text-gray-200">
             <EnvelopeIcon className="h-6 w-6 md:h-8 md:w-8" />
             kshouta0715@gmail.com
           </span>

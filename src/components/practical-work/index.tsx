@@ -25,7 +25,7 @@ function PracticalWork({ work }: { work: PracticalWork }) {
           as="div"
           className="flex flex-1 flex-col justify-between"
         >
-          <div className="grid gap-2 text-sm leading-7 text-gray-600 dark:text-gray-200 md:text-base">
+          <div className="grid gap-2 text-sm leading-7 text-gray-600 md:text-base dark:text-gray-200">
             {work.description}
           </div>
           <SelectedSkill

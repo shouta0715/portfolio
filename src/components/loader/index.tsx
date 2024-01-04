@@ -30,7 +30,7 @@ export function SkillLoader({
         <div
           aria-label="loading"
           className={clsx(
-            "relative block aspect-[9/10] h-14 w-14 flex-none animate-pulse overflow-hidden rounded-xl bg-white/50 opacity-90 shadow-lg ring ring-gray-100 transition-all duration-300  hover:scale-105 hover:ring-gray-300 dark:bg-gray-600 sm:rounded-2xl md:h-20 md:w-20",
+            "relative block aspect-[9/10] h-14 w-14 flex-none animate-pulse overflow-hidden rounded-xl bg-white/50 opacity-90 shadow-lg ring ring-gray-100 transition-all duration-300  hover:scale-105 hover:ring-gray-300 sm:rounded-2xl md:h-20 md:w-20 dark:bg-gray-600",
             rotations[i % rotations.length]
           )}
         >
@@ -49,7 +49,7 @@ export function SkillLoader({
       {skills}
       <div
         aria-busy="true"
-        className="col-span-3 mx-auto rounded-md bg-white/10 px-3 py-1.5 text-sm font-semibold text-gray-900 opacity-50 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:text-white dark:hover:hover:bg-white/20 md:col-span-4"
+        className="col-span-3 mx-auto rounded-md bg-white/10 px-3 py-1.5 text-sm font-semibold text-gray-900 opacity-50 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 md:col-span-4 dark:text-white dark:hover:hover:bg-white/20"
       >
         ロード中...
       </div>

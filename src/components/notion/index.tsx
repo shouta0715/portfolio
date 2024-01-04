@@ -16,7 +16,7 @@ function Loading() {
     <div
       aria-busy
       aria-label="Loading..."
-      className="flex h-full  gap-x-6 rounded-xl px-6 py-3 ring-1 ring-gray-200 dark:bg-gray-800 md:shadow-sm"
+      className="flex h-full  gap-x-6 rounded-xl px-6 py-3 ring-1 ring-gray-200 md:shadow-sm dark:bg-gray-800"
     >
       <div className="grid h-16 w-16 animate-pulse place-items-center rounded-xl">
         <div className="h-12 w-12 rounded-md dark:bg-gray-700" />
@@ -50,7 +50,7 @@ async function Article({ properties, icon, last_edited_time }: NotionPage) {
 
   return (
     <a
-      className="flex h-full gap-x-6 rounded-xl bg-white px-4 py-3 ring-1 ring-gray-200 hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-800/10 md:px-6 md:shadow-sm"
+      className="flex h-full gap-x-6 rounded-xl bg-white px-4 py-3 ring-1 ring-gray-200 hover:bg-gray-50 md:px-6 md:shadow-sm dark:bg-gray-800 dark:hover:bg-gray-800/10"
       href={url}
       rel="noopener noreferrer"
       target="_blank"
@@ -60,7 +60,7 @@ async function Article({ properties, icon, last_edited_time }: NotionPage) {
       </div>
       <div className="line-clamp-3 flex flex-col pt-1">
         <div className="flex flex-1 flex-col justify-between gap-2">
-          <p className="line-clamp-2 font-bold text-gray-900 dark:text-gray-200 md:text-lg">
+          <p className="line-clamp-2 font-bold text-gray-900 md:text-lg dark:text-gray-200">
             {name}
           </p>
           <time

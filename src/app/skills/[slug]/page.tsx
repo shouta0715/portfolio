@@ -89,7 +89,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           id={skill.name}
           level={skill.level}
         />
-        <p className="leading-7 text-gray-600 dark:text-gray-200 md:text-lg">
+        <p className="leading-7 text-gray-600 md:text-lg dark:text-gray-200">
           {skill.description}
         </p>
 
