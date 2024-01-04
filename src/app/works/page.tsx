@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import React from "react";
 import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
+import { PracticalWorks } from "@/components/practical-work";
 import { Works } from "@/components/works";
 import { getWorks } from "@/libs/client";
 
@@ -38,12 +39,23 @@ export default async function Page() {
         </p>
       </div>
       <div className="mt-12">
-        <Works
-          classNames={{
-            card: "h-max",
-          }}
-          works={contents}
-        />
+        <div>
+          <Heading as="h2" className="mt-8">
+            Company Works
+          </Heading>
+          <PracticalWorks />
+        </div>
+        <div>
+          <Heading as="h2" className="mt-16">
+            Personal Works
+          </Heading>
+          <Works
+            classNames={{
+              card: "h-max",
+            }}
+            works={contents}
+          />
+        </div>
       </div>
     </FadeIn>
   );

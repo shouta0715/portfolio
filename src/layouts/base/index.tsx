@@ -1,20 +1,12 @@
 "use client";
 
 import { MotionConfig, useReducedMotion } from "framer-motion";
-import dynamic from "next/dynamic";
 import React, { ReactNode } from "react";
 import { Container } from "@/components/container";
 import { Pattern } from "@/components/pattern";
 import Footer from "@/layouts/base/footer";
 import { Header } from "@/layouts/base/header";
 import { Providers } from "@/layouts/providers";
-
-const DynamicGlobe = dynamic(
-  () => import("@/components/globe").then((mod) => mod.Globe),
-  {
-    ssr: false,
-  }
-);
 
 function BaseLayoutInner({ children }: { children: ReactNode }) {
   const shouldReduceMotion = useReducedMotion();
@@ -30,7 +22,6 @@ function BaseLayoutInner({ children }: { children: ReactNode }) {
             </Container>
             <Footer />
           </div>
-          <DynamicGlobe />
         </div>
       </Pattern>
     </MotionConfig>

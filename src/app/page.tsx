@@ -10,6 +10,7 @@ import { Heading } from "@/components/heading";
 import { Logo } from "@/components/logo";
 import { MoreLink } from "@/components/moreLink";
 import { NotionArticles, NotionLoadings } from "@/components/notion";
+import { PracticalWorks } from "@/components/practical-work";
 import { Works } from "@/components/works";
 import { ZennArticles } from "@/components/zenn";
 import { getWorks } from "@/libs/client";
@@ -45,7 +46,7 @@ export default async function Home() {
               <rp>)</rp>
             </ruby>
           </p>
-          <p className="mt-8 text-sm leading-7 text-gray-600 dark:text-gray-200 md:text-base">
+          <p className="mt-8 text-sm leading-7 text-gray-600 md:text-base dark:text-gray-200">
             Web開発に興味があります。フロントエンドが得意ですが、バックエンドも勉強中です。
             フロントエンドに関しては、ReactとNext.jsを中心に学習しています。
             また、Tailwind CSSを使用した開発も得意です。
@@ -79,13 +80,28 @@ export default async function Home() {
       </FadeIn>
       <Border className="my-8" />
       <FadeIn>
-        <Heading>Works</Heading>
-        <Works
-          classNames={{
-            card: "h-max",
-          }}
-          works={contents}
-        />
+        <Heading>Works List</Heading>
+        <p className="mt-8 text-sm leading-7 text-gray-600 md:text-base dark:text-gray-200">
+          これまでに行った業務や、個人で作成した作品を紹介します。
+        </p>
+        <div>
+          <Heading as="h2" className="mt-8">
+            Company Works
+          </Heading>
+          <PracticalWorks />
+        </div>
+        <div>
+          <Heading as="h2" className="mt-16">
+            Personal Works
+          </Heading>
+          <Works
+            classNames={{
+              card: "h-max",
+            }}
+            works={contents}
+          />
+        </div>
+
         <MoreLink href="/works" />
       </FadeIn>
       <Border className="my-8" />
