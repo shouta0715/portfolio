@@ -9,7 +9,7 @@ export function ContactCard() {
       <Card className="flex  flex-col gap-y-6">
         <div>
           <Card.Title as="p" className="mb-3 text-lg font-semibold ">
-            Contact And SNS
+            Contact and SNS
           </Card.Title>
           <SocialLinks
             classNames={{
@@ -19,7 +19,7 @@ export function ContactCard() {
         </div>
         <div>
           <Card.Title className="mb-3 font-semibold">Email</Card.Title>
-          <span className="flex items-center gap-2 text-sm text-gray-600 md:text-base dark:text-gray-200">
+          <span className="flex items-center gap-2 text-sm text-muted-foreground md:text-base">
             <EnvelopeIcon className="h-6 w-6 md:h-8 md:w-8" />
             kshouta0715@gmail.com
           </span>

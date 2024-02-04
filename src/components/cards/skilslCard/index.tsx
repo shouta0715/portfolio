@@ -12,7 +12,7 @@ export function SkillsCard() {
           Primary Skills
         </Card.Title>
         <Link
-          className="text-xs text-indigo-600 decoration-indigo-600  hover:underline dark:text-indigo-400 dark:decoration-indigo-400"
+          className="text-xs text-destructive decoration-destructive  hover:underline dark:text-destructive dark:decoration-destructive"
           href={{
             pathname: "/skills",
           }}
@@ -20,7 +20,7 @@ export function SkillsCard() {
           他のスキルはこちら
           <ChevronRightIcon
             className="inline-block
-              h-4 w-4 text-indigo-600 dark:text-indigo-400"
+              h-4 w-4 text-destructive dark:text-destructive"
           />
         </Link>
       </div>

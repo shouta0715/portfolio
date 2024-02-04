@@ -45,11 +45,9 @@ function ArticleInner({ title }: { title: string }) {
 
 function ArticleFooter({ title }: { title: string }) {
   return (
-    <div className="-m-4 border-t bg-white p-2 dark:bg-gray-900">
+    <div className="-m-4 border-t bg-background p-2">
       <div>
-        <p className="text-sm font-light  text-gray-600 dark:text-gray-400">
-          zenn.dev
-        </p>
+        <p className="text-sm font-light  text-muted-foreground">zenn.dev</p>
         <p className="font-light">{title}</p>
       </div>
     </div>

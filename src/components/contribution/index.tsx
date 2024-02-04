@@ -120,7 +120,7 @@ export async function Contribution({
                       key={day.date}
                       aria-label={`${day.date}のコントリビューション数`}
                       className={clsx(
-                        "h-4 w-4 rounded border border-gray-300 dark:border-gray-600",
+                        "h-4 w-4 rounded border border-border",
                         colors[day.contributionLevel]
                       )}
                     />

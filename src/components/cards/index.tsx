@@ -17,7 +17,7 @@ export function Card<T extends ElementType = "div">({
   return (
     <Component
       className={clsx(
-        "group relative rounded-xl border bg-white p-4 md:rounded-2xl md:p-6 md:shadow-sm dark:bg-gray-800",
+        "group relative rounded-xl border  bg-card p-4 md:rounded-2xl md:p-6 md:shadow-sm",
         className
       )}
     >

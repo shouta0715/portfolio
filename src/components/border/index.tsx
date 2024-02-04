@@ -23,10 +23,7 @@ export function Border({
   return (
     <motion.div
       animate="visible"
-      className={clsx(
-        "h-px rounded-md bg-gray-300 dark:border-gray-700",
-        className
-      )}
+      className={clsx("h-px rounded-md bg-border", className)}
       initial="hidden"
       transition={{
         duration: speed ?? (slow ? 2 : 1),

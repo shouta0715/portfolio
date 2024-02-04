@@ -14,7 +14,7 @@ export function MoreLink({
     <p className="mt-8 text-right">
       <Link
         className={clsx(
-          "inline-flex items-center gap-2 text-indigo-600 hover:underline hover:decoration-indigo-600 dark:text-indigo-400 dark:hover:decoration-indigo-400",
+          "inline-flex items-center gap-2 text-destructive hover:underline hover:decoration-destructive dark:text-destructive dark:hover:decoration-destructive",
           className
         )}
         href={href}
