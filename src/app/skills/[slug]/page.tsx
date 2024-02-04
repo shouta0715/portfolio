@@ -89,20 +89,20 @@ export default async function Page({ params }: { params: { slug: string } }) {
           id={skill.name}
           level={skill.level}
         />
-        <p className="leading-7 text-gray-600 md:text-lg dark:text-gray-200">
+        <p className="text-sm leading-7 text-muted-foreground md:text-base md:leading-7">
           {skill.description}
         </p>
 
         <p>
           GitHub上のソースコードは
           <a
-            className="inline-flex items-center gap-2 px-2 text-teal-600 decoration-teal-500 hover:underline dark:text-teal-400 dark:decoration-teal-400"
+            className="inline-flex items-center gap-2 px-2 text-destructive decoration-destructive hover:underline dark:text-destructive dark:decoration-destructive"
             href={createGitHubUrl(skill.name)}
             rel="noopener noreferrer"
             target="_blank"
           >
             こちら
-            <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 text-teal-600 dark:text-teal-400" />
+            <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 text-destructive dark:text-destructive" />
           </a>
           からご覧いただけます。
         </p>
@@ -132,13 +132,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <p className="mt-8">
             その他のライブラリや、コードの詳細は
             <a
-              className="inline-flex items-center gap-2 px-2 text-teal-600 decoration-teal-500 hover:underline dark:text-teal-400 dark:decoration-teal-400"
+              className="inline-flex items-center gap-2 px-2 text-destructive decoration-destructive hover:underline dark:text-destructive dark:decoration-destructive"
               href="https://github.com/shouta0715"
               rel="noopener noreferrer"
               target="_blank"
             >
               GitHub
-              <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 text-teal-500 dark:text-teal-400" />
+              <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 text-destructive dark:text-destructive" />
             </a>
             にてご確認ください。
           </p>

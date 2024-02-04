@@ -17,20 +17,20 @@ export default async function Page() {
     <FadeIn>
       <Heading>Skills</Heading>
       <div className="mt-12 flex flex-col gap-y-12">
-        <div className="leading-7 text-gray-600 dark:text-gray-200">
+        <div className="leading-7 text-muted-foreground">
           <StarDescribe className="mb-4" />
           <p>
             他のスキルは
             <a
-              className="inline-flex items-center gap-2 px-2 text-teal-600 decoration-teal-500 hover:underline dark:text-teal-400 dark:decoration-teal-400"
+              className="inline-flex items-center gap-2 px-2 text-destructive decoration-destructive hover:underline dark:text-destructive dark:decoration-destructive"
               href="https://github.com/shouta0715"
               rel="noopener noreferrer"
               target="_blank"
             >
               GitHub
-              <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 text-teal-500 dark:text-teal-400" />
+              <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 text-destructive dark:text-destructive" />
             </a>
-            にあります。
+            をご確認ください。
           </p>
         </div>
         <SkillSet

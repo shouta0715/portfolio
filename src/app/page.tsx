@@ -23,8 +23,8 @@ export default async function Home() {
   return (
     <div>
       <FadeIn>
-        <Heading>About</Heading>
-        <div className="mt-12 text-gray-900 dark:text-gray-200">
+        <Heading>Introduction</Heading>
+        <div className="mt-12 text-primary">
           <p className="flex items-center text-xl font-semibold sm:text-2xl">
             <Logo
               alt="くらはししょうたのアバター"
@@ -46,11 +46,11 @@ export default async function Home() {
               <rp>)</rp>
             </ruby>
           </p>
-          <p className="mt-8 text-sm leading-7 text-gray-600 md:text-base dark:text-gray-200">
-            Web開発に興味があります。フロントエンドが得意ですが、バックエンドも勉強中です。
-            フロントエンドに関しては、ReactとNext.jsを中心に学習しています。
-            また、Tailwind CSSを使用した開発も得意です。
-            実務経験を積むため、インターンや、アルバイト、フリーランスなどのお仕事を探しています。
+          <p className="mt-8 text-sm  leading-7 text-muted-foreground md:text-base md:leading-7">
+            Web開発に興味があります。 TypeScript,
+            React,Next.jsを中心に開発を行うことができます。テストの作成、CI/CDの設定、デプロイの自動化なども行うことができます。
+            バックエンドに関しては、Go,Node.jsを中心に開発を行うことができます。
+            その他にもSQLや、アプリケーションの設計なども行うことができます。
           </p>
           <div className="mt-8 grid gap-y-8">
             <div className="flex flex-col justify-between gap-8 md:flex-row">
@@ -81,7 +81,7 @@ export default async function Home() {
       <Border className="my-8" />
       <FadeIn>
         <Heading>Works List</Heading>
-        <p className="mt-8 text-sm leading-7 text-gray-600 md:text-base dark:text-gray-200">
+        <p className="mt-8 text-sm  leading-7 text-muted-foreground md:text-base md:leading-7">
           これまでに行った業務や、個人で作成した作品を紹介します。
         </p>
         <div>

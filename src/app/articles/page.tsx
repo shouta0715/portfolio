@@ -17,7 +17,7 @@ export default async function Page() {
   return (
     <FadeIn>
       <Heading>Articles</Heading>
-      <p className="mt-8 leading-7">
+      <p className="mt-8 text-sm leading-7 text-muted-foreground md:text-base md:leading-7">
         投稿した記事やプログラミング学習のメモをまとめています。
       </p>
       <div className="mt-12">
@@ -26,13 +26,13 @@ export default async function Page() {
           <span className="mt-1.5 text-sm font-normal">
             記事一覧は
             <a
-              className="inline-flex items-center gap-2 px-2 text-teal-600 decoration-teal-500 hover:underline dark:text-teal-400 dark:decoration-teal-400"
+              className="inline-flex items-center gap-2 px-2 text-destructive decoration-destructive hover:underline dark:text-destructive dark:decoration-destructive"
               href="https://zenn.dev/shouta0715"
               rel="noopener noreferrer"
               target="_blank"
             >
               こちら
-              <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 text-teal-500 dark:text-teal-400" />
+              <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 text-destructive dark:text-destructive" />
             </a>
           </span>
         </Heading>

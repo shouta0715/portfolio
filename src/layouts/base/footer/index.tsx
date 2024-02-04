@@ -19,7 +19,7 @@ export default function Footer() {
               wrapper: "gap-8",
             }}
           />
-          <FadeIn className="mt-8 text-xs leading-7 text-gray-600 dark:text-gray-200">
+          <FadeIn className="mt-8 text-xs leading-7 text-muted-foreground">
             &copy; {new Date().getFullYear()} Shota Kurahashi
           </FadeIn>
         </FadeInWithStagger>

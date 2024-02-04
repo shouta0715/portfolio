@@ -34,7 +34,8 @@ const Careers = [
   {
     id: "career-4",
     date: "2023年 6月",
-    title: "個人開発でアプリを作成",
+    title:
+      "個人開発でアプリを作成し、メディア芸術データベース活用コンテストでコンテストで最優秀賞を受賞しました。",
     link: {
       name: "作成したWebアプリ",
       url: "https://nerd-plus.com/",
@@ -42,40 +43,49 @@ const Careers = [
   },
   {
     id: "career-5",
+    date: "2023年 10月",
+    title:
+      "TypeScriptの他にGo言語やSQLなど、など、バックエンド技術に関しても学習をしWeb APIの作成などを行えるようになりました。",
+  },
+  {
+    id: "career-6",
+    date: "2023年 11月",
+    title:
+      "業務委託として、Next.jsを用いたWebアプリケーション開発に携わりました。",
+  },
+  {
+    id: "career-7",
     date: "現在",
-    title: "Web開発を学習、実践中",
+    title:
+      "個人開発でWebアプリの作成を行ったり、研究室での活動の一環として様々なWebアプリ開発を行いながら、更に更に技術を向上させるため、勉強や実務経験を積んでいます。",
   },
 ];
 
 function Career() {
   return (
     <FadeInWithStagger className="grid flex-1 gap-y-8">
-      <h2 className="text-lg font-bold text-gray-900 md:text-xl dark:text-gray-200">
-        経歴
-      </h2>
+      <h2 className="text-lg font-bold text-primary md:text-xl">経歴</h2>
       {Careers.map((career) => (
         <FadeIn key={career.id}>
-          <time className="relative order-first mb-3 flex items-center pl-3.5 text-sm leading-7 text-gray-400 sm:text-base">
+          <time className="relative order-first mb-3 flex items-center pl-3.5 text-xs leading-7 text-muted-foreground">
             {career.date}
             <span
               aria-hidden="true"
               className="absolute inset-y-0 left-0 flex items-center"
             >
-              <span className="h-4 w-0.5 rounded-full bg-gray-200 dark:bg-gray-500" />
+              <span className="h-4 w-0.5 rounded-full bg-muted-foreground" />
             </span>
           </time>
-          <p className="pl-3.5 font-medium">{career.title}</p>
+          <p className="pl-3.5 leading-7">{career.title}</p>
           {career.link && (
             <a
-              className="mt-3 inline-flex items-center gap-x-2 pl-3.5 text-sm hover:underline hover:decoration-teal-600 dark:hover:decoration-teal-400"
+              className="mt-3 inline-flex items-center gap-x-2 pl-3.5 text-sm text-destructive hover:underline"
               href={career.link.url}
               rel="noopener noreferrer"
               target="_blank"
             >
-              <span className="text-teal-600 dark:text-teal-400">
-                {career.link.name}
-              </span>
-              <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 text-teal-600 dark:text-teal-400" />
+              <span className="text-destructive">{career.link.name}</span>
+              <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 text-destructive" />
             </a>
           )}
         </FadeIn>
@@ -88,7 +98,7 @@ export default function Page() {
   return (
     <div>
       <FadeIn>
-        <Heading>About Me</Heading>
+        <Heading>About me</Heading>
         <div className="mt-12 text-gray-900 dark:text-gray-200">
           <p className="flex items-center text-xl font-semibold sm:text-2xl">
             <Logo
@@ -111,7 +121,7 @@ export default function Page() {
               <rp>)</rp>
             </ruby>
           </p>
-          <p className="mt-8 text-sm leading-7 text-gray-600 md:text-base dark:text-gray-200">
+          <p className="mt-8 text-sm leading-7 text-muted-foreground">
             Web開発に興味があります。フロントエンドが得意ですが、バックエンドも勉強中です。
             フロントエンドに関しては、ReactとNext.jsを中心に学習しています。
             また、Tailwind CSSを使用した開発も得意です。
@@ -119,14 +129,22 @@ export default function Page() {
           </p>
         </div>
         <FadeIn className="mt-8 flex flex-col gap-8 md:flex-row">
-          <Career />
-          <div className="flex flex-1 flex-col justify-between gap-y-8">
-            <ContactCard />
-            <SkillsCard />
+          <div className="flex-1">
+            <Career />
+          </div>
+          <div className="flex-1">
+            <div className="top-8 flex flex-col gap-y-8 md:sticky">
+              <div>
+                <ContactCard />
+              </div>
+              <div>
+                <SkillsCard />
+              </div>
+            </div>
           </div>
         </FadeIn>
-        <FadeIn className="mt-12 leading-7 text-gray-600 dark:text-gray-200">
-          <h2 className="text-lg font-bold text-gray-900 md:text-xl dark:text-gray-200">
+        <FadeIn className="mt-12 leading-7 text-muted-foreground">
+          <h2 className="text-lg font-bold  text-primary md:text-xl">
             GitHub Contribution
           </h2>
           <div className="mt-8">
@@ -143,12 +161,10 @@ export default function Page() {
             </ErrorBoundary>
           </div>
         </FadeIn>
-        <FadeIn className="mt-12 leading-7 text-gray-600 dark:text-gray-200">
-          <h2 className="text-lg font-bold text-gray-900 md:text-xl dark:text-gray-200">
-            趣味
-          </h2>
+        <FadeIn className="mt-12 leading-7 text-muted-foreground">
+          <h2 className="text-lg font-bold  text-primary md:text-xl">趣味</h2>
           <div className="mt-8">
-            <p className="text-sm md:text-base">
+            <p className="text-sm">
               趣味は、プログラミングです。休日や暇な時間は
               Webアプリを作成したり、勉強したりしています。楽しいです。
             </p>

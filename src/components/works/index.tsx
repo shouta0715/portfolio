@@ -68,7 +68,7 @@ function Work({ work, classNames }: WorkProps) {
             <Achievement key={tag.id}>{tag.name}</Achievement>
           ))}
         </div>
-        <Card.Description as="div" className=" flex-1">
+        <Card.Description as="div" className="flex-1">
           <Accordion collapsible type="single">
             <AccordionItem value={work.id}>
               <AccordionTrigger>使用したスキルを表示する</AccordionTrigger>

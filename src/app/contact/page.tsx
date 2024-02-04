@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <FadeIn>
       <Heading>Contact</Heading>
-      <div className="mt-8 leading-7">
+      <div className="mt-8 text-sm  leading-7 text-muted-foreground md:text-base md:leading-7">
         <p>ご連絡は下記のメールアドレスまたは、TwitterのDMにてお願いします。</p>
       </div>
       <div className="mt-12 flex flex-col gap-y-6">
@@ -27,7 +27,7 @@ export default function Page() {
         </div>
         <div>
           <p className="mb-3 font-semibold">Email</p>
-          <span className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-200">
+          <span className="flex items-center gap-2 text-sm text-muted-foreground">
             <EnvelopeIcon className="h-6 w-6" />
             kshouta0715@gmail.com
           </span>

@@ -26,11 +26,7 @@ export function Heading<T extends "h1" | "h2" | "h3" | "h4" | "h5" | "h6">({
 
   return (
     <Component
-      className={clsx(
-        "text-gray-900 dark:text-gray-200",
-        className,
-        headingSizes[Component]
-      )}
+      className={clsx("text-primary", className, headingSizes[Component])}
       {...props}
     >
       {children}

@@ -39,7 +39,7 @@ Card.Title = function CardTitle<T extends React.ElementType = "h2">({
   const Component = as ?? "h2";
 
   return (
-    <Component className={clsx("text-gray-900 dark:text-gray-200 ", className)}>
+    <Component className={clsx("text-primary", className)}>
       {children}
     </Component>
   );
@@ -58,7 +58,10 @@ Card.Description = function CardDescription<T extends React.ElementType = "p">({
 
   return (
     <Component
-      className={clsx("mt-2 text-gray-600 dark:text-gray-200", className)}
+      className={clsx(
+        "mt-2 text-sm leading-7 text-muted-foreground",
+        className
+      )}
       {...props}
     >
       {children}

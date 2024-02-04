@@ -7,7 +7,7 @@ export default function Error({
 }) {
   return (
     <p
-      className="py-10 text-center text-lg font-semibold text-gray-900 dark:text-gray-200"
+      className="py-10 text-center text-lg font-semibold text-destructive"
       role="alert"
     >
       {message}
