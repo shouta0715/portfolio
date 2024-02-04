@@ -54,13 +54,13 @@ function Work({ work, classNames }: WorkProps) {
         >
           <span>{work.name}</span>
           <a
-            className="flex items-center gap-2 text-sm text-teal-600 decoration-teal-600 hover:underline dark:text-teal-400 dark:decoration-teal-400"
+            className="flex items-center gap-2 text-sm text-destructive decoration-destructive hover:underline dark:text-destructive dark:decoration-destructive"
             href={work.github_url}
             rel="noopener noreferrer"
             target="_blank"
           >
             GitHubへ
-            <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 text-teal-600 dark:text-teal-400" />
+            <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 text-destructive dark:text-destructive" />
           </a>
         </Card.Title>
         <div className="flex flex-wrap gap-2">
