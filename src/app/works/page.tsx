@@ -23,7 +23,7 @@ export default async function Page() {
           これまでに作成した作品を紹介します。主にフロントエンドのスキルを中心に、以下の作品を作成しました。
         </p>
         <p>
-          詳細は各作品のページまたは、
+          その他の作品や詳細な情報は、
           <a
             className="inline-flex items-center gap-2 px-2 text-destructive decoration-destructive hover:underline dark:text-destructive dark:decoration-destructive"
             href="https://github.com/shouta0715"
