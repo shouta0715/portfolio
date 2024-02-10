@@ -20,7 +20,7 @@ function BaseLayoutInner({ children }: { children: ReactNode }) {
           <Container as="main" className="w-full flex-auto py-8">
             {children}
           </Container>
-          <Footer />P
+          <Footer />
         </div>
       </div>
     </MotionConfig>
