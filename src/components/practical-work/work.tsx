@@ -9,7 +9,6 @@ export type PracticalWork = {
   image?: string | undefined;
   link?: string | undefined;
   icon: string;
-
   technologies: SkillNames[];
 };
 
@@ -19,14 +18,14 @@ export const practicalWorks: PracticalWork[] = [
     icon: "⚽",
     contract_type: "業務委託",
     name: "Next.jsを使用したWebアプリ開発",
-    period: "2023年11月〜",
+    period: "約3ヶ月間",
     description: (
       <>
         <p>Next.jsを使用したWebカードゲームのアプリ開発を行いました。</p>
         <p>
-          主に、TypeScript、Prismaを用いたバックエンドの開発を行いました。
-          ユーザーへの報酬付与機能、ユーザーのランキング機能など様々なAPIの開発を行いました。
-          Vitestを使用したテストコードの作成も行いました。
+          主にTypeScriptとPrismaを使用したバックエンドの開発を行いました。
+          仕様書を元に、APIの設計、テストの作成、バグ修正やパフォーマンスの改善などを行いました。
+          その他、機能の修正の提案や、新機能の追加なども行いました。
         </p>
       </>
     ),
@@ -37,7 +36,7 @@ export const practicalWorks: PracticalWork[] = [
     icon: "📞",
     contract_type: "業務委託",
     name: "Next.jsを使用したP2PのWebアプリ開発",
-    period: "2023年11月〜2023年12月",
+    period: "約2ヶ月間",
     description: (
       <div>
         <p>Next.jsを使用したP2PのWebアプリ開発を行いました。</p>

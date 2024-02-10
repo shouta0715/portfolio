@@ -95,7 +95,7 @@ Card.Image = function CardImage({
     <>
       <div
         className={clsx(
-          "absolute bottom-8 left-0 top-0 h-56  w-full rounded-2xl border border-indigo-300 transition duration-300 ",
+          "absolute bottom-8 left-0 top-0 h-40  w-full rounded-2xl border border-indigo-300 transition duration-300 ",
           href ? "group-hover/image:scale-95" : "group-hover:scale-95"
         )}
       />

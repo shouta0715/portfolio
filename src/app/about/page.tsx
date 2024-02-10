@@ -103,7 +103,7 @@ export default function Page() {
           <p className="flex items-center text-xl font-semibold sm:text-2xl">
             <Logo
               alt="くらはししょうたのアバター"
-              className="mr-2 inline-block rounded-full object-cover"
+              className="mr-4 inline-block size-16 rounded-full border border-border object-cover"
               height={64}
               width={64}
             />
@@ -122,10 +122,10 @@ export default function Page() {
             </ruby>
           </p>
           <p className="mt-8 text-sm leading-7 text-muted-foreground">
-            Web開発に興味があります。フロントエンドが得意ですが、バックエンドも勉強中です。
-            フロントエンドに関しては、ReactとNext.jsを中心に学習しています。
-            また、Tailwind CSSを使用した開発も得意です。
-            実務経験を積むため、インターンや、アルバイト、フリーランスなどのお仕事を探しています。
+            Web開発に興味があります。 TypeScript,
+            React,Next.jsを中心に開発を行うことができます。テストの作成、CI/CDの設定、デプロイの自動化なども行うことができます。
+            バックエンドに関しては、Go,Node.jsを中心に開発を行うことができます。
+            その他にもSQLなども扱うことができます。
           </p>
         </div>
         <FadeIn className="mt-8 flex flex-col gap-8 md:flex-row">

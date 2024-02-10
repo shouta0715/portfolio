@@ -61,6 +61,7 @@ export type Work = {
   image: MicroCMSImage;
   skills: Skill[];
   github_url: string;
+  description: string;
   tags?: Tag[];
 } & MicroCMSDate;
 

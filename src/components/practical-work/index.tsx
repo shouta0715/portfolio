@@ -6,7 +6,7 @@ import {
 } from "@/components/practical-work/work";
 import { SelectedSkill } from "@/components/skills";
 
-function PracticalWork({ work }: { work: PracticalWork }) {
+export function PracticalWork({ work }: { work: PracticalWork }) {
   return (
     <Card key={work.id} as={FadeIn} className="flex">
       <div className="flex flex-1 flex-col gap-y-4 px-2.5">
@@ -38,10 +38,14 @@ function PracticalWork({ work }: { work: PracticalWork }) {
   );
 }
 
-export const PracticalWorks = () => {
+export const PracticalWorks = ({
+  works = practicalWorks,
+}: {
+  works?: PracticalWork[];
+}) => {
   return (
     <FadeInWithStagger className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
-      {practicalWorks.map((work) => (
+      {works.map((work) => (
         <PracticalWork key={work.id} work={work} />
       ))}
     </FadeInWithStagger>

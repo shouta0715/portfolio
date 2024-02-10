@@ -24,7 +24,7 @@ export function Header() {
             >
               <Logo
                 alt="Shouta's avatar"
-                className="h-12 w-12 rounded-full border  border-border object-cover  shadow-md"
+                className="h-12 w-12 rounded-full border  border-border object-cover"
                 height={48}
                 width={48}
               />

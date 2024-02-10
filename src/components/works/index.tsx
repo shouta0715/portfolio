@@ -44,7 +44,7 @@ function Work({ work, classNames }: WorkProps) {
         src={work.image.url}
         width={work.image.width}
       />
-      <div className="flex flex-col gap-y-4 px-2.5">
+      <div className="flex flex-col gap-y-2 px-2.5">
         <Card.Title
           as="div"
           className={clsx(
@@ -63,15 +63,28 @@ function Work({ work, classNames }: WorkProps) {
             <ArrowTopRightOnSquareIcon className="inline-block h-4 w-4 text-destructive dark:text-destructive" />
           </a>
         </Card.Title>
-        <div className="flex flex-wrap gap-2">
-          {work.tags?.map((tag) => (
-            <Achievement key={tag.id}>{tag.name}</Achievement>
-          ))}
-        </div>
+        {work.tags && work.tags?.length > 0 ? (
+          <div className="flex flex-wrap gap-2">
+            {work.tags?.map((tag) => (
+              <Achievement key={tag.id}>{tag.name}</Achievement>
+            ))}
+          </div>
+        ) : (
+          <div aria-hidden="true" className="h-7" />
+        )}
+
         <Card.Description as="div" className="flex-1">
           <Accordion collapsible type="single">
+            <AccordionItem value={`${work.id}description`}>
+              <AccordionTrigger>作品の説明を表示する</AccordionTrigger>
+              <AccordionContent className="">
+                {work.description}
+              </AccordionContent>
+            </AccordionItem>
             <AccordionItem value={work.id}>
-              <AccordionTrigger>使用したスキルを表示する</AccordionTrigger>
+              <AccordionTrigger className={clsx(work.description ? "" : "")}>
+                使用したスキルを表示する
+              </AccordionTrigger>
               <AccordionContent className="-mx-4 py-4">
                 <SelectedSkill
                   className="grid grid-cols-3  gap-2 md:grid-cols-4"

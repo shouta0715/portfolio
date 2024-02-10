@@ -4,6 +4,8 @@ import React from "react";
 import { Border } from "@/components/border";
 import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
+import { PracticalWorks } from "@/components/practical-work";
+import { practicalWorks as PWork } from "@/components/practical-work/work";
 import { SkillSet, selectedSkills } from "@/components/skills";
 import { StarDescribe, Stars } from "@/components/stars";
 import { Works } from "@/components/works";
@@ -60,7 +62,6 @@ const createGitHubUrl = (name: SkillNames) => {
 
 const getData = async (slug: string) => {
   const { contents } = await getWorks({
-    fields: ["id", "name", "link", "image", "skills", "github_url", "tags"],
     filters: `skills[contains]${slug}`,
   });
 
@@ -72,10 +73,27 @@ const getData = async (slug: string) => {
   return { contents, skill, Icon };
 };
 
+const getPracticalWorks = async (slug: string) => {
+  const skill = await getSkill(slug, {
+    fields: ["name", "description", "level"],
+  });
+
+  const works = PWork.filter((work) => {
+    return work.technologies.some((tech) => tech === skill.name);
+  });
+
+  return works;
+};
+
 export const fetchCache = "only-cache";
 export default async function Page({ params }: { params: { slug: string } }) {
-  const { contents, skill, Icon } = await getData(params.slug);
+  const [{ contents, skill, Icon }, practicalWorks] = await Promise.all([
+    getData(params.slug),
+    getPracticalWorks(params.slug),
+  ]);
+
   const hasWorks = contents.length > 0;
+  const hasPracticalWorks = practicalWorks.length > 0;
 
   return (
     <FadeIn>
@@ -106,16 +124,28 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </a>
           からご覧いただけます。
         </p>
-        <div>
-          {hasWorks && (
+        {hasPracticalWorks && (
+          <div>
+            <Heading as="h2" className="mt-8">
+              Business Works
+            </Heading>
+            <PracticalWorks />
+          </div>
+        )}
+
+        {hasWorks && (
+          <div>
+            <Heading as="h2" className="mt-16">
+              Personal Works
+            </Heading>
             <Works
               classNames={{
                 card: "h-max",
               }}
               works={contents}
             />
-          )}
-        </div>
+          </div>
+        )}
       </div>
 
       <div className="mt-10 flex flex-col gap-8 sm:mt-14 lg:mt-16">

@@ -17,7 +17,7 @@ import { getWorks } from "@/libs/client";
 
 export default async function Home() {
   const { contents } = await getWorks({
-    fields: ["id", "name", "link", "image", "skills", "github_url", "tags"],
+    limit: 4,
   });
 
   return (
@@ -28,7 +28,7 @@ export default async function Home() {
           <p className="flex items-center text-xl font-semibold sm:text-2xl">
             <Logo
               alt="くらはししょうたのアバター"
-              className="mr-2 inline-block rounded-full object-cover"
+              className="mr-4 inline-block size-16 rounded-full border border-border object-cover"
               height={64}
               width={64}
             />
@@ -50,7 +50,7 @@ export default async function Home() {
             Web開発に興味があります。 TypeScript,
             React,Next.jsを中心に開発を行うことができます。テストの作成、CI/CDの設定、デプロイの自動化なども行うことができます。
             バックエンドに関しては、Go,Node.jsを中心に開発を行うことができます。
-            その他にもSQLや、アプリケーションの設計なども行うことができます。
+            その他にもSQLなども扱うことができます。
           </p>
           <div className="mt-8 grid gap-y-8">
             <div className="flex flex-col justify-between gap-8 md:flex-row">
@@ -86,7 +86,7 @@ export default async function Home() {
         </p>
         <div>
           <Heading as="h2" className="mt-8">
-            Company Works
+            Business Works
           </Heading>
           <PracticalWorks />
         </div>
