@@ -5,6 +5,7 @@ import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
 import { AstroIcon } from "@/components/icons/skills/AstroIcon";
 import { AWSIcon } from "@/components/icons/skills/AWSIcon";
 import { CSSIcon } from "@/components/icons/skills/CSSIcon";
+import { DatabaseIcon } from "@/components/icons/skills/DatabaseIcon";
 import { DockerIcon } from "@/components/icons/skills/DockerIcon";
 import { FirebaseIcon } from "@/components/icons/skills/FirebaseIcon";
 import { GoIcon } from "@/components/icons/skills/GoIcon";
@@ -138,6 +139,10 @@ export const Skills: SkillData[] = [
   {
     name: "Vitest",
     icon: VitestIcon,
+  },
+  {
+    name: "SQL",
+    icon: DatabaseIcon,
   },
 ];
 
