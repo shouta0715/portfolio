@@ -1,3 +1,9 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/accordion";
 import { Card } from "@/components/cards";
 import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
 import {
@@ -25,7 +31,15 @@ export function PracticalWork({ work }: { work: PracticalWork }) {
           as="div"
           className="flex flex-1 flex-col justify-between"
         >
-          <div className="grid gap-2">{work.description}</div>
+          <div className="grid gap-2">
+            <p>{work.title}</p>
+            <Accordion collapsible type="single">
+              <AccordionItem value={`practical-work-${work.id}-description`}>
+                <AccordionTrigger>作品の説明を表示する</AccordionTrigger>
+                <AccordionContent>{work.description}</AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
           <SelectedSkill
             className="mt-4 flex flex-wrap justify-around"
             classNames={{ skill: "h-10 w-10 !rounded-md" }}
