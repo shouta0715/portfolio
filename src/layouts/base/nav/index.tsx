@@ -45,10 +45,10 @@ export const NavLinks = ({ footer }: { footer?: boolean }) => {
         <FadeIn key={nav.name}>
           <Link
             className={clsx(
-              "relative -mx-3 -my-2 rounded-lg px-3 py-2 text-sm text-gray-600 transition-colors delay-150 hover:delay-0  ",
+              "relative -mx-3 -my-2 rounded-lg px-3 py-2 text-sm transition-colors delay-150 hover:delay-0  ",
               active === i
-                ? "font-semibold text-indigo-600 dark:text-indigo-400"
-                : "hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400"
+                ? "font-semibold text-destructive"
+                : "text-muted-foreground hover:text-destructive"
             )}
             href={nav.href}
             onMouseEnter={() => {

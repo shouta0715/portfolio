@@ -2,9 +2,6 @@ import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import Error from "@/app/error";
 import { Border } from "@/components/border";
-import { ContactCard } from "@/components/cards/contactCard";
-import { SkillsCard } from "@/components/cards/skilslCard";
-import { Contribution } from "@/components/contribution";
 import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { Logo } from "@/components/logo";
@@ -46,44 +43,20 @@ export default async function Home() {
               <rp>)</rp>
             </ruby>
           </p>
-          <p className="mt-8 text-sm  leading-7 text-muted-foreground md:text-base md:leading-7">
-            Web開発に興味があります。 TypeScript,
-            React,Next.jsを中心に開発を行うことができます。テストの作成、CI/CDの設定、デプロイの自動化なども行うことができます。
+          <p className="mt-8 text-sm leading-7 text-muted-foreground md:text-base md:leading-7">
+            Web開発に興味があります。
+            <br />
+            TypeScript, React,
+            Next.jsを中心に開発を行うことができます。テストの作成、CI/CDの設定、デプロイの自動化なども行うことができます。
+            <br />
             バックエンドに関しては、Go,Node.jsを中心に開発を行うことができます。
             その他にもSQLなども扱うことができます。
           </p>
-          <div className="mt-8 grid gap-y-8">
-            <div className="flex flex-col justify-between gap-8 md:flex-row">
-              <ContactCard />
-              <SkillsCard />
-            </div>
-
-            <div className="overflow-hidden">
-              <FadeIn className="mb-3 text-lg font-semibold">
-                GitHub Contribution
-              </FadeIn>
-              <ErrorBoundary
-                fallback={
-                  <Error message="Failed to fetch GitHub contribution data" />
-                }
-              >
-                <Suspense
-                  fallback={<div>Loading GitHub contribution data...</div>}
-                >
-                  <Contribution />
-                </Suspense>
-              </ErrorBoundary>
-            </div>
-          </div>
+          <MoreLink href="/about">私についてもっと詳しく</MoreLink>
         </div>
-        <MoreLink href="/about" />
       </FadeIn>
-      <Border className="my-8" />
-      <FadeIn>
-        <Heading>Works List</Heading>
-        <p className="mt-8 text-sm  leading-7 text-muted-foreground md:text-base md:leading-7">
-          これまでに行った業務や、個人で作成した作品を紹介します。
-        </p>
+
+      <FadeIn className="mt-8">
         <div>
           <Heading as="h2" className="mt-8">
             Business Works
@@ -104,7 +77,7 @@ export default async function Home() {
 
         <MoreLink href="/works" />
       </FadeIn>
-      <Border className="my-8" />
+      <Border className="my-16" />
       <FadeIn>
         <Heading>Articles</Heading>
         <div className="grid gap-8">

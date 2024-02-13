@@ -3,12 +3,17 @@ import { Metadata } from "next";
 import React, { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import Error from "@/app/error";
+import { Border } from "@/components/border";
 import { ContactCard } from "@/components/cards/contactCard";
 import { SkillsCard } from "@/components/cards/skilslCard";
 import { Contribution } from "@/components/contribution";
 import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { Logo } from "@/components/logo";
+import { MoreLink } from "@/components/moreLink";
+import { PracticalWorks } from "@/components/practical-work";
+import { Works } from "@/components/works";
+import { getWorks } from "@/libs/client";
 
 export const metadata: Metadata = {
   title: "About",
@@ -45,7 +50,7 @@ const Careers = [
     id: "career-5",
     date: "2023年 10月",
     title:
-      "TypeScriptの他にGo言語やSQLなど、など、バックエンド技術に関しても学習をし、Web APIの作成などを行えるようになりました。",
+      "TypeScriptの他にGo言語やSQLなど、バックエンド技術に関しても学習をし、Web APIの作成などを行えるようになりました。",
   },
   {
     id: "career-6",
@@ -94,7 +99,11 @@ function Career() {
   );
 }
 
-export default function Page() {
+export default async function Page() {
+  const { contents } = await getWorks({
+    limit: 4,
+  });
+
   return (
     <div>
       <FadeIn>
@@ -121,14 +130,18 @@ export default function Page() {
               <rp>)</rp>
             </ruby>
           </p>
-          <p className="mt-8 text-sm leading-7 text-muted-foreground">
-            Web開発に興味があります。 TypeScript,
-            React,Next.jsを中心に開発を行うことができます。テストの作成、CI/CDの設定、デプロイの自動化なども行うことができます。
+          <p className="mt-8 text-sm leading-7 text-muted-foreground md:text-base md:leading-7">
+            Web開発に興味があります。
+            <br />
+            TypeScript, React,
+            Next.jsを中心に開発を行うことができます。テストの作成、CI/CDの設定、デプロイの自動化なども行うことができます。
+            <br />
             バックエンドに関しては、Go,Node.jsを中心に開発を行うことができます。
             その他にもSQLなども扱うことができます。
           </p>
+          <MoreLink href="/works">作品を見る</MoreLink>
         </div>
-        <FadeIn className="mt-8 flex flex-col gap-8 md:flex-row">
+        <FadeIn className="mt-12 flex flex-col gap-8 md:flex-row">
           <div className="flex-1">
             <Career />
           </div>
@@ -143,7 +156,30 @@ export default function Page() {
             </div>
           </div>
         </FadeIn>
-        <FadeIn className="mt-12 leading-7 text-muted-foreground">
+        <Border className="my-16" />
+        <FadeIn>
+          <div>
+            <Heading as="h2" className="mt-8">
+              Business Works
+            </Heading>
+            <PracticalWorks />
+          </div>
+          <div>
+            <Heading as="h2" className="mt-16">
+              Personal Works
+            </Heading>
+            <Works
+              classNames={{
+                card: "h-max",
+              }}
+              works={contents}
+            />
+          </div>
+
+          <MoreLink href="/works" />
+        </FadeIn>
+        <Border className="my-8" />
+        <FadeIn className="leading-7 text-muted-foreground">
           <h2 className="text-lg font-bold  text-primary md:text-xl">
             GitHub Contribution
           </h2>
@@ -164,7 +200,7 @@ export default function Page() {
         <FadeIn className="mt-12 leading-7 text-muted-foreground">
           <h2 className="text-lg font-bold  text-primary md:text-xl">趣味</h2>
           <div className="mt-8">
-            <p className="text-sm">
+            <p className="mt-8 text-sm leading-7 text-muted-foreground md:text-base md:leading-7">
               趣味は、プログラミングです。休日や暇な時間は
               Webアプリを作成したり、勉強したりしています。楽しいです。
             </p>

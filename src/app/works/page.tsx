@@ -18,7 +18,7 @@ export default async function Page() {
   return (
     <FadeIn>
       <Heading>Works</Heading>
-      <div className="mt-8 text-sm  leading-7 text-muted-foreground md:text-base md:leading-7">
+      <div className="mt-8 text-sm leading-7 text-muted-foreground md:text-base md:leading-7">
         <p>
           これまでに作成した作品を紹介します。主にフロントエンドのスキルを中心に、以下の作品を作成しました。
         </p>
@@ -39,7 +39,7 @@ export default async function Page() {
       <div className="mt-12">
         <div>
           <Heading as="h2" className="mt-8">
-            Company Works
+            Business Works
           </Heading>
           <PracticalWorks />
         </div>
