@@ -1,4 +1,5 @@
 import "@/style/tailwind.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import clsx from "clsx";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -28,6 +29,7 @@ export default function RootLayout({
           "flex h-full flex-col dark:bg-gray-900"
         )}
       >
+        <GoogleAnalytics gaId={process.env.GA_ID as string} />
         <BaseLayout>{children}</BaseLayout>
       </body>
     </html>
