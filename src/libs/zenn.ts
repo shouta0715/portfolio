@@ -37,3 +37,17 @@ export const getZennArticles = async (): Promise<ZennArticles> => {
 
   return json;
 };
+
+export const getZennArticle = async (slug: string): Promise<Article> => {
+  const url = `${zennurl}/api/articles/${slug}`;
+
+  const res = await fetch(url, {
+    next: {
+      revalidate: 3600,
+    },
+  });
+
+  const { article } = (await res.json()) as { article: Article };
+
+  return article;
+};

@@ -1,7 +1,13 @@
-import React from "react";
+import { HeartIcon } from "@heroicons/react/24/solid";
+import React, { Suspense } from "react";
 import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
 import { Logo, ZennLogo } from "@/components/logo";
-import { Article as TArticle, getZennArticles, zennurl } from "@/libs/zenn";
+import {
+  Article as TArticle,
+  getZennArticle,
+  getZennArticles,
+  zennurl,
+} from "@/libs/zenn";
 
 function ArticleLink({ path, title }: { path: string; title: string }) {
   return (
@@ -43,11 +49,29 @@ function ArticleInner({ title }: { title: string }) {
   );
 }
 
-function ArticleFooter({ title }: { title: string }) {
+async function ArticleLike({ slug }: { slug: string }) {
+  const article = await getZennArticle(slug);
+
+  return (
+    <>
+      <HeartIcon className="size-4 fill-pink-500" />
+      {article.liked_count}
+    </>
+  );
+}
+
+function ArticleFooter({ title, slug }: { title: string; slug: string }) {
   return (
     <div className="-m-4 border-t bg-background p-2">
       <div>
-        <p className="text-sm font-light  text-muted-foreground">zenn.dev</p>
+        <p className="flex items-center text-sm font-light  text-muted-foreground">
+          zenn.dev
+          <span className="ml-2 flex items-center gap-1">
+            <Suspense fallback={null}>
+              <ArticleLike slug={slug} />
+            </Suspense>
+          </span>
+        </p>
         <p className="font-light">{title}</p>
       </div>
     </div>
@@ -62,7 +86,7 @@ function Article({ article }: { article: TArticle }) {
         <ArticleInner title={article.title} />
       </div>
       <div className="mt-8">
-        <ArticleFooter title={article.title} />
+        <ArticleFooter slug={article.slug} title={article.title} />
       </div>
     </div>
   );
