@@ -62,7 +62,7 @@ async function ArticleLike({ slug }: { slug: string }) {
 
 function ArticleFooter({ title, slug }: { title: string; slug: string }) {
   return (
-    <div className="-m-4 border-t bg-background p-2">
+    <div className="-mx-4 mt-4 h-full flex-1 border-t bg-background p-2">
       <div>
         <p className="flex items-center text-sm font-light  text-muted-foreground">
           zenn.dev
@@ -82,10 +82,10 @@ function Article({ article }: { article: TArticle }) {
   return (
     <div className="relative flex flex-col">
       <ArticleLink path={article.path} title={article.title} />
-      <div>
+      <div className="flex-1">
         <ArticleInner title={article.title} />
       </div>
-      <div className="mt-8">
+      <div className="flex-1">
         <ArticleFooter slug={article.slug} title={article.title} />
       </div>
     </div>
@@ -100,7 +100,7 @@ export async function ZennArticles() {
       {articles.map((article) => (
         <FadeIn
           key={article.id}
-          className="group overflow-hidden rounded-xl border bg-gradient-to-br from-[#6ccaff] to-[#b398ff] p-4 md:rounded-2xl md:shadow-sm dark:border-gray-900"
+          className="group grid overflow-hidden rounded-xl border bg-gradient-to-br from-[#6ccaff] to-[#b398ff] p-4 pb-0 md:rounded-2xl md:shadow-sm dark:border-gray-900"
         >
           <Article article={article} />
         </FadeIn>
