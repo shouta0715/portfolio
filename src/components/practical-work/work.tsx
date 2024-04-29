@@ -6,8 +6,7 @@ export type PracticalWork = {
   contract_type: "業務委託" | "インターン" | "アルバイト" | "フリーランス";
   period: string;
   title: string;
-  description: string | React.ReactNode;
-  image?: string | undefined;
+  description?: string | React.ReactNode;
   link?: string | undefined;
   icon: string;
   technologies: SkillNames[];
@@ -15,7 +14,22 @@ export type PracticalWork = {
 
 export const practicalWorks: PracticalWork[] = [
   {
-    id: "1",
+    id: "chot",
+    icon: "🔥",
+    contract_type: "アルバイト",
+    name: "ちょっと株式会社",
+    period: "2024年5月〜",
+    title: "フロントエンドエンジニア",
+    link: "https://chot-inc.com/",
+    description: (
+      <p>
+        5月13日より、ちょっと株式会社にてフロントエンドエンジニアとして働きます。
+      </p>
+    ),
+    technologies: [],
+  },
+  {
+    id: "card-game",
     icon: "⚽",
     contract_type: "業務委託",
     name: "Next.jsを使用したWebアプリ開発",
@@ -31,7 +45,7 @@ export const practicalWorks: PracticalWork[] = [
     technologies: ["TypeScript", "Next.js", "Prisma", "Vitest"],
   },
   {
-    id: "2",
+    id: "p2p",
     icon: "📞",
     contract_type: "業務委託",
     name: "Next.jsを使用したP2PのWebアプリ開発",
