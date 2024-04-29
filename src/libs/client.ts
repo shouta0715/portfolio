@@ -20,6 +20,8 @@ export type SkillNames =
   | "Astro"
   | "Storybook"
   | "Tanstack Query"
+  | "Vue.js"
+  | "Nuxt.js"
   | "Node.js"
   | "Nest.js"
   | "Jest"
