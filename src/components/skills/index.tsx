@@ -18,6 +18,7 @@ import { MSWIcon } from "@/components/icons/skills/MSWIcon";
 import { NestIcon } from "@/components/icons/skills/NestIcon";
 import { NextIcon } from "@/components/icons/skills/NextIcon";
 import { NodeIcon } from "@/components/icons/skills/NodeIcon";
+import { NuxtIcon } from "@/components/icons/skills/NuxtIcon";
 import { PlaywrightIcon } from "@/components/icons/skills/PlaywrightIcon";
 import { PrismaIcon } from "@/components/icons/skills/PrismaIcon";
 import { ReactIcon } from "@/components/icons/skills/ReactIcon";
@@ -28,6 +29,7 @@ import { TailwindIcon } from "@/components/icons/skills/TailwindIcon";
 import { TestingLibraryIcon } from "@/components/icons/skills/TestingLibraryIcon";
 import { TsIcon } from "@/components/icons/skills/TsIcon";
 import { VitestIcon } from "@/components/icons/skills/VitestIcon";
+import { VueIcon } from "@/components/icons/skills/VueIcon";
 import { Stars } from "@/components/stars";
 import { SkillNames, getSkills } from "@/libs/client";
 
@@ -84,6 +86,8 @@ export const Skills: SkillData[] = [
     name: "Tanstack Query",
     icon: ReactQueryIcon,
   },
+  { name: "Vue.js", icon: VueIcon },
+  { name: "Nuxt.js", icon: NuxtIcon },
   {
     name: "Node.js",
     icon: NodeIcon,
