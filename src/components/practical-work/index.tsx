@@ -46,11 +46,10 @@ export function PracticalWork({ work }: { work: PracticalWork }) {
           className="flex flex-1 flex-col justify-between"
         >
           <div className="grid gap-2">
-            <p className="line-clamp-2 md:h-14">{work.title}</p>
             {work.description && (
               <Accordion collapsible type="single">
                 <AccordionItem value={`practical-work-${work.id}-description`}>
-                  <AccordionTrigger>作品の説明を表示する</AccordionTrigger>
+                  <AccordionTrigger>業務内容の説明を表示する</AccordionTrigger>
                   <AccordionContent>{work.description}</AccordionContent>
                 </AccordionItem>
               </Accordion>
