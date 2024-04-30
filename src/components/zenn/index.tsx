@@ -1,6 +1,6 @@
 import { HeartIcon } from "@heroicons/react/24/solid";
 import React, { Suspense } from "react";
-import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
+import { FadeIn } from "@/components/fadeIn";
 import { Logo, ZennLogo } from "@/components/logo";
 import {
   Article as TArticle,
@@ -96,7 +96,7 @@ export async function ZennArticles() {
   const { articles } = await getZennArticles();
 
   return (
-    <FadeInWithStagger className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+    <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
       {articles.map((article) => (
         <FadeIn
           key={article.id}
@@ -105,6 +105,6 @@ export async function ZennArticles() {
           <Article article={article} />
         </FadeIn>
       ))}
-    </FadeInWithStagger>
+    </div>
   );
 }

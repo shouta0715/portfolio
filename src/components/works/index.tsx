@@ -9,7 +9,7 @@ import {
 } from "@/components/accordion";
 import { Achievement } from "@/components/achievement";
 import { Card } from "@/components/cards";
-import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
+import { FadeIn } from "@/components/fadeIn";
 import { SelectedSkill } from "@/components/skills";
 import { Work as TWork } from "@/libs/client";
 
@@ -112,12 +112,12 @@ export async function Works({
   classNames?: ClassNames;
 }) {
   return (
-    <FadeInWithStagger
+    <div
       className={clsx("mt-12 grid grid-cols-1 gap-8 md:grid-cols-2", className)}
     >
       {works.map((work) => (
         <Work key={work.id} classNames={classNames} work={work} />
       ))}
-    </FadeInWithStagger>
+    </div>
   );
 }

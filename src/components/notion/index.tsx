@@ -82,9 +82,9 @@ export async function NotionArticles({ limit = 100 }) {
   return (
     <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-2">
       {results?.map((article) => (
-        <div key={article.id}>
+        <FadeIn key={article.id}>
           <Article {...article} />
-        </div>
+        </FadeIn>
       ))}
     </div>
   );
