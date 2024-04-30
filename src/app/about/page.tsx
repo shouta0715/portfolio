@@ -7,7 +7,7 @@ import { Border } from "@/components/border";
 import { ContactCard } from "@/components/cards/contactCard";
 import { SkillsCard } from "@/components/cards/skilslCard";
 import { Contribution } from "@/components/contribution";
-import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
+import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { Logo } from "@/components/logo";
 import { MoreLink } from "@/components/moreLink";
@@ -69,7 +69,7 @@ const Careers = [
 
 function Career() {
   return (
-    <FadeInWithStagger className="grid flex-1 gap-y-8">
+    <div className="grid flex-1 gap-y-8">
       <h2 className="text-lg font-bold text-primary md:text-xl">経歴</h2>
       {Careers.map((career) => (
         <FadeIn key={career.id}>
@@ -96,7 +96,7 @@ function Career() {
           )}
         </FadeIn>
       ))}
-    </FadeInWithStagger>
+    </div>
   );
 }
 

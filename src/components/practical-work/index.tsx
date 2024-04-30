@@ -6,7 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/accordion";
 import { Card } from "@/components/cards";
-import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
+import { FadeIn } from "@/components/fadeIn";
 import {
   PracticalWork,
   practicalWorks,
@@ -74,10 +74,10 @@ export const PracticalWorks = ({
   works?: PracticalWork[];
 }) => {
   return (
-    <FadeInWithStagger className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+    <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
       {works.map((work) => (
         <PracticalWork key={work.id} work={work} />
       ))}
-    </FadeInWithStagger>
+    </div>
   );
 };
