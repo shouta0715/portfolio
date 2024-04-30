@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import Link from "next/link";
-import React from "react";
+import React, { cache } from "react";
 import { FadeIn, FadeInWithStagger } from "@/components/fadeIn";
 import { AstroIcon } from "@/components/icons/skills/AstroIcon";
 import { AWSIcon } from "@/components/icons/skills/AWSIcon";
@@ -158,7 +158,7 @@ const rotations = [
   "-rotate-2",
 ];
 
-export async function selectedSkills({ skills }: { skills: SkillNames[] }) {
+async function fetchSkills({ skills }: { skills: SkillNames[] }) {
   const { contents } = await getSkills({
     limit: 50,
     fields: ["id", "name", "level"],
@@ -177,16 +177,20 @@ export async function selectedSkills({ skills }: { skills: SkillNames[] }) {
   return result;
 }
 
-function Skill({
+export const selectedSkills = cache(fetchSkills);
+
+export function Skill({
   skill,
   i,
   className,
   hasStar = true,
+  hasName = true,
 }: {
   skill: ViewSkill;
   i: number;
   className?: string;
   hasStar?: boolean;
+  hasName?: boolean;
 }) {
   return (
     <FadeIn className="flex flex-col items-center">
@@ -201,22 +205,22 @@ function Skill({
           pathname: `/skills/${skill.id}`,
         }}
       >
-        <skill.icon
-          aria-hidden="true"
-          className="h-full w-full object-cover p-2"
-        />
+        <skill.icon className="h-full w-full object-cover p-2" />
+        <span className="sr-only">{skill.name}</span>
       </Link>
 
-      <div className="mt-2 text-center">
-        <p className="text-xs font-semibold">{skill.name}</p>
-        {hasStar && (
-          <Stars
-            className="mt-1 justify-center"
-            id={skill.name}
-            level={skill.level ?? 0}
-          />
-        )}
-      </div>
+      {(hasName || hasStar) && (
+        <div className="mt-2 text-center">
+          {hasName && <p className="text-xs font-semibold">{skill.name}</p>}
+          {hasStar && (
+            <Stars
+              className="mt-1 justify-center"
+              id={skill.name}
+              level={skill.level ?? 0}
+            />
+          )}
+        </div>
+      )}
     </FadeIn>
   );
 }
@@ -226,6 +230,7 @@ export async function SelectedSkill({
   className,
   classNames,
   hasStar = true,
+  hasName = true,
 }: {
   skills: SkillNames[];
   className?: string;
@@ -233,6 +238,8 @@ export async function SelectedSkill({
     skill?: string;
   };
   hasStar?: boolean;
+  hasName?: boolean;
+  speed?: number;
 }) {
   const selected = await selectedSkills({ skills });
 
@@ -242,6 +249,7 @@ export async function SelectedSkill({
         <Skill
           key={skill.name}
           className={classNames?.skill}
+          hasName={hasName}
           hasStar={hasStar}
           i={i}
           skill={skill}
