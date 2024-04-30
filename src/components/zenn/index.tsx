@@ -96,7 +96,7 @@ export async function ZennArticles() {
   const { articles } = await getZennArticles();
 
   return (
-    <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+    <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
       {articles.map((article) => (
         <FadeIn
           key={article.id}

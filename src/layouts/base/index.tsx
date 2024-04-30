@@ -2,7 +2,6 @@
 
 import { MotionConfig, useReducedMotion } from "framer-motion";
 import React, { ReactNode } from "react";
-import { Container } from "@/components/container";
 import { Pattern } from "@/components/pattern";
 import Footer from "@/layouts/base/footer";
 import { Header } from "@/layouts/base/header";
@@ -17,12 +16,7 @@ function BaseLayoutInner({ children }: { children: ReactNode }) {
         <Pattern />
         <div className="flex-1">
           <Header />
-          <Container
-            as="main"
-            className="w-full flex-auto overflow-hidden py-8"
-          >
-            {children}
-          </Container>
+          <main className="w-full flex-auto py-8">{children}</main>
           <Footer />
         </div>
       </div>

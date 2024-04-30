@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import Error from "@/app/error";
 import { Border } from "@/components/border";
+import { Container } from "@/components/container";
 import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { Logo } from "@/components/logo";
@@ -20,9 +21,9 @@ export default async function Home() {
 
   return (
     <div>
-      <FadeIn className="py-6">
-        <div className="relative gap-x-14 md:flex md:items-center">
-          <div className="w-full max-w-2xl shrink-0 rounded-xl md:max-w-md lg:max-w-lg dark:bg-gray-900/85">
+      <FadeIn>
+        <div className="relative max-w-full gap-x-14 overflow-hidden md:flex md:items-center">
+          <Container className="mx-0 w-full max-w-2xl shrink-0 rounded-xl md:max-w-md lg:max-w-lg  dark:bg-gray-900/85">
             <Heading>Introduction</Heading>
             <div className="mt-12 text-primary">
               <p className="flex items-center text-xl font-semibold sm:text-2xl">
@@ -58,51 +59,57 @@ export default async function Home() {
               </p>
               <MoreLink href="/about">私についてもっと詳しく</MoreLink>
             </div>
+          </Container>
+
+          <div className="p-6 md:p-0">
+            <SkillTile />
+          </div>
+        </div>
+      </FadeIn>
+
+      <Container>
+        <FadeIn className="mt-8">
+          <div>
+            <Heading as="h2" className="mt-8">
+              Business Works
+            </Heading>
+            <PracticalWorks />
+          </div>
+          <div>
+            <Heading as="h2" className="mt-16">
+              Personal Works
+            </Heading>
+            <Works
+              classNames={{
+                card: "h-max",
+              }}
+              works={contents}
+            />
           </div>
 
-          <SkillTile />
-        </div>
-      </FadeIn>
+          <MoreLink href="/works" />
+        </FadeIn>
+        <Border className="my-16" />
+        <FadeIn>
+          <Heading>Articles</Heading>
+          <div className="grid gap-8">
+            <ErrorBoundary fallback={<Error />}>
+              <ZennArticles />
+            </ErrorBoundary>
 
-      <FadeIn className="mt-8">
-        <div>
-          <Heading as="h2" className="mt-8">
-            Business Works
-          </Heading>
-          <PracticalWorks />
-        </div>
-        <div>
-          <Heading as="h2" className="mt-16">
-            Personal Works
-          </Heading>
-          <Works
-            classNames={{
-              card: "h-max",
-            }}
-            works={contents}
-          />
-        </div>
-
-        <MoreLink href="/works" />
-      </FadeIn>
-      <Border className="my-16" />
-      <FadeIn>
-        <Heading>Articles</Heading>
-        <div className="grid gap-8">
-          <ErrorBoundary fallback={<Error />}>
-            <ZennArticles />
-          </ErrorBoundary>
-
-          <ErrorBoundary
-            fallback={<Error message="Notionの記事を取得できませんでした。" />}
-          >
-            <Suspense fallback={<NotionLoadings />}>
-              <NotionArticles limit={4} />
-            </Suspense>
-          </ErrorBoundary>
-        </div>
-        <MoreLink href="/articles" />
-      </FadeIn>
+            <ErrorBoundary
+              fallback={
+                <Error message="Notionの記事を取得できませんでした。" />
+              }
+            >
+              <Suspense fallback={<NotionLoadings />}>
+                <NotionArticles limit={4} />
+              </Suspense>
+            </ErrorBoundary>
+          </div>
+          <MoreLink href="/articles" />
+        </FadeIn>
+      </Container>
     </div>
   );
 }

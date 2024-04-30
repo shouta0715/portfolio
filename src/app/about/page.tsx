@@ -6,6 +6,7 @@ import Error from "@/app/error";
 import { Border } from "@/components/border";
 import { ContactCard } from "@/components/cards/contactCard";
 import { SkillsCard } from "@/components/cards/skilslCard";
+import { Container } from "@/components/container";
 import { Contribution } from "@/components/contribution";
 import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
@@ -107,58 +108,61 @@ export default async function Page() {
 
   return (
     <div>
-      <div>
-        <FadeIn className="overflow-hidden py-6">
-          <div className="relative gap-x-14 md:flex md:items-center">
-            <div className="w-full max-w-2xl shrink-0 rounded-xl md:max-w-md lg:max-w-lg dark:bg-gray-900/85">
-              <Heading>About</Heading>
-              <div className="mt-12 text-primary">
-                <p className="flex items-center text-xl font-semibold sm:text-2xl">
-                  <Logo
-                    alt="くらはししょうたのアバター"
-                    className="mr-4 inline-block size-16 rounded-full border border-border bg-background object-cover"
-                    height={64}
-                    width={64}
-                  />
-                  <ruby>
-                    倉 <rp>(</rp>
-                    <rt>くら</rt>
-                    <rp>)</rp> 橋 <rp>(</rp>
-                    <rt>はし</rt>
-                  </ruby>
-                  <ruby className="ml-2">
-                    <rp>)</rp>渉 <rp>(</rp>
-                    <rt>しょう</rt>
-                    <rp>)</rp> 太 <rp>(</rp>
-                    <rt>た</rt>
-                    <rp>)</rp>
-                  </ruby>
-                </p>
-                <p className="mt-8 text-sm leading-7 text-muted-foreground md:text-base md:leading-7">
-                  Web開発に興味があります。
-                  <br />
-                  TypeScript、React、 Next.jsを中心に開発を行うことができます。
-                  Storybookを使用したコンポーネント開発、アクセシビリティテストの自動化なども構築できます。
-                  <br />
-                  CI・CDを使用した自動デプロイ、テスト自動化も行うことができます。
-                  <br />
-                  Go、Node.jsを使用したバックエンド開発も行うことができます。
-                  <br />
-                  その他にも、インフラ含めたWeb系を中心に幅広い技術を学び、開発を行っています。
-                </p>
-                <MoreLink href="/works">作品を見る</MoreLink>
-              </div>
+      <FadeIn>
+        <div className="relative max-w-full gap-x-14 overflow-hidden md:flex md:items-center">
+          <Container className="mx-0 w-full max-w-2xl shrink-0 rounded-xl md:max-w-md lg:max-w-lg dark:bg-gray-900/85">
+            <Heading>About</Heading>
+            <div className="mt-12 text-primary">
+              <p className="flex items-center text-xl font-semibold sm:text-2xl">
+                <Logo
+                  alt="くらはししょうたのアバター"
+                  className="mr-4 inline-block size-16 rounded-full border border-border bg-background object-cover"
+                  height={64}
+                  width={64}
+                />
+                <ruby>
+                  倉 <rp>(</rp>
+                  <rt>くら</rt>
+                  <rp>)</rp> 橋 <rp>(</rp>
+                  <rt>はし</rt>
+                </ruby>
+                <ruby className="ml-2">
+                  <rp>)</rp>渉 <rp>(</rp>
+                  <rt>しょう</rt>
+                  <rp>)</rp> 太 <rp>(</rp>
+                  <rt>た</rt>
+                  <rp>)</rp>
+                </ruby>
+              </p>
+              <p className="mt-8 text-sm leading-7 text-muted-foreground md:text-base md:leading-7">
+                Web開発に興味があります。
+                <br />
+                TypeScript、React、 Next.jsを中心に開発を行うことができます。
+                Storybookを使用したコンポーネント開発、アクセシビリティテストの自動化なども構築できます。
+                <br />
+                CI・CDを使用した自動デプロイ、テスト自動化も行うことができます。
+                <br />
+                Go、Node.jsを使用したバックエンド開発も行うことができます。
+                <br />
+                その他にも、インフラ含めたWeb系を中心に幅広い技術を学び、開発を行っています。
+              </p>
+              <MoreLink href="/works">作品を見る</MoreLink>
             </div>
+          </Container>
 
+          <div className="py-6">
             <SkillTile />
           </div>
-        </FadeIn>
+        </div>
+      </FadeIn>
+
+      <Container>
         <FadeIn className="mt-12 flex flex-col gap-8 md:flex-row">
           <div className="flex-1">
             <Career />
           </div>
-          <div className="flex-1">
-            <div className="top-8 flex flex-col gap-y-8 md:sticky">
+          <div className="flex-1 ">
+            <div className="top-8 flex flex-col gap-y-8  md:sticky">
               <div>
                 <ContactCard />
               </div>
@@ -218,7 +222,7 @@ export default async function Page() {
             </p>
           </div>
         </FadeIn>
-      </div>
+      </Container>
     </div>
   );
 }
