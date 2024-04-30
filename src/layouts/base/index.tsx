@@ -17,7 +17,10 @@ function BaseLayoutInner({ children }: { children: ReactNode }) {
         <Pattern />
         <div className="flex-1">
           <Header />
-          <Container as="main" className="w-full flex-auto py-8">
+          <Container
+            as="main"
+            className="w-full flex-auto overflow-hidden py-8"
+          >
             {children}
           </Container>
           <Footer />

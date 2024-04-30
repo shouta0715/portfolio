@@ -20,7 +20,7 @@ export default async function Home() {
 
   return (
     <div>
-      <FadeIn className="overflow-hidden py-6">
+      <FadeIn className="py-6">
         <div className="relative gap-x-14 md:flex md:items-center">
           <div className="w-full max-w-2xl shrink-0 rounded-xl md:max-w-md lg:max-w-lg dark:bg-gray-900/85">
             <Heading>Introduction</Heading>

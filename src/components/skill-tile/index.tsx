@@ -30,7 +30,7 @@ export async function SkillTile() {
       className="flex w-full justify-between gap-12 pt-8 md:p-4"
       speed={0.075}
     >
-      <div className="-ml-8 grid h-max gap-8 pt-40 md:ml-0 md:pt-56">
+      <div className="-ml-7 grid h-max gap-8 pt-40 md:ml-0 md:pt-56">
         {first.map((skill, i) => (
           <Skill
             key={skill.name}
