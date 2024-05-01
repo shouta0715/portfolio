@@ -195,7 +195,7 @@ export function Skill({
   return (
     <FadeIn className="flex flex-col items-center">
       <Link
-        aria-label={skill.name}
+        aria-label={`${skill.name}へのリンク`}
         className={clsx(
           "relative block aspect-[9/10] flex-none overflow-hidden rounded-xl bg-white/50 shadow-lg ring ring-gray-100 transition-all duration-300 hover:scale-105 hover:ring-gray-300  sm:rounded-2xl dark:bg-gray-600",
           rotations[i % rotations.length],
@@ -206,7 +206,7 @@ export function Skill({
         }}
       >
         <skill.icon className="h-full w-full object-cover p-2" />
-        <span className="sr-only">{skill.name}</span>
+        <span className="sr-only">{skill.name}へのリンク</span>
       </Link>
 
       {(hasName || hasStar) && (
