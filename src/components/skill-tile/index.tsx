@@ -66,7 +66,7 @@ export async function SkillTile() {
             key={skill.name}
             className={clsx(
               "h-16 w-16 sm:h-20 sm:w-20",
-              rotations[Math.floor(i / 2) % rotations.length]
+              rotations[Math.floor(i) % rotations.length]
             )}
             hasName={false}
             hasStar={false}
@@ -81,7 +81,7 @@ export async function SkillTile() {
             key={skill.name}
             className={clsx(
               "h-16 w-16 sm:h-20 sm:w-20",
-              rotations[Math.floor(i / 2) % 2]
+              rotations[Math.floor(i * 4) % rotations.length]
             )}
             hasName={false}
             hasStar={false}

@@ -150,7 +150,7 @@ export default async function Page() {
             </div>
           </Container>
 
-          <div className="py-6">
+          <div className="p-6 md:p-0">
             <SkillTile />
           </div>
         </div>
