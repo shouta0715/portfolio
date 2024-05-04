@@ -42,7 +42,7 @@ const Careers = [
     id: "career-4",
     date: "2023年 6月",
     title:
-      "個人開発でアプリを作成し、メディア芸術データベース活用コンテストでコンテストで最優秀賞を受賞しました。",
+      "個人開発でアプリを作成し、メディア芸術データベース活用コンテストで最優秀賞を受賞しました。",
     link: {
       name: "作成したWebアプリ",
       url: "https://nerd-plus.com/",
@@ -64,7 +64,7 @@ const Careers = [
     id: "career-7",
     date: "現在",
     title:
-      "個人開発でWebアプリの作成を行ったり、研究室での活動の一環として様々なWebアプリ開発を行いながら、更に技術を向上させるため、勉強や実務経験を積んでいます。",
+      "フロントエンドエンジニアとして、React、Next.jsを中心に開発を行っています。",
   },
 ];
 
@@ -74,7 +74,10 @@ function Career() {
       <h2 className="text-lg font-bold text-primary md:text-xl">経歴</h2>
       {Careers.map((career) => (
         <FadeIn key={career.id}>
-          <time className="relative order-first mb-3 flex items-center pl-3.5 text-xs leading-7 text-muted-foreground">
+          <time
+            className="relative order-first mb-3 flex items-center pl-3.5 text-xs leading-7"
+            dateTime={career.date}
+          >
             {career.date}
             <span
               aria-hidden="true"
@@ -83,7 +86,9 @@ function Career() {
               <span className="h-4 w-0.5 rounded-full bg-muted-foreground" />
             </span>
           </time>
-          <p className="pl-3.5 leading-7">{career.title}</p>
+          <p className="pl-3.5 leading-7 text-muted-foreground">
+            {career.title}
+          </p>
           {career.link && (
             <a
               className="mt-3 inline-flex items-center gap-x-2 pl-3.5 text-sm text-destructive hover:underline"
