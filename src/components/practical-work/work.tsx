@@ -12,20 +12,20 @@ export type PracticalWork = {
 };
 
 export const practicalWorks: PracticalWork[] = [
-  {
-    id: "chot",
-    icon: "🔥",
-    contract_type: "アルバイト",
-    name: "ちょっと株式会社",
-    period: "2024年5月〜",
-    link: "https://chot-inc.com/",
-    description: (
-      <p>
-        5月13日より、ちょっと株式会社にてフロントエンドエンジニアとして働きます。
-      </p>
-    ),
-    technologies: [],
-  },
+  // {
+  //   id: "chot",
+  //   icon: "🔥",
+  //   contract_type: "アルバイト",
+  //   name: "ちょっと株式会社",
+  //   period: "2024年5月〜",
+  //   link: "https://chot-inc.com/",
+  //   description: (
+  //     <p>
+  //       5月13日より、ちょっと株式会社にてフロントエンドエンジニアとして働きます。
+  //     </p>
+  //   ),
+  //   technologies: [],
+  // },
   {
     id: "card-game",
     icon: "⚽",
