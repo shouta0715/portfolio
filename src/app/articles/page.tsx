@@ -8,10 +8,12 @@ import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { NotionArticles, NotionLoadings } from "@/components/notion";
 import { ZennArticles } from "@/components/zenn";
+import { basicMetadata } from "@/libs/meta";
 
 export const metadata: Metadata = {
+  ...basicMetadata,
   title: "Articles",
-  description: "Zennなどに投稿した記事を紹介します。",
+  description: "倉橋 渉太ののZennなどに投稿した記事を紹介します。",
 };
 
 export default async function Page() {

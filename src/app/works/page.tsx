@@ -7,10 +7,12 @@ import { Heading } from "@/components/heading";
 import { PracticalWorks } from "@/components/practical-work";
 import { Works } from "@/components/works";
 import { getWorks } from "@/libs/client";
+import { basicMetadata } from "@/libs/meta";
 
 export const metadata: Metadata = {
+  ...basicMetadata,
   title: "Works",
-  description: "これまでに作成した作品を紹介します。",
+  description: "倉橋 渉太がこれまでに作成した作品を紹介します。",
 };
 
 export default async function Page() {

@@ -16,10 +16,12 @@ import { PracticalWorks } from "@/components/practical-work";
 import { SkillTile } from "@/components/skill-tile";
 import { Works } from "@/components/works";
 import { getWorks } from "@/libs/client";
+import { basicMetadata } from "@/libs/meta";
 
 export const metadata: Metadata = {
+  ...basicMetadata,
   title: "About",
-  description: "倉橋渉太の自己紹介です。",
+  description: "倉橋 渉太の自己紹介です。",
 };
 
 const Careers = [

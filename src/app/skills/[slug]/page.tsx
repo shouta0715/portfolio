@@ -10,6 +10,7 @@ import { SkillSet, selectedSkills } from "@/components/skills";
 import { StarDescribe, Stars } from "@/components/stars";
 import { Works } from "@/components/works";
 import { SkillNames, getSkill, getSkills, getWorks } from "@/libs/client";
+import { basicMetadata } from "@/libs/meta";
 
 export async function generateMetadata({
   params,
@@ -23,6 +24,7 @@ export async function generateMetadata({
   });
 
   return {
+    ...basicMetadata,
     title: `Skills - ${skill.name}`,
     description: skill.description,
   };

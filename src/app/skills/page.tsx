@@ -5,10 +5,12 @@ import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { SkillSet } from "@/components/skills";
 import { StarDescribe } from "@/components/stars";
+import { basicMetadata } from "@/libs/meta";
 
 export const metadata: Metadata = {
+  ...basicMetadata,
   title: "Skills",
-  description: "フロントエンドのスキルを中心に学習をしています。",
+  description: "倉橋 渉太のフロントエンドのスキルを中心に学習をしています。",
 };
 
 // export const fetchCache = "only-cache";

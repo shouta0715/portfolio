@@ -4,10 +4,12 @@ import { Container } from "@/components/container";
 import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { SocialLinks } from "@/components/socialLinks";
+import { basicMetadata } from "@/libs/meta";
 
 export const metadata: Metadata = {
+  ...basicMetadata,
   title: "Contact",
-  description: "連絡先の情報です。",
+  description: "倉橋 渉太の連絡先の情報です。",
 };
 
 export default function Page() {
