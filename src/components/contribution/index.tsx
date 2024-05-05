@@ -28,7 +28,7 @@ type ContributionLevels =
   | "FOURTH_QUARTILE"
   | "NONE";
 
-type Contribution = {
+type TContribution = {
   totalContributions: number;
   months: {
     name: string;
@@ -43,7 +43,7 @@ type Contribution = {
 
 type User = {
   contributionsCollection: {
-    contributionCalendar: Contribution;
+    contributionCalendar: TContribution;
   };
 };
 
