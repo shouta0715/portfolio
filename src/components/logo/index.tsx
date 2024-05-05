@@ -6,12 +6,26 @@ export function Logo({
   className,
   ...props
 }: Omit<ComponentPropsWithoutRef<typeof Image>, "src">) {
-  return <Image src="/avatar.webp" {...props} className={clsx(className)} />;
+  return (
+    <Image
+      src="/avatar.webp"
+      {...props}
+      alt={props.alt || "Shouta's avatar"}
+      className={clsx(className)}
+    />
+  );
 }
 
 export function ZennLogo({
   className,
   ...props
 }: Omit<ComponentPropsWithoutRef<typeof Image>, "src">) {
-  return <Image src="/zenn.webp" {...props} className={clsx(className)} />;
+  return (
+    <Image
+      src="/zenn.webp"
+      {...props}
+      alt={props.alt || "Zenn's logo"}
+      className={clsx(className)}
+    />
+  );
 }

@@ -107,6 +107,7 @@ Card.Image = function CardImage({
             href ? "group-hover/image:scale-105" : "group-hover:scale-105"
           )}
           {...props}
+          alt={props.alt ?? ""}
           src={src}
         />
       </div>
