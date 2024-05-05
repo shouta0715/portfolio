@@ -120,38 +120,41 @@ export default async function Page() {
           <Container className="mx-0 w-full max-w-2xl shrink-0 rounded-xl md:max-w-md lg:max-w-lg dark:bg-gray-900/85">
             <Heading>About</Heading>
             <div className="mt-12 text-primary">
-              <p className="flex items-center text-xl font-semibold sm:text-2xl">
+              <div className="flex items-center text-lg font-semibold sm:text-xl">
                 <Logo
                   alt="くらはししょうたのアバター"
                   className="mr-4 inline-block size-16 rounded-full border border-border bg-background object-cover"
                   height={64}
                   width={64}
                 />
-                <ruby>
-                  倉 <rp>(</rp>
-                  <rt>くら</rt>
-                  <rp>)</rp> 橋 <rp>(</rp>
-                  <rt>はし</rt>
-                </ruby>
-                <ruby className="ml-2">
-                  <rp>)</rp>渉 <rp>(</rp>
-                  <rt>しょう</rt>
-                  <rp>)</rp> 太 <rp>(</rp>
-                  <rt>た</rt>
-                  <rp>)</rp>
-                </ruby>
-              </p>
-              <p className="mt-8 text-sm leading-7 text-muted-foreground md:text-base md:leading-7">
-                Web開発に興味があります。
+                <div>
+                  <ruby>
+                    倉 <rp>(</rp>
+                    <rt>くら</rt>
+                    <rp>)</rp> 橋 <rp>(</rp>
+                    <rt>はし</rt>
+                  </ruby>
+                  <ruby className="ml-2">
+                    <rp>)</rp>渉 <rp>(</rp>
+                    <rt>しょう</rt>
+                    <rp>)</rp> 太 <rp>(</rp>
+                    <rt>た</rt>
+                    <rp>)</rp>
+                  </ruby>
+                  <p className="text-xs mt-1 text-muted-foreground font-normal">
+                    フロントエンドエンジニア
+                  </p>
+                </div>
+              </div>
+              <p className="mt-8 text-sm leading-8 text-muted-foreground md:text-base md:leading-8">
+                綺麗なUI・UX・アクセシビリティが好きなフロントエンドエンジニアです。
                 <br />
                 TypeScript、React、 Next.jsを中心に開発を行うことができます。
-                Storybookを使用したコンポーネント開発、アクセシビリティテストの自動化なども構築できます。
+                Storybookを利用したコンポーネント設計や、アクセシビリティテストの自動化などフロントエンドの技術が得意です。
                 <br />
-                CI・CDを使用した自動デプロイ、テスト自動化も行うことができます。
+                サーバーサイドの技術では、GoやNode.jsを利用したAPIの開発ができます。
                 <br />
-                Go、Node.jsを使用したバックエンド開発も行うことができます。
-                <br />
-                その他にも、インフラ含めたWeb系を中心に幅広い技術を学び、開発を行っています。
+                その他にも、インフラやCI/CDの設定、Web全般の技術にも興味があります。
               </p>
               <MoreLink href="/works">作品を見る</MoreLink>
             </div>
