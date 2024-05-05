@@ -239,7 +239,6 @@ export async function SelectedSkill({
   };
   hasStar?: boolean;
   hasName?: boolean;
-  speed?: number;
 }) {
   const selected = await selectedSkills({ skills });
 

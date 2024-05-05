@@ -8,12 +8,12 @@ import {
 import { Card } from "@/components/cards";
 import { FadeIn } from "@/components/fadeIn";
 import {
-  PracticalWork,
+  PracticalWork as TPracticalWork,
   practicalWorks,
 } from "@/components/practical-work/work";
 import { SelectedSkill } from "@/components/skills";
 
-export function PracticalWork({ work }: { work: PracticalWork }) {
+export function PracticalWork({ work }: { work: TPracticalWork }) {
   const HeadComp = work.link ? "a" : "div";
 
   return (
@@ -71,7 +71,7 @@ export function PracticalWork({ work }: { work: PracticalWork }) {
 export const PracticalWorks = ({
   works = practicalWorks,
 }: {
-  works?: PracticalWork[];
+  works?: TPracticalWork[];
 }) => {
   return (
     <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
