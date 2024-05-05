@@ -4,16 +4,12 @@ import clsx from "clsx";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { BaseLayout } from "@/layouts/base";
+import { basicMetadata } from "@/libs/meta";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Shouta's Portfolio",
-    template: "%s - Shouta's Portfolio",
-  },
-
-  description: "Shouta's Portfolio",
+  ...basicMetadata,
 };
 
 export default function RootLayout({
