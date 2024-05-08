@@ -116,8 +116,8 @@ export default async function Page() {
   return (
     <div>
       <FadeIn>
-        <div className="relative max-w-full gap-x-14 overflow-hidden md:flex md:items-center">
-          <Container className="mx-0 w-full max-w-2xl shrink-0 rounded-xl md:max-w-md lg:max-w-lg dark:bg-gray-900/85">
+        <Container className="relative gap-x-14 overflow-hidden md:flex md:items-center">
+          <div className="mx-0 w-full max-w-2xl shrink-0 rounded-xl md:max-w-md lg:max-w-lg">
             <Heading>About</Heading>
             <div className="mt-12 text-primary">
               <div className="flex items-center text-lg font-semibold sm:text-xl">
@@ -158,12 +158,12 @@ export default async function Page() {
               </p>
               <MoreLink href="/works">作品を見る</MoreLink>
             </div>
-          </Container>
+          </div>
 
           <div className="p-6 md:p-0">
             <SkillTile />
           </div>
-        </div>
+        </Container>
       </FadeIn>
 
       <Container>

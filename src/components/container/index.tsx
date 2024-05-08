@@ -1,5 +1,5 @@
-import clsx from "clsx";
 import React, { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
+import { cn } from "@/libs/cn";
 
 type ContainerProps<T extends ElementType> = {
   as?: T;
@@ -16,7 +16,7 @@ export function Container<T extends ElementType = "div">({
   const Component = as ?? "div";
 
   return (
-    <Component className={clsx("mx-auto max-w-7xl  px-6 lg:px-12", className)}>
+    <Component className={cn("mx-auto max-w-7xl  px-6 lg:px-12", className)}>
       {children}
     </Component>
   );
