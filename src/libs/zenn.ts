@@ -43,7 +43,7 @@ export const getZennArticle = async (slug: string): Promise<Article> => {
 
   const res = await fetch(url, {
     next: {
-      revalidate: 3600,
+      revalidate: 86400,
     },
   });
 

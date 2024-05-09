@@ -75,7 +75,7 @@ export async function getNotionArticles(
         ],
       }),
       next: {
-        revalidate: 300,
+        revalidate: 604800,
       },
     }
   ).then((res) => res.json());
