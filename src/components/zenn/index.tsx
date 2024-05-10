@@ -92,19 +92,32 @@ function Article({ article }: { article: TArticle }) {
   );
 }
 
-export async function ZennArticles({ short = false }: { short?: boolean }) {
+const sortLike = (a: TArticle, b: TArticle) => {
+  return b.liked_count - a.liked_count;
+};
+
+export async function ZennArticles({
+  short = false,
+  sort = false,
+}: {
+  short?: boolean;
+  sort?: boolean;
+}) {
   const { articles } = await getZennArticles();
 
   return (
     <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-      {articles.slice(0, short ? 4 : articles.length).map((article) => (
-        <FadeIn
-          key={article.id}
-          className="group grid overflow-hidden rounded-xl border bg-gradient-to-br from-[#6ccaff] to-[#b398ff] p-4 pb-0 md:rounded-2xl md:shadow-sm dark:border-gray-900"
-        >
-          <Article article={article} />
-        </FadeIn>
-      ))}
+      {articles
+        .sort(sort ? sortLike : () => 0)
+        .slice(0, short ? 4 : articles.length)
+        .map((article) => (
+          <FadeIn
+            key={article.id}
+            className="group grid overflow-hidden rounded-xl border bg-gradient-to-br from-[#6ccaff] to-[#b398ff] p-4 pb-0 md:rounded-2xl md:shadow-sm dark:border-gray-900"
+          >
+            <Article article={article} />
+          </FadeIn>
+        ))}
     </div>
   );
 }

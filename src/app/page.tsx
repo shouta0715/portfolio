@@ -97,7 +97,7 @@ export default async function Home() {
           <Heading>Articles</Heading>
           <div className="grid gap-8">
             <ErrorBoundary fallback={<Error />}>
-              <ZennArticles short />
+              <ZennArticles short sort />
             </ErrorBoundary>
 
             <ErrorBoundary
