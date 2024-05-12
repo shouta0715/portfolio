@@ -77,6 +77,7 @@ export default async function Home() {
               Business Works
             </Heading>
             <PracticalWorks />
+            <MoreLink href="/works" />
           </div>
           <div>
             <Heading as="h2" className="mt-16">
