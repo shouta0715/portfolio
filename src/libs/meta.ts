@@ -2,8 +2,8 @@ import { Metadata } from "next";
 
 export const basicMetadata: Metadata = {
   metadataBase: new URL("https://www.kurahashi.me/"),
-  generator: "倉橋 渉太",
-  applicationName: "Shouta's Portfolio",
+  generator: "Kurahashi Shouta",
+  applicationName: "Kurahashi Shoutaのポートフォリオ",
   referrer: "no-referrer",
   authors: [
     {
@@ -15,30 +15,30 @@ export const basicMetadata: Metadata = {
   publisher: "倉橋 渉太",
   keywords: [
     "倉橋 渉太",
+    "倉橋",
+    "渉太",
     "Shouta Kurahashi",
     "Shouta",
     "Kurahashi",
-    "Portfolio",
-    "ポートフォリオ",
   ],
   title: {
-    default: "Shouta's Portfolio",
-    template: "%s - Shouta's Portfolio",
+    default: "Kurahashi Shoutaのポートフォリオ",
+    template: "%s - Kurahashi Shoutaのポートフォリオ",
   },
 
-  description: "倉橋 渉太のポートフォリオです。",
+  description: "Kurahashi Shoutaのポートフォリオです。",
   openGraph: {
-    title: "Shouta's Portfolio",
-    description: "倉橋 渉太のポートフォリオです。",
-    siteName: "Shouta's Portfolio",
+    title: "Kurahashi Shoutaのポートフォリオ",
+    description: "Kurahashi Shoutaのポートフォリオです。",
+    siteName: "Kurahashi Shoutaのポートフォリオ",
     url: "https://www.kurahashi.me/",
     locale: "ja_JP",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Shouta's Portfolio",
-    description: "倉橋 渉太のポートフォリオです。",
+    title: "Kurahashi Shoutaのポートフォリオ",
+    description: "Kurahashi Shoutaのポートフォリオです。",
     creator: "@shoutapu0715",
   },
 };
