@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import Error from "@/app/error";
 import { Border } from "@/components/border";
@@ -7,7 +6,6 @@ import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { Logo } from "@/components/logo";
 import { MoreLink } from "@/components/moreLink";
-import { NotionArticles, NotionLoadings } from "@/components/notion";
 import { PracticalWorks } from "@/components/practical-work";
 import { SkillTile } from "@/components/skill-tile";
 import { Works } from "@/components/works";
@@ -99,16 +97,6 @@ export default async function Home() {
           <div className="grid gap-8">
             <ErrorBoundary fallback={<Error />}>
               <ZennArticles short sort />
-            </ErrorBoundary>
-
-            <ErrorBoundary
-              fallback={
-                <Error message="Notionの記事を取得できませんでした。" />
-              }
-            >
-              <Suspense fallback={<NotionLoadings />}>
-                <NotionArticles limit={4} />
-              </Suspense>
             </ErrorBoundary>
           </div>
           <MoreLink href="/articles" />

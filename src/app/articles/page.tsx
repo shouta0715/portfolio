@@ -1,12 +1,11 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { Metadata } from "next";
-import React, { Suspense } from "react";
+import React from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import Error from "@/app/error";
 import { Container } from "@/components/container";
 import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
-import { NotionArticles, NotionLoadings } from "@/components/notion";
 import { ZennArticles } from "@/components/zenn";
 import { basicMetadata } from "@/libs/meta";
 
@@ -42,16 +41,6 @@ export default async function Page() {
           </Heading>
           <ErrorBoundary fallback={<Error />}>
             <ZennArticles />
-          </ErrorBoundary>
-        </div>
-        <div className="mt-12">
-          <Heading as="h2">Notion</Heading>
-          <ErrorBoundary
-            fallback={<Error message="Notionの記事を取得できませんでした。" />}
-          >
-            <Suspense fallback={<NotionLoadings />}>
-              <NotionArticles />
-            </Suspense>
           </ErrorBoundary>
         </div>
       </FadeIn>
