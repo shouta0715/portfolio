@@ -1,13 +1,10 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { Metadata } from "next";
-import React, { Suspense } from "react";
-import { ErrorBoundary } from "react-error-boundary";
-import Error from "@/app/error";
+import React from "react";
 import { Border } from "@/components/border";
 import { ContactCard } from "@/components/cards/contactCard";
 import { SkillsCard } from "@/components/cards/skilslCard";
 import { Container } from "@/components/container";
-import { Contribution } from "@/components/contribution";
 import { FadeIn } from "@/components/fadeIn";
 import { Heading } from "@/components/heading";
 import { Logo } from "@/components/logo";
@@ -204,25 +201,6 @@ export default async function Page() {
           </div>
 
           <MoreLink href="/works" />
-        </FadeIn>
-        <Border className="my-8" />
-        <FadeIn className="leading-7 text-muted-foreground">
-          <h2 className="text-lg font-bold  text-primary md:text-xl">
-            GitHub Contribution
-          </h2>
-          <div className="mt-8">
-            <ErrorBoundary
-              fallback={
-                <Error message="Failed to fetch GitHub contribution data" />
-              }
-            >
-              <Suspense
-                fallback={<div>Loading GitHub contribution data...</div>}
-              >
-                <Contribution animation={false} />
-              </Suspense>
-            </ErrorBoundary>
-          </div>
         </FadeIn>
         <FadeIn className="mt-12 leading-7 text-muted-foreground">
           <h2 className="text-lg font-bold  text-primary md:text-xl">趣味</h2>
